@@ -1,0 +1,15 @@
+#!/bin/sh
+
+date="$1"
+
+if [[ "$date" =~ ^([1-9]|[1-2][0-9]|3[0-1])-([1-9]|1[0-2])-[0-9]{4}$ ]]; then
+    if [ -d ./contents/"$date" ]; then
+        echo "The date already exists"
+        exit 1
+    else
+        cp -R ./templates ./contents/"$date"
+    fi
+else
+    echo "The date need to be dd-mm-yyyy format"
+    exit 1
+fi
