@@ -1,7 +1,9 @@
-### Editing Steps
+### Editing Flow
 
-- Trim and splice
+- Trim & splice
 - Add texts
+- Grouping & Marking
+- End Screen
 - Color grading
   - Adjust color balance
   - Apply ambient color to the background
