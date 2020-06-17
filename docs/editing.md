@@ -1,8 +1,9 @@
 ### Editing Flow
 
-- Trim & splice
+- Trim & Splice
 - Add texts
-- Grouping & Marking
+- Grouping
+- Marking
 - End Screen
 - Color grading
   - Adjust color balance
@@ -13,3 +14,4 @@
   - Apply limitter
   - Apply eq
 - Add background music
+- Thumbnail
