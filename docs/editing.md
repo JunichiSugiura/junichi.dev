@@ -3,7 +3,8 @@
 - Trim & Splice
 - Add texts
 - Grouping
-- Marking
+- Add background music
+  - around -35dB
 - End Screen
 - Color grading
   - Adjust color balance
@@ -12,6 +13,7 @@
   - Remove noize
   - Apply complessor
   - Apply limitter
+  - Adjust level (in between -12dB and -6dB)
   - Apply eq
-- Add background music
+- Export master
 - Thumbnail
