@@ -1,7 +1,6 @@
 ### Title
 
-```txt
-```
+[GitHub] デフォルトbranchをmasterからmainに変更する理由と方法
 
 ### Schedule
 
@@ -19,12 +18,15 @@
 -
 
 ### Description
+今回はGithubのBranchをMaterからMainに変更することをやってみます。アメリカを中心に広がっているBlack lives Matter活動は、テック業界やエンジニア界隈でも様々なことを見直すきっかけになっています。その背景や他のテック企業の取り組みを紹介しつつ、自分でも気軽にできるGithubのチュートリアルです。
 
-```txt
+### SNS share Description
+Black lives Matterはテック業界やエンジニア界隈でも様々なことを見直すきっかけになっています。今回はその背景や実際の取り組みを紹介しています。Githubの取り組みでもあるBranch名をMasterからMainに変更する作業を実際にやってみました。
+
 
 ------------- 📌 Chapters -------------
 0:00
-```
+```txt
 
 <!-- ----------- 🔔 チャンネル登録はこちらから -----------
 https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
