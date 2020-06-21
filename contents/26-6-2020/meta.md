@@ -5,7 +5,7 @@
 
 ### Schedule
 
-dd-mm-2020 14:00 (GMT+0900) Tokyo
+26-6-2020 14:00 (GMT+0900) Tokyo
 
 ### Shareable Link
 
