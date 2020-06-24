@@ -58,9 +58,10 @@ https://shop.ledger.com/pages/apparel?r=3ae057a09ca4
 
 <!-- - プログラミング
 - エンジニア
-- 学習
 - プログラミング
-- 開発 -->
+- 開発
+- 学習
+- テック -->
 
 <!-- ### End Screen -->
 <!-- if there is a specific video that you want to link  -->

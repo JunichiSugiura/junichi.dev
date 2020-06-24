@@ -57,6 +57,12 @@ https://shop.ledger.com/pages/apparel?r=3ae057a09ca4
 
 ### Tags
 
+- GitHub
+- BlackLivesMatter
+- チュートリアル
+- ニュース
+- 時事
+
 <!-- - プログラミング
 - エンジニア
 - 学習
