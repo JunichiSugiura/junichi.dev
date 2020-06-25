@@ -24,14 +24,12 @@
 ------------- 📌 Chapters -------------
 0:00 イントロ
 0:11 発表に至るまでの経緯
-1:09 githubでのbranch変更チュートリアル
+1:09 GitHubでのbranch変更チュートリアル
 4:08 なぜそもそもデフォルトで"master"が使われているの？
 4:45 "Black Lives Matter"について
 5:50 "Black Lives Matter"に対してのテック業界の反応
 8:13 批判の声
 8:38 個人的な見解
-
-
 
 #BlackLivesMatter
 ```
