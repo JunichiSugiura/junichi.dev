@@ -1,11 +1,10 @@
 ### Title
 
-```txt
-```
+[GitHub] デフォルトbranchをmasterからmainに変更する方法と"理由"
 
 ### Schedule
 
-dd-mm-2020 14:00 (GMT+0900) Tokyo
+26-6-2020 14:00 (GMT+0900) Tokyo
 
 ### Shareable Link
 
@@ -13,17 +12,26 @@ dd-mm-2020 14:00 (GMT+0900) Tokyo
 
 ### Thumbnail (max 4 words)
 
-- 
-- 
-- 
--
+- GitHub
+- master -> main
+- 変更方法と"理由"
 
 ### Description
 
 ```txt
+今回はサクッとGitHubのデフォルトブランチを"mater"から"main"への変更する方法を紹介します。アメリカを中心に広がっている"Black Lives Matter"活動は、テック業界やエンジニア界隈でも様々なことを見直すきっかけになっています。その背景や他のテック企業の取り組みを知りながら、自分でも気軽にできるGitHubのチュートリアルです。
 
 ------------- 📌 Chapters -------------
-0:00
+0:00 イントロ
+0:11 発表に至るまでの経緯
+1:09 GitHubでのbranch変更チュートリアル
+4:08 なぜそもそもデフォルトで"master"が使われているの？
+4:45 "Black Lives Matter"について
+5:50 "Black Lives Matter"に対してのテック業界の反応
+8:13 批判の声
+8:38 個人的な見解
+
+#BlackLivesMatter
 ```
 
 <!-- ----------- 🔔 チャンネル登録はこちらから -----------
@@ -56,12 +64,21 @@ https://shop.ledger.com/pages/apparel?r=3ae057a09ca4
 
 ### Tags
 
+- GitHub
+- BlackLivesMatter
+- チュートリアル
+- ニュース
+- 時事
+
 <!-- - プログラミング
 - エンジニア
-- プログラミング
-- 開発
 - 学習
-- テック -->
+- プログラミング
+- 開発 -->
 
 <!-- ### End Screen -->
 <!-- if there is a specific video that you want to link  -->
+
+### SNS post
+
+"Black Lives Matter"はテック業界やエンジニア界隈でも様々なことを見直すきっかけになっています。今回はその背景や実際の取り組みを紹介します。#GitHubの取り組みでもあるbranch名を"master"から"main"に変更する作業を実際にやってみました💻#プログラミング
