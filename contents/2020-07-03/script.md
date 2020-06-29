@@ -1,11 +1,21 @@
 ---
-title: 海外でプログラマーをしてみて体感した7つのメリット
+title: 海外でプログラマーをしてみて体感した6つのメリット
 description:
-sheduledAt: 2020-07-03 05:00:00
-# shareableLink:
-thumbnailKeywords: []
-tags: []
-# endScreen:
+thumbnailKeywords:
+  -
+tags:
+  -
+link:
+publishedAt: 2020-07-03 05:00:00
+playlists:
+  - Career
+endScreen:
+  elements:
+    - "Video: Best for viewer"
+    - "Subscribe: Junichi"
+sns:
+  post:
+  twitter:
 ---
 
 ## Outline
