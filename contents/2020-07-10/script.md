@@ -30,9 +30,9 @@ tags:
   # - テック
   - 
 link: https://youtu.be/<video-id>
-publishedAt: YYYY-MM-DD 05:00:00
+publishedAt: 2020-07-10 05:00:00
 playlists:
-  - 
+  - Career
 endScreen:
   elements:
     - "Video: Best for viewer"
