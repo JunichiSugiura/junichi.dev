@@ -2,12 +2,13 @@
 
 date="$1"
 
-if [[ "$date" =~ ^([1-9]|[1-2][0-9]|3[0-1])-([1-9]|1[0-2])-[0-9]{4}$ ]]; then
+if [[ "$date" =~ ^[0-9]{4}-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])$ ]]; then
     if [ -d ./contents/"$date" ]; then
         echo "The date already exists"
         exit 1
     else
-        cp -R ./templates ./contents/"$date"
+        mkdir ./contents/"$date"
+        cp ./templates/script.md ./contents/"$date"/
     fi
 else
     echo "The date need to be dd-mm-yyyy format"
