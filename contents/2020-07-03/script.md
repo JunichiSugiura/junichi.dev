@@ -2,13 +2,16 @@
 title: 海外でプログラマーをしてみて体感した6つのメリット
 description:
 thumbnailKeywords:
-  -
+  - プログラマー
+  - 海外就職
+  - メリット
 tags:
-  -
-link:
+  - キャリア
+  - 海外就職
+link: https://youtu.be/GjXjs6FeeKY
 publishedAt: 2020-07-03 05:00:00
 playlists:
-  - Career
+  - キャリア・海外就職
 endScreen:
   elements:
     - "Video: Best for viewer"
