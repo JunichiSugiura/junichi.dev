@@ -47,6 +47,7 @@ playlists:
 endScreen:
   elements:
     - "Video: Best for viewer"
+    - "Video: Most recent upload"
     - "Subscribe: Junichi"
 sns:
   post:
