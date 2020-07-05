@@ -58,7 +58,7 @@ sns:
   post: >
     今回は実際にパリで働いてみた経験から感じた海外でエンジニアとして働くメリット6つを紹介します！💻🇫🇷
     少しでも海外で働く興味がある人のモチベーション向上になれば嬉しいです！
-  twitter:
+  twitter: https://twitter.com/JunichiSugiura/status/1279218370647224321
 ---
 
 ## Outline
