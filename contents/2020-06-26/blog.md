@@ -1,5 +1,5 @@
 ---
-title: "GitHub" デフォルトbranchをmasterからmainに変更する方法と"理由"
+title: GitHub デフォルトbranchをmasterからmainに変更する方法と"理由"
 date: '2019-03-09'
 spoiler: Effects are a part of your data flow.
 cta: 'react'
