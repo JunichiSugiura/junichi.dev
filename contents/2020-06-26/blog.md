@@ -1,12 +1,5 @@
 ---
-title:
-date: '2019-06-27'
-spoiler: 今回はサクッとGitHubのデフォルトブランチを"mater"から"main"への変更する方法を紹介します。アメリカを中心に広がっている"Black Lives Matter"活動は、テック業界やエンジニア界隈でも様々なことを見直すきっかけになっています。その背景や他のテック企業の取り組みを知りながら、自分でも気軽にできるGitHubのチュートリアルです。
-cta: 'github'
----
-
----
-title: A Complete Guide to useEffect
+title: A Complete Guide to useEffectあああ
 date: '2019-03-09'
 spoiler: Effects are a part of your data flow.
 cta: 'react'
