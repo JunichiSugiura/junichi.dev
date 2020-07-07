@@ -2,7 +2,7 @@
 title: GitHub デフォルトbranchをmasterからmainに変更する方法と"理由"
 date: '2019-03-09'
 spoiler: Githubのチュートリアル
-cta: 'react'
+cta: 'react' 'github'
 ---
 
 
