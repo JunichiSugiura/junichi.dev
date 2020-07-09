@@ -31,6 +31,7 @@ playlists:
 endScreen:
   elements:
     - "Video: Best for viewer"
+    - "Playlist: 💻 Tutorials"
     - "Subscribe: Junichi"
 sns: 
   post: "Black Lives Matter"はテック業界やエンジニア界隈でも様々なことを見直すきっかけになっています。今回はその背景や実際の取り組みを紹介します。#GitHub の取り組みでもあるbranch名を"master"から"main"に変更する作業を実際にやってみました💻#プログラミング

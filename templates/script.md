@@ -25,9 +25,12 @@ thumbnailKeywords:
 tags:
   # - プログラミング
   # - エンジニア
+  # - プログラマー
   # - 開発
   # - 学習
   # - テック
+  # - 海外就職
+  # - キャリア
   - 
 link: https://youtu.be/<video-id>
 publishedAt: YYYY-MM-DD 05:00:00

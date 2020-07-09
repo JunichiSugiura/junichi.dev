@@ -51,8 +51,8 @@ playlists:
   - キャリア・海外就職
 endScreen:
   elements:
+    - "Video: 2020-07-10"
     - "Video: Best for viewer"
-    - "Video: Most recent upload"
     - "Subscribe: Junichi"
 sns:
   post: >
