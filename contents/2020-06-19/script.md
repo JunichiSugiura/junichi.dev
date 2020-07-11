@@ -74,8 +74,9 @@ playlists:
   - Tutorials
 endScreen:
   elements:
-    - "Video: https://youtu.be/3hVy_yh7Fco"
+    - "Video: 2020-06-19-part1"
     - "Video: Best for viewer"
+    - "Playlist: 💻 Tutorials"
     - "Subscribe: Junichi"
 sns: 
   post: >
