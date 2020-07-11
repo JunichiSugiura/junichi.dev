@@ -7,8 +7,14 @@ import {
   useContext,
 } from "react";
 
+interface Fonts {
+  serif: string;
+  sansSerif: string;
+  monospace: string;
+}
+
 export const fonts = {
-  serif: "'Merriweather', Georgia, Serif",
+  serif: "'Merriweather', 'Noto Sans JP', Georgia, Serif",
   sansSerif:
     "'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
   monospace:

@@ -37,6 +37,10 @@ export function Head({ title = "Junichi パリ在住エンジニア🇫🇷" }: 
         href="https://fonts.googleapis.com/css?family=Merriweather"
         rel="stylesheet"
       />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+        rel="stylesheet"
+      />
       <script
         dangerouslySetInnerHTML={{
           __html: `

@@ -19,12 +19,10 @@ export function Header() {
 }
 
 const Container = styled.header`
-  width: 100vw;
-  max-width: 40rem;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
   padding-top: 6rem;
 `;
 
