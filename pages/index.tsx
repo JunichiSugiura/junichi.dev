@@ -6,9 +6,9 @@ import { Head, Header, Posts } from "components";
 import { ThemeProvider, fonts } from "logic/styles";
 import fs from "fs";
 import path from "path";
-import matter from "gray-matter"
+import matter from "gray-matter";
 
-export default function Home({posts}) {
+export default function Home({ posts }) {
   return (
     <>
       <Head />
@@ -48,6 +48,17 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  input,
+  button,
+  submit{
+    border:none;
+  } 
 `;
 
 const Container = styled.div`
@@ -60,23 +71,23 @@ const Container = styled.div`
 `;
 
 const Center = styled.div`
-  max-width: 40rem;
+  max-width: 64rem;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: var(--color-text);
-`
+`;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = fs.readdirSync(path.join("contents")).map(id => {
+  const posts = fs.readdirSync(path.join("contents")).map((id) => {
     const filePath = path.join("contents", id, "blog.md");
     if (!fs.existsSync(filePath)) {
       return;
     }
 
     return fs.readFileSync(filePath);
-  }).filter(f => !!f).map(f => matter(f.toString()).data);
+  }).filter((f) => !!f).map((f) => matter(f.toString()).data);
 
   return {
     props: { posts },
