@@ -8,9 +8,9 @@ export function Posts({ posts }) {
   return (
     <main>
       {posts.map((p) => (
-        <Link href={`/blog/${p.title}`}>
-          <Article key={p.title}>
-            <Image src={getThumbnailLink("GRL-kF088Y0")} />
+        <Link key={p.title} href={`/blog/${p.title}`}>
+          <Article>
+            <Image src={getThumbnailLink(p.videoId)} />
             <Data>
               <Title>
                 {p.title}
@@ -36,7 +36,7 @@ const Article = styled.article`
   cursor: pointer;
 
   &:hover {
-    img {
+    > div:first-child {
       box-shadow: ${elevation[3]};
       transform: translateY(-0.1rem);
     }
@@ -64,7 +64,10 @@ const Spoiler = styled.p`
   margin-bototm: 1.75rem;
 `;
 
-const Image = styled.img`
+const Image = styled.div<{ src: string }>`
+  min-width: 320px;
+  min-height: 180px;
+  background: center / cover no-repeat url(${(props) => props.src});
   border-radius: ${size.borderRadius};
   box-shadow: ${elevation[4]};
 

@@ -62,6 +62,7 @@ export const size: Size = {
   borderRadius: "0.25rem",
 };
 
+// TODO: fix shadow to match https://material-components.github.io/material-components-web-catalog/#/component/elevation
 export const elevation = {
   0: "0px 0px 0px 0px var(--color-box-shadow)",
   1: "0px 2px 1px -1px var(--color-box-shadow)",
