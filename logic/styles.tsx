@@ -15,7 +15,7 @@ interface Fonts {
 export const fonts: Fonts = {
   serif: "'Merriweather', 'Noto Sans JP', Georgia, Serif",
   sansSerif:
-    "'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
+    "'Noto Sans JP', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
   monospace:
     `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
 };
@@ -43,14 +43,14 @@ export const colors: { [K in ColorScheme]: Theme } = {
   light: {
     ...sharedTheme,
     background: "#fff",
-    text: "#000",
+    text: "#222",
     grey: "#73737D",
     "box-shadow": "#000",
   },
   dark: {
     ...sharedTheme,
     background: "#111216",
-    text: "#fff",
+    text: "rgba(255, 255, 255, 0.88)",
     grey: "#73737D",
     "box-shadow": "#000",
   },

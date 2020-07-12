@@ -16,7 +16,7 @@ export function Posts({ posts }) {
                 {p.title}
               </Title>
               <Date>
-                {moment(p.date, "YYYY-MM-DD").format("YYYY年M月D日")}
+                {moment(p.date).format("YYYY年M月D日")}
               </Date>
               <Spoiler>
                 {p.spoiler}
@@ -49,7 +49,7 @@ const Data = styled.div`
 `;
 
 const Title = styled.h2`
-  color: var(--color-primary);
+  text-decoration: underline var(--color-primary);
   font-family: ${fonts.sansSerif};
   font-size: 1.75rem;
 `;

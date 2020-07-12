@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { getPostDataAll } from "logic/fs";
+import { getPostDataAll } from "logic/models";
 import { Template, Posts } from "components";
 
 export default function Home({ posts }) {

@@ -1,15 +1,15 @@
 ---
 title: GitHub デフォルトbranchをmasterからmainに変更する方法と"理由"
 videoId: GRL-kF088Y0
-date: '2019-03-09'
+date: '2020-06-26'
 spoiler: Githubのチュートリアル
 cta:
   - React
   - GitHub
 ---
 
-
 ## この発表至るまでの経緯
+
 今月11日にGoogle ChromeのdeveloperであるUna Kravetさんが@githubをメンションに含んで従来のデフォルトのブランチ名を"master"から"main"に変えてもいいよとの趣旨のツイートを投稿しました。
 
 https://twitter.com/Una/status/1271180494944829441
@@ -42,30 +42,42 @@ https://twitter.com/natfriedman/status/1271253144442253312
 
 詳しくみていきましょう。
 
-#### ローカルでmain branchを作成してcheckout
+### ローカルでmain branchを作成してcheckout
+
 以下のコマンドで、新しくmainというブランチを作成し、そこにcheckoutすることができます。一応"git brach"コマンドで確認することもできます。
+
 ```console
 git checkout -b main
 git branch
 ```
-#### ローカルのmain branchをremoteにpush
+
+### ローカルのmain branchをremoteにpush
+
 次にローカルのリポジトリを先ほど作ったremoteリポジトリにpushしていきます。
+
 ```console
 git push origin main
 ```
-#### 既存のPull Request全てのbase branchをmainに変更
+
+### 既存のPull Request全てのbase branchをmainに変更
+
 Pull Requestがすでにある場合は、それに飛んでマージされるはずのブランチをmainに変更しておきましょう。
 
 ![このような画面になります。](./picture1.png)
-#### GitHubの設定からdefault branchをmainに変更
+
+### GitHubの設定からdefault branchをmainに変更
+
 今後もmainをデフォルトのブランチとして使用していくために、githubのサイトの設定から該当のリポジトリのデフォルトブランチを変更していきます。
 `@jun 写真欲しい！！`
 
-#### remoteから"master" branchを削除
+### remoteから"master" branchを削除
+
 最後にもうこれから使用しなくなる従来のmasterブランチを削除しましょう。まずはローカルでmasterブランチを削除してそれをリモートにも反映していきます。
+
 ```console
 git branch -d master
 git push -d origin master
 ```
+
 ## そもそもなぜデフォルトのブランチ名に"master"が使われるのか
   

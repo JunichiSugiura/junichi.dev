@@ -34,11 +34,11 @@ export function Head({ title = "Junichi パリ在住エンジニア🇫🇷" }: 
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <link
-        href="https://fonts.googleapis.com/css?family=Merriweather"
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
         rel="stylesheet"
       />
       <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
         rel="stylesheet"
       />
       <script
