@@ -4,9 +4,7 @@ import styled, {
 } from "styled-components";
 import { Head, Header, Posts } from "components";
 import { ThemeProvider, fonts } from "logic/styles";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import { getPostDataAll } from "logic/fs";
 
 export default function Home({ posts }) {
   return (
@@ -80,16 +78,7 @@ const Center = styled.div`
 `;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = fs.readdirSync(path.join("contents")).map((id) => {
-    const filePath = path.join("contents", id, "blog.md");
-    if (!fs.existsSync(filePath)) {
-      return;
-    }
-
-    return fs.readFileSync(filePath);
-  }).filter((f) => !!f).map((f) => matter(f.toString()).data);
-
   return {
-    props: { posts },
+    props: { posts: getPostDataAll() },
   };
 };

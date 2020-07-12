@@ -3,7 +3,9 @@ title: GitHub デフォルトbranchをmasterからmainに変更する方法と"�
 videoId: GRL-kF088Y0
 date: '2019-03-09'
 spoiler: Githubのチュートリアル
-cta: 'react, github'
+cta:
+  - React
+  - GitHub
 ---
 
 
