@@ -22,13 +22,13 @@ export function Header() {
       <Right>
         <a href={accounts.youtube.link} target="_blank">
           <IconContainer>
-            <IoLogoYoutube size={28} color="var(--color-grey)" />
+            <IoLogoYoutube size={28} color="var(--color-youtube-red)" />
           </IconContainer>
         </a>
 
         <a href={accounts.twitter.link} target="_blank">
           <IconContainer>
-            <IoLogoTwitter size={28} color="var(--color-grey)" />
+            <IoLogoTwitter size={28} color="var(--color-twitter-blue)" />
           </IconContainer>
         </a>
 

@@ -35,6 +35,8 @@ interface Theme {
 
 const sharedTheme = {
   primary: "#03DAC6",
+  "youtube-red": "#FF0000",
+  "twitter-blue": "#1DA1F2",
 };
 
 export const colors: { [K in ColorScheme]: Theme } = {

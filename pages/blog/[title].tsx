@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostAll, getPost, Post } from "logic/fs";
+import { Template } from "components";
 
 interface Props {
   post: Post;
@@ -7,7 +8,9 @@ interface Props {
 
 export default function Posts({ post }: Props) {
   return (
-    <div>{JSON.stringify(post, null, 2)}</div>
+    <Template>
+      {JSON.stringify(post, null, 2)}
+    </Template>
   );
 }
 
