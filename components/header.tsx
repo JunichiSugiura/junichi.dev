@@ -1,3 +1,4 @@
+import { Link } from "components";
 import styled from "styled-components";
 import { fonts, useTheme } from "logic/styles";
 import {
@@ -14,7 +15,9 @@ export function Header() {
 
   return (
     <Container>
-      <Logo>Jun<Accent>i</Accent>chi</Logo>
+      <Link href="/">
+        <Logo>Jun<Accent>i</Accent>chi</Logo>
+      </Link>
 
       <Right>
         <a href={accounts.youtube.link} target="_blank">
@@ -41,11 +44,11 @@ export function Header() {
           </IconContainer>
         </a>
 
-        <div onClick={toggleColorScheme}>
+        <ToggleContainer onClick={toggleColorScheme}>
           <IconContainer>
             <IoMdSunny size={28} color="var(--color-grey)" />
           </IconContainer>
-        </div>
+        </ToggleContainer>
       </Right>
     </Container>
   );
@@ -80,4 +83,8 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 0.5rem;
+`;
+
+const ToggleContainer = styled.div`
+  cursor: pointer;
 `;

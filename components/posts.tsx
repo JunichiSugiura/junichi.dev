@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "components";
 import styled from "styled-components";
 import moment from "moment";
 import { fonts, size, elevation } from "logic/styles";
@@ -33,7 +33,6 @@ const Article = styled.article`
   margin-top: 3.5rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
 
   &:hover {
     > div:first-child {
