@@ -1,9 +1,9 @@
 import { GetStaticProps } from "next";
-import { getPostDataAll, Post } from "logic/models";
+import { getPostDataAll, PostData } from "logic/models";
 import { Posts } from "components";
 
 interface Props {
-  posts: Post[];
+  posts: PostData[];
 }
 
 export default function Home({ posts }: Props) {
