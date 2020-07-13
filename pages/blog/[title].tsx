@@ -1,5 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostAll, getPost, Post } from "logic/models";
+import { ExactTheme } from "logic/styles";
 import styled from "@emotion/styled";
 import YouTube from 'react-youtube'
 import { elevation } from "logic/styles"
@@ -27,18 +28,18 @@ export default function Posts({ post }: Props) {
   );
 }
 
-const Title = styled.h1`
+const Title = styled.h1<{ theme: ExactTheme }>`
   margin-top: 3.5rem;
   text-decoration: underline ${({ theme }) => theme.colors.accent};
 `;
 
-const YouTubeContainer = styled.div`
+const YouTubeContainer = styled.div<{ theme: ExactTheme }>`
   .youtube-container {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
 
-    // TODO: stretch width and height while respecting the aspect ratio of FHD (1920 * 1080)
+    /* TODO: stretch width and height while respecting the aspect ratio of FHD (1920 * 1080) */
     > iframe {
       border-radius: ${({ theme }) => theme.borderRadius};
       box-shadow: ${elevation[3]};
@@ -46,7 +47,7 @@ const YouTubeContainer = styled.div`
   }
 `
 
-const Content = styled.div`
+const Content = styled.div<{ theme: ExactTheme }>`
   margin-top: 1rem;
 
   * {

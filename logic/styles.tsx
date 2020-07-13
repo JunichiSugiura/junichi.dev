@@ -1,4 +1,12 @@
-export const theme = {
+// @ts-ignore
+import { Theme, useThemeUI, ContextValue } from 'theme-ui' 
+
+// ref: https://theme-ui.com/guides/typescript
+function makeTheme<T extends Theme>(t: T) {
+  return t;
+}
+
+export const theme = makeTheme({
   initialColorModeName: 'light',
   useColorSchemeMediaQuery: true,
   borderRadius: "0.25rem",
@@ -36,7 +44,15 @@ export const theme = {
       }
     }
   },
-};
+});
+
+export type ExactTheme = typeof theme
+
+interface ExactContextValue extends Omit<ContextValue, 'theme'> {
+  theme: typeof theme
+}
+
+export const useTheme = (useThemeUI as unknown) as () => ExactContextValue
 
 // TODO: fix shadow to match https://material-components.github.io/material-components-web-catalog/#/component/elevation
 export const elevation = {

@@ -8,11 +8,11 @@ import {
 } from "react-icons/io";
 import { accounts } from "logic/sns";
 import styled from '@emotion/styled'
-import { useThemeUI } from "theme-ui"
 import { useCallback } from "react";
+import {useTheme, ExactTheme} from "logic/styles"
 
 export function Header() {
-  const {theme, setColorMode}= useThemeUI()
+  const {theme, setColorMode}= useTheme()
 
   const toggleColorMode = useCallback(() => {
     setColorMode(mode => mode === 'default' ? 'dark' : 'default')
@@ -67,11 +67,11 @@ const Container = styled.header`
   padding-top: 6rem;
 `;
 
-const Accent = styled.span`
+const Accent = styled.span<{ theme: ExactTheme }>`
   color: ${({ theme }) => theme.colors.accent};
 `;
 
-const Logo = styled.div`
+const Logo = styled.div<{ theme: ExactTheme }>`
   font-size: 1.5rem;
   font-family: ${({ theme }) => theme.fontFamily.serif};
 `;

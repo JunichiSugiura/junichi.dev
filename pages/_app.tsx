@@ -1,7 +1,7 @@
 import {AppProps} from 'next/app'
 import styled from "@emotion/styled";
 import { GlobalStyle, Header, Head } from "components";
-import { theme } from "logic/styles";
+import { theme, ExactTheme } from "logic/styles";
 import { ThemeProvider } from "theme-ui"
 
 export default function App({Component, pageProps}: AppProps) {
@@ -21,7 +21,7 @@ export default function App({Component, pageProps}: AppProps) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.div<{ theme: ExactTheme }>`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ const Container = styled.div`
   font-family: ${({ theme }) => theme.fontFamily.sansSerif}
 `;
 
-const Center = styled.div`
+const Center = styled.div<{ theme: ExactTheme }>`
   max-width: 64rem;
   padding: 0 2rem;
   display: flex;
