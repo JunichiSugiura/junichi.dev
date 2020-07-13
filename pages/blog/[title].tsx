@@ -1,9 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostAll, getPost, Post } from "logic/models";
-import { Template } from "components";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import YouTube from 'react-youtube'
-import { size, elevation } from "logic/styles"
+import { elevation } from "logic/styles"
 import Markdown from "react-markdown"
 
 interface Props {
@@ -12,7 +11,7 @@ interface Props {
 
 export default function Posts({ post }: Props) {
   return (
-    <Template>
+    <>
       <Title>
         {post.data.title}
       </Title>
@@ -24,13 +23,13 @@ export default function Posts({ post }: Props) {
         {/* // TODO: code */}
         <Markdown source={post.content} />
       </Content>
-    </Template>
+    </>
   );
 }
 
 const Title = styled.h1`
   margin-top: 3.5rem;
-  text-decoration: underline var(--color-primary);
+  text-decoration: underline ${({ theme }) => theme.colors.accent};
 `;
 
 const YouTubeContainer = styled.div`
@@ -41,7 +40,7 @@ const YouTubeContainer = styled.div`
 
     // TODO: stretch width and height while respecting the aspect ratio of FHD (1920 * 1080)
     > iframe {
-      border-radius: ${size.borderRadius};
+      border-radius: ${({ theme }) => theme.borderRadius};
       box-shadow: ${elevation[3]};
     }
   }
@@ -64,12 +63,12 @@ const Content = styled.div`
   }
 
   blockquote {
-    border-left: solid 0.25rem var(--color-text);
+    border-left: solid 0.25rem ${({ theme }) => theme.colors.text};
     padding-left: 1.5rem;
   }
 
   hr {
-    border-top: solid 0.063rem var(--color-grey);
+    border-top: solid 0.063rem ${({ theme }) => theme.colors.muted};
   }
 
   // TODO: fix style for nested list

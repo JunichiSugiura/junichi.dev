@@ -1,7 +1,7 @@
 import { Link } from "components";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import moment from "moment";
-import { fonts, size, elevation } from "logic/styles";
+import { elevation } from "logic/styles";
 import { getThumbnailLink } from "logic/sns";
 
 export function Posts({ posts }) {
@@ -49,8 +49,8 @@ const Data = styled.div`
 `;
 
 const Title = styled.h2`
-  text-decoration: underline var(--color-primary);
-  font-family: ${fonts.sansSerif};
+  text-decoration: underline ${({ theme }) => theme.colors.accent};
+  font-family: ${({ theme }) => theme.fontFamily.sansSerif};
   font-size: 1.75rem;
 `;
 
@@ -67,7 +67,7 @@ const Image = styled.div<{ src: string }>`
   min-width: 320px;
   min-height: 180px;
   background: center / cover no-repeat url(${(props) => props.src});
-  border-radius: ${size.borderRadius};
+  border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${elevation[4]};
 
   transition: 0.25s var(--ease-in-out-quad);

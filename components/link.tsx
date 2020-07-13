@@ -1,5 +1,5 @@
 import RawLink from "next/link";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 
 export function Link(props: RawLink["props"]) {
   return (

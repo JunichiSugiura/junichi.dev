@@ -1,67 +1,41 @@
-import {
-  createContext,
-  useState,
-  useEffect,
-  useCallback,
-  useContext,
-} from "react";
-
-interface Fonts {
-  serif: string;
-  sansSerif: string;
-  monospace: string;
-}
-
-export const fonts: Fonts = {
-  serif: "'Merriweather', 'Noto Sans JP', Georgia, Serif",
-  sansSerif:
-    "'Noto Sans JP', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
-  monospace:
-    `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
-};
-
-export enum ColorScheme {
-  dark = "dark",
-  light = "light",
-}
-
-interface Theme {
-  background: string;
-  text: string;
-  primary: string;
-  grey: string;
-  "box-shadow": string;
-}
-
-const sharedTheme = {
-  primary: "#03DAC6",
-  "youtube-red": "#FF0000",
-  "twitter-blue": "#1DA1F2",
-};
-
-export const colors: { [K in ColorScheme]: Theme } = {
-  light: {
-    ...sharedTheme,
+export const theme = {
+  initialColorModeName: 'light',
+  useColorSchemeMediaQuery: true,
+  borderRadius: "0.25rem",
+  colors: {
+    accent: "#03DAC6",
     background: "#fff",
     text: "#222",
-    grey: "#73737D",
-    "box-shadow": "#000",
+    muted: "#73737D",
+    boxShadow: "#000",
+    primary: "#03DAC6",
+    youtubeRed: "#FF0000",
+    twitterBlue: "#1DA1F2",
+    modes: {
+      dark: {
+        background: "#111216",
+        text: "rgba(255, 255, 255, 0.88)",
+        muted: "#73737D",
+        boxShadow: "#000",
+      },
+    }
   },
-  dark: {
-    ...sharedTheme,
-    background: "#111216",
-    text: "rgba(255, 255, 255, 0.88)",
-    grey: "#73737D",
-    "box-shadow": "#000",
+  fontFamily: {
+    serif: "'Merriweather', 'Noto Sans JP', Georgia, Serif",
+    sansSerif:
+      "'Noto Sans JP', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
+    monospace:
+      `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
   },
-};
-
-interface Size {
-  borderRadius: string;
-}
-
-export const size: Size = {
-  borderRadius: "0.25rem",
+  styles: {
+    root: {
+      transition: "background 0.25s var(--ease-in-out-quad)",
+      a: {
+        color: "inherit",
+        textDecoratiog: "inherit",
+      }
+    }
+  },
 };
 
 // TODO: fix shadow to match https://material-components.github.io/material-components-web-catalog/#/component/elevation
@@ -92,53 +66,3 @@ export const elevation = {
   23: "0px 11px 14px -7px var(--color-box-shadow)",
   24: "0px 11px 15px -7px var(--color-box-shadow)",
 };
-
-export const ThemeContext = createContext(undefined);
-
-interface ThemeProviderProps {
-  children: React.ReactNode;
-}
-
-export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [colorScheme, setColorScheme] = useState(
-    ColorScheme.light,
-  );
-
-  const toggleColorScheme = useCallback(() => {
-    const root = window.document.documentElement;
-    const val = colorScheme === ColorScheme.light
-      ? ColorScheme.dark
-      : ColorScheme.light;
-
-    setColorScheme(val);
-
-    localStorage.setItem("color-scheme", val);
-
-    Object
-      .entries(colors[val])
-      .forEach(([k, v]) => {
-        const p = "--color-" + k;
-        root.style.setProperty(p, v);
-      });
-  }, [colorScheme]);
-
-  useEffect(() => {
-    const initialColorScheme = window.document.documentElement.style
-      .getPropertyValue(
-        "--initial-color-scheme",
-      );
-    setColorScheme(initialColorScheme as ColorScheme);
-  }, []);
-
-  return (
-    <ThemeContext.Provider value={{ colorScheme, toggleColorScheme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
-}
-
-export const ThemeConsumer = ThemeContext.Consumer;
-
-export function useTheme() {
-  return useContext(ThemeContext);
-}
