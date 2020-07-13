@@ -19,43 +19,43 @@ export function Header() {
   }, [])
 
   return (
-      <Container>
-        <Link href="/">
-          <Logo>Jun<Accent>i</Accent>chi</Logo>
-        </Link>
+    <Container>
+      <Link href="/">
+        <Logo>Jun<Accent>i</Accent>chi</Logo>
+      </Link>
 
-        <Right>
-          <a href={accounts.youtube.link} target="_blank">
-            <IconContainer>
-              <IoLogoYoutube size={28} color={theme.colors.youtubeRed} />
-            </IconContainer>
-          </a>
+      <Right>
+        <a href={accounts.youtube.link} target="_blank">
+          <IconContainer>
+            <IoLogoYoutube size={28} color={theme.colors.youtubeRed} />
+          </IconContainer>
+        </a>
 
-          <a href={accounts.twitter.link} target="_blank">
-            <IconContainer>
-              <IoLogoTwitter size={28} color={theme.colors.twitterBlue} />
-            </IconContainer>
-          </a>
+        <a href={accounts.twitter.link} target="_blank">
+          <IconContainer>
+            <IoLogoTwitter size={28} color={theme.colors.twitterBlue} />
+          </IconContainer>
+        </a>
 
-          <a href={accounts.github.link} target="_blank">
-            <IconContainer>
-              <IoLogoGithub size={28} color={theme.colors.muted} />
-            </IconContainer>
-          </a>
+        <a href={accounts.github.link} target="_blank">
+          <IconContainer>
+            <IoLogoGithub size={28} color={theme.colors.muted} />
+          </IconContainer>
+        </a>
 
-          <a href={accounts.instagram.link} target="_blank">
-            <IconContainer>
-              <IoLogoInstagram size={28} color={theme.colors.muted} />
-            </IconContainer>
-          </a>
+        <a href={accounts.instagram.link} target="_blank">
+          <IconContainer>
+            <IoLogoInstagram size={28} color={theme.colors.muted} />
+          </IconContainer>
+        </a>
 
-          <ToggleContainer onClick={toggleColorMode}>
-            <IconContainer>
-              <IoMdSunny size={28} color={theme.colors.muted} />
-            </IconContainer>
-          </ToggleContainer>
-        </Right>
-      </Container>
+        <ToggleContainer onClick={toggleColorMode}>
+          <IconContainer>
+            <IoMdSunny size={28} color={theme.colors.muted} />
+          </IconContainer>
+        </ToggleContainer>
+      </Right>
+    </Container>
   );
 }
 
