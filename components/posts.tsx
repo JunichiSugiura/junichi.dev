@@ -2,9 +2,10 @@ import { Link } from "components";
 import styled from "@emotion/styled";
 import moment from "moment";
 import { elevation, ExactTheme } from "logic/styles";
+import { PostData } from "logic/models";
 import { getThumbnailLink } from "logic/sns";
 
-export function Posts({ posts }) {
+export function Posts({ posts }: { posts: PostData[] }) {
   return (
     <main>
       {posts.map((p) => (
@@ -12,15 +13,9 @@ export function Posts({ posts }) {
           <Article>
             <Image src={getThumbnailLink(p.videoId)} />
             <Data>
-              <Title>
-                {p.title}
-              </Title>
-              <Date>
-                {moment(p.date).format("YYYY年M月D日")}
-              </Date>
-              <Spoiler>
-                {p.spoiler}
-              </Spoiler>
+              <Title>{p.title}</Title>
+              <Date>{moment(p.date).format("YYYY年M月D日")}</Date>
+              <Spoiler>{p.spoiler}</Spoiler>
             </Data>
           </Article>
         </Link>
@@ -63,7 +58,7 @@ const Spoiler = styled.p`
   margin-bototm: 1.75rem;
 `;
 
-const Image = styled.div<{ src: string, theme: ExactTheme }>`
+const Image = styled.div<{ src: string; theme: ExactTheme }>`
   min-width: 320px;
   min-height: 180px;
   background: center / cover no-repeat url(${(props) => props.src});

@@ -19,6 +19,7 @@ export function getPostAll(): Post[] {
     })
     .filter((f) => !!f)
     .map((f) => {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { orig, ...post } = matter(f);
       return post;
     }).sort((m1, m2) =>

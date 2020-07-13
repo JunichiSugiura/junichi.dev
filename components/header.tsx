@@ -25,25 +25,25 @@ export function Header() {
       </Link>
 
       <Right>
-        <a href={accounts.youtube.link} target="_blank">
+        <a href={accounts.youtube.link} target="_blank" rel="noreferrer">
           <IconContainer>
             <IoLogoYoutube size={28} color={theme.colors.youtubeRed} />
           </IconContainer>
         </a>
 
-        <a href={accounts.twitter.link} target="_blank">
+        <a href={accounts.twitter.link} rel="noreferrer">
           <IconContainer>
             <IoLogoTwitter size={28} color={theme.colors.twitterBlue} />
           </IconContainer>
         </a>
 
-        <a href={accounts.github.link} target="_blank">
+        <a href={accounts.github.link} rel="noreferrer">
           <IconContainer>
             <IoLogoGithub size={28} color={theme.colors.muted} />
           </IconContainer>
         </a>
 
-        <a href={accounts.instagram.link} target="_blank">
+        <a href={accounts.instagram.link} rel="noreferrer">
           <IconContainer>
             <IoLogoInstagram size={28} color={theme.colors.muted} />
           </IconContainer>
