@@ -1,6 +1,4 @@
 import { Link } from "components";
-import styled from "styled-components";
-import { fonts, useTheme } from "logic/styles";
 import {
   IoMdSunny,
   IoLogoGithub,
@@ -9,9 +7,16 @@ import {
   IoLogoInstagram,
 } from "react-icons/io";
 import { accounts } from "logic/sns";
+import styled from '@emotion/styled'
+import { useCallback } from "react";
+import {useTheme, ExactTheme} from "logic/styles"
 
 export function Header() {
-  const { toggleColorScheme } = useTheme();
+  const {theme, setColorMode}= useTheme()
+
+  const toggleColorMode = useCallback(() => {
+    setColorMode(mode => mode === 'default' ? 'dark' : 'default')
+  }, [])
 
   return (
     <Container>
@@ -22,31 +27,31 @@ export function Header() {
       <Right>
         <a href={accounts.youtube.link} target="_blank">
           <IconContainer>
-            <IoLogoYoutube size={28} color="var(--color-youtube-red)" />
+            <IoLogoYoutube size={28} color={theme.colors.youtubeRed} />
           </IconContainer>
         </a>
 
         <a href={accounts.twitter.link} target="_blank">
           <IconContainer>
-            <IoLogoTwitter size={28} color="var(--color-twitter-blue)" />
+            <IoLogoTwitter size={28} color={theme.colors.twitterBlue} />
           </IconContainer>
         </a>
 
         <a href={accounts.github.link} target="_blank">
           <IconContainer>
-            <IoLogoGithub size={28} color="var(--color-grey)" />
+            <IoLogoGithub size={28} color={theme.colors.muted} />
           </IconContainer>
         </a>
 
         <a href={accounts.instagram.link} target="_blank">
           <IconContainer>
-            <IoLogoInstagram size={28} color="var(--color-grey)" />
+            <IoLogoInstagram size={28} color={theme.colors.muted} />
           </IconContainer>
         </a>
 
-        <ToggleContainer onClick={toggleColorScheme}>
+        <ToggleContainer onClick={toggleColorMode}>
           <IconContainer>
-            <IoMdSunny size={28} color="var(--color-grey)" />
+            <IoMdSunny size={28} color={theme.colors.muted} />
           </IconContainer>
         </ToggleContainer>
       </Right>
@@ -62,13 +67,13 @@ const Container = styled.header`
   padding-top: 6rem;
 `;
 
-const Accent = styled.span`
-  color: var(--color-primary);
+const Accent = styled.span<{ theme: ExactTheme }>`
+  color: ${({ theme }) => theme.colors.accent};
 `;
 
-const Logo = styled.div`
+const Logo = styled.div<{ theme: ExactTheme }>`
   font-size: 1.5rem;
-  font-family: ${fonts.serif};
+  font-family: ${({ theme }) => theme.fontFamily.serif};
 `;
 
 const Right = styled.div`

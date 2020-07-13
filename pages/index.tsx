@@ -1,12 +1,14 @@
 import { GetStaticProps } from "next";
-import { getPostDataAll } from "logic/models";
-import { Template, Posts } from "components";
+import { getPostDataAll, Post } from "logic/models";
+import { Posts } from "components";
 
-export default function Home({ posts }) {
+interface Props {
+  posts: Post[];
+}
+
+export default function Home({ posts }: Props) {
   return (
-    <Template>
-      <Posts posts={posts} />
-    </Template>
+    <Posts posts={posts} />
   );
 }
 
