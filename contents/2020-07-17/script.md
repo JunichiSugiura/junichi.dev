@@ -1,16 +1,21 @@
 ---
-title: Next.jsとTypeScriptを使ったモダンな技術ブログの作り方[技術スタック・構成編]
+title: Next.jsとTypeScriptを使ったモダンな技術ブログの作り方 [技術スタック・構成編]
 description: >
+  技術関連のことを調べる時、動画のチュートリアルを見ることもあれば、技術ブログなどを参考にすることも多いと思います。
+  このチャンネルでも動画だけでなくブログという形でもいろんな人に見ていただけるよう、YouTubeに同期した技術ブログを開発することに決めました。
+  今回は、その技術ブログを作っていくにあたって考慮した技術やツール、そして実際に使っていくツール・言語を紹介します 💻
+
+  #毎週金曜配信 #技術ブログ #Nextjs
 
   ------------- 📌 Chapters -------------
   0:00 イントロ
-  0:00 従来のポピュラーな実装方法
+  0:29 従来のポピュラーな実装方法
     - WordPress
     - サーバーサイドアプリケーション
     - シングルページアプリケーション
-  0:00 JAMStack
-  0:00 Next.js vs Gatsby
-  0:00 今回使用する技術スタック
+  3:28 JAMStack
+  5:27 Next.js vs Gatsby
+  7:16 今回使用する技術スタック
     - TypeScript
     - React
     - Next.js
@@ -36,7 +41,9 @@ description: >
   # 普段は暗号通貨のハードウェアウォレットを作っています。
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
 thumbnailKeywords:
-  -
+  - Nextjs
+  - Gatsby
+  - 🤔?
 tags:
   # - プログラミング
   # - エンジニア
@@ -66,8 +73,9 @@ endScreen:
     - "Video: Best for viewer"
     - "Subscribe: Junichi"
 sns:
-  post:
-  twitter:
+  post: >
+    今週の動画は新しくYouTubeと共に運営していくことに決めた技術ブログについてです。技術ブログを作っていくにあたって考慮した点や、実際に使うことに決めたツールについて紹介します。💻 #エンジニア #Nextjs
+  twitter: https://twitter.com/JunichiSugiura/status/1283989809913102336?s=20
 ---
 
 ## Outline
