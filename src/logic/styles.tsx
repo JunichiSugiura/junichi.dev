@@ -56,6 +56,9 @@ export const theme = makeTheme({
         cursor: "pointer",
         outline: "inherit",
       },
+      "*": {
+        margin: 0,
+      },
     },
   },
 });

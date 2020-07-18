@@ -10,7 +10,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head />
       <Container>
         <Header />
-        <main>{/* <Component {...pageProps} /> */}</main>
+        <main>
+          <Component {...pageProps} />
+        </main>
       </Container>
     </ThemeProvider>
   );

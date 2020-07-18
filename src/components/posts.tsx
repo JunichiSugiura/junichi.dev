@@ -25,9 +25,10 @@ export function Posts({ posts }: { posts: PostData[] }) {
 }
 
 const Article = styled.article`
-  margin-top: 3.5rem;
+  margin: 2rem 1rem;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  flex-direction: column;
 
   &:hover {
     > div:first-of-type {
@@ -38,7 +39,6 @@ const Article = styled.article`
 `;
 
 const Data = styled.div`
-  margin-left: 1.75rem;
   display: flex;
   flex-direction: column;
 `;
@@ -47,20 +47,24 @@ const Title = styled.h2<{ theme: ExactTheme }>`
   text-decoration: underline ${({ theme }) => theme.colors.accent};
   font-family: ${({ theme }) => theme.fontFamily.sansSerif};
   font-size: 1.75rem;
+  margin: 1rem 0;
 `;
 
-const Date = styled.p`
-  margin: 1rem 0;
+const Date = styled.p<{ theme: ExactTheme }>`
   font-size: 0.75rem;
+  color: ${({ theme }) => theme.colors.muted}
 `;
 
 const Spoiler = styled.p`
   margin-bototm: 1.75rem;
+  margin 1rem 0;
 `;
 
 const Image = styled.div<{ src: string; theme: ExactTheme }>`
-  min-width: 320px;
-  min-height: 180px;
+  align-self: center;
+  display: flex;
+  width: 100%;
+  height: calc((100vw - 2rem) / 16 * 9);
   background: center / cover no-repeat url(${(props) => props.src});
   border-radius: ${({ theme }) => theme.borderRadius};
   box-shadow: ${elevation[4]};
