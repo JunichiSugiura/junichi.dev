@@ -48,7 +48,7 @@ export const theme = makeTheme({
         color: "inherit",
         textDecoratiog: "inherit",
       }
-    }
+    },
   },
 });
 
