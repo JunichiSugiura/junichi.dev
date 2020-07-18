@@ -30,7 +30,7 @@ const Article = styled.article`
   align-items: center;
 
   &:hover {
-    > div:first-child {
+    > div:first-of-type {
       box-shadow: ${elevation[3]};
       transform: translateY(-0.1rem);
     }
