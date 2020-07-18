@@ -2,22 +2,34 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostAll, getPost, Post } from "logic/models";
 import { ExactTheme } from "logic/styles";
 import styled from "@emotion/styled";
-import YouTube from 'react-youtube'
-import { elevation } from "logic/styles"
-import Markdown from "react-markdown"
+import YouTube from "react-youtube";
+import { elevation } from "logic/styles";
+import Markdown from "react-markdown";
+import renderToString from "next-mdx-remote/render-to-string";
+import hydrate from "next-mdx-remote/hydrate";
+import fs from "fs";
+import path from "path";
 
 interface Props {
   post: Post;
 }
 
-export default function Posts({ post }: Props) {
+export default function Posts({ mdxSource, frontMatter }) {
+  const content = hydrate(mdxSource, {});
+  return (
+    <div>
+      <pre>{JSON.stringify(frontMatter, null, 2)}</pre>
+      <div>{content}</div>
+    </div>
+  );
   return (
     <>
-      <Title>
-        {post.data.title}
-      </Title>
+      <Title>{post.data.title}</Title>
       <YouTubeContainer>
-        <YouTube videoId={post.data.videoId} containerClassName="youtube-container" />
+        <YouTube
+          videoId={post.data.videoId}
+          containerClassName="youtube-container"
+        />
       </YouTubeContainer>
 
       <Content>
@@ -45,7 +57,7 @@ const YouTubeContainer = styled.div<{ theme: ExactTheme }>`
       box-shadow: ${elevation[3]};
     }
   }
-`
+`;
 
 const Content = styled.div<{ theme: ExactTheme }>`
   margin-top: 1rem;
@@ -73,7 +85,8 @@ const Content = styled.div<{ theme: ExactTheme }>`
   }
 
   // TODO: fix style for nested list
-  ul, ol {
+  ul,
+  ol {
     margin-left: 1rem;
     margin-top: 1rem;
 
@@ -91,7 +104,7 @@ const Content = styled.div<{ theme: ExactTheme }>`
   // TODO: Links
   // TODO: Images
   // TODO: Tables
-`
+`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -109,9 +122,21 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
     throw new Error("Duplicated title");
   }
 
+  const { content, data } = getPost(title);
+  const mdxSource = await renderToString(content, {}, null, data);
+  return { props: { mdxSource, frontMatter: data } };
   return {
     props: {
-      post: getPost(title),
+      post: [],
     },
   };
+  // if (typeof title !== "string") {
+  //   throw new Error("Duplicated title");
+  // }
+
+  // return {
+  //   props: {
+  //     post: getPost(title),
+  //   },
+  // };
 };
