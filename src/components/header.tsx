@@ -31,40 +31,39 @@ export function Header() {
           </IconContainer>
         </a>
 
-        <a href={accounts.twitter.link} rel="noreferrer">
+        <a href={accounts.twitter.link} target="_blank"  rel="noreferrer">
           <IconContainer>
             <IoLogoTwitter size={28} color={theme.colors.twitterBlue} />
           </IconContainer>
         </a>
 
-        <a href={accounts.github.link} rel="noreferrer">
+        <a href={accounts.github.link} target="_blank"  rel="noreferrer">
           <IconContainer>
             <IoLogoGithub size={28} color={theme.colors.muted} />
           </IconContainer>
         </a>
 
-        <a href={accounts.instagram.link} rel="noreferrer">
+        <a href={accounts.instagram.link} target="_blank"  rel="noreferrer">
           <IconContainer>
             <IoLogoInstagram size={28} color={theme.colors.muted} />
           </IconContainer>
         </a>
 
-        <ToggleContainer onClick={toggleColorMode}>
+        <button onClick={toggleColorMode}>
           <IconContainer>
             <IoMdSunny size={28} color={theme.colors.muted} />
           </IconContainer>
-        </ToggleContainer>
+        </button>
       </Right>
     </Container>
   );
 }
 
 const Container = styled.header`
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 6rem;
+  padding: 2rem 1rem;
 `;
 
 const Accent = styled.span<{ theme: ExactTheme }>`
@@ -72,8 +71,13 @@ const Accent = styled.span<{ theme: ExactTheme }>`
 `;
 
 const Logo = styled.div<{ theme: ExactTheme }>`
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-family: ${({ theme }) => theme.fontFamily.serif};
+  letter-spacing: 0.2em;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Right = styled.div`
@@ -81,15 +85,15 @@ const Right = styled.div`
   align-items: center;
 `;
 
-const IconContainer = styled.div`
+const IconContainer = styled.div<{ theme: ExactTheme }>`
   height: 2.25rem;
   width: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0.5rem;
-`;
+  margin: 0 0.25rem;
 
-const ToggleContainer = styled.div`
-  cursor: pointer;
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    margin: 0 0.5rem;
+  }
 `;
