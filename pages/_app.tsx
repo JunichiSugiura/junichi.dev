@@ -1,7 +1,7 @@
 import {AppProps} from 'next/app'
 import styled from "@emotion/styled";
-import { Header, Head } from "components";
-import { theme, ExactTheme } from "logic/styles";
+import { Header, Head } from "src/components";
+import { theme, ExactTheme } from "src/logic/styles";
 import { ThemeProvider } from "theme-ui"
 
 export default function App({Component, pageProps}: AppProps) {
