@@ -74,6 +74,10 @@ const Logo = styled.div<{ theme: ExactTheme }>`
   font-size: 1.125rem;
   font-family: ${({ theme }) => theme.fontFamily.serif};
   letter-spacing: 0.2em;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    font-size: 1.5rem;
+  }
 `;
 
 const Right = styled.div`
@@ -81,11 +85,15 @@ const Right = styled.div`
   align-items: center;
 `;
 
-const IconContainer = styled.div`
+const IconContainer = styled.div<{ theme: ExactTheme }>`
   height: 2.25rem;
   width: 2.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 0.25rem;
+
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    margin: 0 0.5rem;
+  }
 `;

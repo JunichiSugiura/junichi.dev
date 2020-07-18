@@ -58,6 +58,7 @@ export const theme = makeTheme({
       },
     },
   },
+  breakpoints: ["37.5rem", "75rem"],
 });
 
 export type ExactTheme = typeof theme;
