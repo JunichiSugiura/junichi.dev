@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Theme, useThemeUI, ContextValue } from 'theme-ui' 
+import { Theme, useThemeUI, ContextValue } from "theme-ui";
 
 // ref: https://theme-ui.com/guides/typescript
 function makeTheme<T extends Theme>(t: T) {
@@ -7,7 +7,7 @@ function makeTheme<T extends Theme>(t: T) {
 }
 
 export const theme = makeTheme({
-  initialColorModeName: 'light',
+  initialColorModeName: "light",
   useColorSchemeMediaQuery: true,
   borderRadius: "0.25rem",
   colors: {
@@ -26,14 +26,13 @@ export const theme = makeTheme({
         muted: "#73737D",
         boxShadow: "#000",
       },
-    }
+    },
   },
   fontFamily: {
     serif: "'Merriweather', 'Noto Sans JP', Georgia, Serif",
     sansSerif:
       "'Noto Sans JP', 'SF Pro Display', '-apple-system', 'BlinkMacSystemFont', 'San Francisco', 'Helvetica Neue', 'Helvetica', 'Ubuntu', 'Roboto', 'Noto', 'Segoe UI', 'Arial', sans-serif",
-    monospace:
-      `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
+    monospace: `"Operator Mono", Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace`,
   },
   styles: {
     root: {
@@ -47,18 +46,27 @@ export const theme = makeTheme({
       a: {
         color: "inherit",
         textDecoratiog: "inherit",
-      }
+      },
+      button: {
+        background: "none",
+        color: "inherit",
+        border: "none",
+        padding: 0,
+        font: "inherit",
+        cursor: "pointer",
+        outline: "inherit",
+      },
     },
   },
 });
 
-export type ExactTheme = typeof theme
+export type ExactTheme = typeof theme;
 
-interface ExactContextValue extends Omit<ContextValue, 'theme'> {
-  theme: typeof theme
+interface ExactContextValue extends Omit<ContextValue, "theme"> {
+  theme: typeof theme;
 }
 
-export const useTheme = (useThemeUI as unknown) as () => ExactContextValue
+export const useTheme = (useThemeUI as unknown) as () => ExactContextValue;
 
 // TODO: fix shadow to match https://material-components.github.io/material-components-web-catalog/#/component/elevation
 export const elevation = {
