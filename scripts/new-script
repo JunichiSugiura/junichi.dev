@@ -2,13 +2,15 @@
 
 date="$1"
 
+contents_path=./documents/contents
+
 if [[ "$date" =~ ^[0-9]{4}-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])$ ]]; then
-    if [ -d ./contents/"$date" ]; then
+    if [ -d "$contents_path"/"$date" ]; then
         echo "The date already exists"
         exit 1
     else
-        mkdir ./contents/"$date"
-        cp ./templates/script.md ./contents/"$date"/
+        mkdir "$contents_path"/"$date"
+        cp ./documents/templates/script.md "$contents_path"/"$date"/
     fi
 else
     echo "The date need to be dd-mm-yyyy format"

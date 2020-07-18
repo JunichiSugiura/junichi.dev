@@ -1,9 +1,9 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { getPostAll, getPost, PostData } from "logic/models";
-import { ExactTheme } from "logic/styles";
+import { getPostAll, getPost, PostData } from "src/logic/models";
+import { ExactTheme } from "src/logic/styles";
 import styled from "@emotion/styled";
 import YouTube from "react-youtube";
-import { elevation } from "logic/styles";
+import { elevation } from "src/logic/styles";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 

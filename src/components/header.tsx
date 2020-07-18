@@ -1,4 +1,4 @@
-import { Link } from "components";
+import { Link } from "src/components";
 import {
   IoMdSunny,
   IoLogoGithub,
@@ -6,10 +6,10 @@ import {
   IoLogoYoutube,
   IoLogoInstagram,
 } from "react-icons/io";
-import { accounts } from "logic/sns";
+import { accounts } from "src/logic/sns";
 import styled from '@emotion/styled'
 import { useCallback } from "react";
-import {useTheme, ExactTheme} from "logic/styles"
+import {useTheme, ExactTheme} from "src/logic/styles"
 
 export function Header() {
   const {theme, setColorMode}= useTheme()
