@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Theme, useThemeUI, ContextValue, Flex } from "theme-ui";
+import { Theme, useThemeUI, ContextValue } from "theme-ui";
 
 // ref: https://theme-ui.com/guides/typescript
 function makeTheme<T extends Theme>(t: T) {
