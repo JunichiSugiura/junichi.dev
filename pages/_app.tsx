@@ -1,13 +1,12 @@
 import {AppProps} from 'next/app'
 import styled from "@emotion/styled";
-import { GlobalStyle, Header, Head } from "components";
+import { Header, Head } from "components";
 import { theme, ExactTheme } from "logic/styles";
 import { ThemeProvider } from "theme-ui"
 
 export default function App({Component, pageProps}: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <Head />
       <Container>
         <Center>
