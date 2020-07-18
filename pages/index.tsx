@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
-import { getPostDataAll, PostData } from "logic/models";
-import { Posts } from "components";
+import { getPostDataAll, PostData } from "src/logic/models";
+import { Posts } from "src/components";
 
 interface Props {
   posts: PostData[];

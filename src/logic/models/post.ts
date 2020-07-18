@@ -3,11 +3,13 @@ import fs from "fs";
 import matter, { GrayMatterFile, Input } from "gray-matter";
 import moment from "moment";
 
+const contentsPath = path.join("documents", "contents")
+
 export function getPostAll(): Post[] {
   const posts = fs
-    .readdirSync(path.join("contents"))
+    .readdirSync(contentsPath)
     .map((dirName) => {
-      const filePath = path.join("contents", dirName, "blog.md");
+      const filePath = path.join(contentsPath, dirName, "blog.md");
       if (!fs.existsSync(filePath)) {
         return;
       }
