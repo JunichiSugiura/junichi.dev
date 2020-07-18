@@ -68,7 +68,6 @@ Pull Requestがすでにある場合は、それに飛んでマージされる�
 ### GitHubの設定からdefault branchをmainに変更
 
 今後もmainをデフォルトのブランチとして使用していくために、githubのサイトの設定から該当のリポジトリのデフォルトブランチを変更していきます。
-`@jun 写真欲しい！！`
 
 ### remoteから"master" branchを削除
 
