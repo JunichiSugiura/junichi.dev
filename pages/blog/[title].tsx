@@ -1,28 +1,32 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { getPostAll, getPost, Post } from "logic/models";
+import { getPostAll, getPost, PostData } from "logic/models";
 import { ExactTheme } from "logic/styles";
 import styled from "@emotion/styled";
-import YouTube from 'react-youtube'
-import { elevation } from "logic/styles"
-import Markdown from "react-markdown"
+import YouTube from "react-youtube";
+import { elevation } from "logic/styles";
+import renderToString from "next-mdx-remote/render-to-string";
+import hydrate from "next-mdx-remote/hydrate";
 
 interface Props {
-  post: Post;
+  mdxSource: string;
+  frontMatter: PostData;
 }
 
-export default function Posts({ post }: Props) {
+export default function Posts({ mdxSource, frontMatter }: Props) {
+  const content = hydrate(mdxSource);
   return (
     <>
-      <Title>
-        {post.data.title}
-      </Title>
+      <Title>{frontMatter.title}</Title>
       <YouTubeContainer>
-        <YouTube videoId={post.data.videoId} containerClassName="youtube-container" />
+        <YouTube
+          videoId={frontMatter.videoId}
+          containerClassName="youtube-container"
+        />
       </YouTubeContainer>
 
       <Content>
-        {/* // TODO: code */}
-        <Markdown source={post.content} />
+        {/* TODO: code */}
+        {content}
       </Content>
     </>
   );
@@ -45,53 +49,11 @@ const YouTubeContainer = styled.div<{ theme: ExactTheme }>`
       box-shadow: ${elevation[3]};
     }
   }
-`
+`;
 
 const Content = styled.div<{ theme: ExactTheme }>`
   margin-top: 1rem;
-
-  * {
-    margin-bottom: 1.75rem;
-  }
-
-  h2 {
-    margin-top: 3.5rem;
-    font-size: 1.75rem;
-  }
-
-  strong {
-    text-style: bold;
-  }
-
-  blockquote {
-    border-left: solid 0.25rem ${({ theme }) => theme.colors.text};
-    padding-left: 1.5rem;
-  }
-
-  hr {
-    border-top: solid 0.063rem ${({ theme }) => theme.colors.muted};
-  }
-
-  // TODO: fix style for nested list
-  ul, ol {
-    margin-left: 1rem;
-    margin-top: 1rem;
-
-    li {
-      margin-bottom: 0.75rem;
-
-      input[type="checkbox"] {
-        height: inherit;
-        margin-right: 0.5rem;
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  // TODO: Links
-  // TODO: Images
-  // TODO: Tables
-`
+`;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -109,9 +71,12 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
     throw new Error("Duplicated title");
   }
 
+  const { content, data } = getPost(title);
+  const mdxSource = await renderToString(content, null, null, data);
   return {
     props: {
-      post: getPost(title),
+      mdxSource,
+      frontMatter: data,
     },
   };
 };
