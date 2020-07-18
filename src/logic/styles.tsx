@@ -1,5 +1,5 @@
 // @ts-ignore
-import { Theme, useThemeUI, ContextValue } from "theme-ui";
+import { Theme, useThemeUI, ContextValue, Flex } from "theme-ui";
 
 // ref: https://theme-ui.com/guides/typescript
 function makeTheme<T extends Theme>(t: T) {
@@ -56,6 +56,9 @@ export const theme = makeTheme({
         cursor: "pointer",
         outline: "inherit",
       },
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "column",
     },
   },
   breakpoints: ["37.5rem", "75rem"],
