@@ -7,7 +7,7 @@ import { getThumbnailLink } from "src/logic/sns";
 
 export function Posts({ posts }: { posts: PostData[] }) {
   return (
-    <main>
+    <div>
       {posts.map((p) => (
         <Link key={p.title} href={`/blog/${p.title}`}>
           <Article>
@@ -20,7 +20,7 @@ export function Posts({ posts }: { posts: PostData[] }) {
           </Article>
         </Link>
       ))}
-    </main>
+    </div>
   );
 }
 
@@ -52,7 +52,8 @@ const Title = styled.h2<{ theme: ExactTheme }>`
 
 const Date = styled.p<{ theme: ExactTheme }>`
   font-size: 0.75rem;
-  color: ${({ theme }) => theme.colors.muted}
+  color: ${({ theme }) => theme.colors.muted};
+  margin: 0;
 `;
 
 const Spoiler = styled.p`
