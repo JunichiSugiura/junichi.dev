@@ -51,7 +51,7 @@ tags:
   - AI
   - 人工知能
 link: https://youtu.be/MDQL2NfOYdU
-publishedAt: YYYY-MM-DD 05:00:00
+publishedAt: 2020-07-24 05:00:00
 playlists:
   -
 endScreen:
