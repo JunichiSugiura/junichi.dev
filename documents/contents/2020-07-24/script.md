@@ -1,7 +1,7 @@
 ---
 title: ビットコイン以来の衝撃 [OpenAI GPT-3]
 description: >
-  今回は急遽予定を変更して、テック界隈で話題となっている「GPT-3」という言語生成モデルを紹介します。先月開発者向けにAPIが公開されたことで、「あれ、これ思ってる以上にやばくない？」と驚きの声が上がっています。openzeppelinの創業者である、Manuel Araozさんが書いたブログ記事、「OpenAIのGPT-3はビットコイン以来最大のものかもしれない（OpenAI's GPT-3 may be the biggest thing since bitcoin）」をメインに取り上げて、簡単に概要を紹介していきます。
+  今回は急遽予定を変更して、テック界隈で話題となっている「GPT-3」という言語予測モデルを紹介します。先月開発者向けにAPIが公開されたことで、「あれ、これ思ってる以上にやばくない？」と驚きの声が上がっています。OpenZeppelinの創業者である、Manuel Araozさんが書いたブログ記事、「OpenAIのGPT-3はビットコイン以来最大のものかもしれない（OpenAI's GPT-3 may be the biggest thing since bitcoin）」をメインに取り上げて、簡単に概要を紹介していきます。
 
   ------------- 📌 Chapters -------------
   0:00 イントロ
@@ -61,6 +61,7 @@ endScreen:
     - "Subscribe: Junichi"
 sns:
   post:
+  ビットコイン以来の衝撃とも言われる、話題の言語予測モデル「GPT-3」の紹介です！今後このYouTubeチャンネルにも取り入れていけたらなと思っています。🙇🏼 #人工知能 #テック #AI 
   twitter:
 ---
 
