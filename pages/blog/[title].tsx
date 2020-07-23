@@ -12,10 +12,10 @@ interface Props {
   frontMatter: PostData;
 }
 
-export default function Posts({ mdxSource, frontMatter }: Props) {
+export default function Post({ mdxSource, frontMatter }: Props) {
   const content = hydrate(mdxSource);
   return (
-    <>
+    <Container>
       <Title>{frontMatter.title}</Title>
       <YouTubeContainer>
         <YouTube
@@ -28,12 +28,20 @@ export default function Posts({ mdxSource, frontMatter }: Props) {
         {/* TODO: code */}
         {content}
       </Content>
-    </>
+    </Container>
   );
 }
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow-wrap: break-word;
+  padding: 1rem;
+`
+
 const Title = styled.h1<{ theme: ExactTheme }>`
-  margin-top: 3.5rem;
+  margin: 1rem 0;
   text-decoration: underline ${({ theme }) => theme.colors.accent};
 `;
 

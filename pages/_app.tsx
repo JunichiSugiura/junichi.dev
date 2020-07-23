@@ -1,38 +1,31 @@
-import {AppProps} from 'next/app'
+import { AppProps } from "next/app";
 import styled from "@emotion/styled";
 import { Header, Head } from "src/components";
 import { theme, ExactTheme } from "src/logic/styles";
-import { ThemeProvider } from "theme-ui"
+import { ThemeProvider } from "theme-ui";
 
-export default function App({Component, pageProps}: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head />
       <Container>
-        <Center>
-          <Header />
-          <main>
-            <Component {...pageProps} />
-          </main>
-        </Center>
+        <Header />
+        <main>
+          <Component {...pageProps} />
+        </main>
       </Container>
     </ThemeProvider>
   );
 }
 
 const Container = styled.div<{ theme: ExactTheme }>`
-  min-height: 100vh;
   display: flex;
+  align-self: center;
   flex-direction: column;
-  align-items: center;
-  font-family: ${({ theme }) => theme.fontFamily.sansSerif}
-`;
+  align-items: stretch;
+  font-family: ${({ theme }) => theme.fontFamily.sansSerif};
 
-const Center = styled.div<{ theme: ExactTheme }>`
-  max-width: 64rem;
-  padding: 0 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.text};
+  @media screen and (min-width: ${({theme}) => theme.breakpoints[1]}) {
+    width: ${({ theme }) => theme.breakpoints[1]};
+  }
 `;
