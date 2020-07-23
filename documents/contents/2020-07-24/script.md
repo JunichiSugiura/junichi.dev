@@ -1,5 +1,5 @@
 ---
-title: [衝撃の結末] OpenAIのGPT-3はビットコイン以来の技術革新かもしれない
+title: ビットコイン以来の衝撃 [OpenAI GPT-3]
 description: >
 
   ------------- 📌 Chapters -------------
@@ -27,6 +27,14 @@ description: >
   # 現在はフランスのパリに住んでいます。
   # 普段は暗号通貨のハードウェアウォレットを作っています。
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
+
+  ---------- 🙏 ATTRIBUTION ----------
+  Araoz, Manuel. OpenAI's GPT-3 may be the biggest thing since bitcoin. maraoz.com. July 18, 2020. https://maraoz.com/2020/07/18/openai-gpt3/
+  By Dan Taylor / Heisenberg Media - https://www.flickr.com/photos/heisenbergmedia/14070972702, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=66987439
+  By Duncan.Hull - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=76353307
+  By Scott Ellis from Dallas, US - Fight Club Soap, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=40062131
+  gregstee. Mind blown / Mind explosion. YouTube. October 10, 2011, https://youtu.be/9CS7j5I6aOc
+  Wikipedia contributors. "OpenAI." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 23 Jul. 2020. Web. 23 Jul. 2020. https://en.wikipedia.org/wiki/OpenAI
 thumbnailKeywords:
   -
 tags:
@@ -38,7 +46,10 @@ tags:
   # - テック
   # - 海外就職
   # - キャリア
-  -
+  - OpenAI
+  - GPT-3
+  - AI
+  - 人工知能
 link: https://youtu.be/MDQL2NfOYdU
 publishedAt: YYYY-MM-DD 05:00:00
 playlists:
@@ -64,11 +75,17 @@ https://twitter.com/maraoz/status/1284627854488150024
 
 ## Main
 
-で、その記事というのはこの動画のタイトルにもある"OpenAI の GPT-3 は Bitcoin 以来の'ザ・ネクスト・ビッグ・シング'かもしれない"という見出しを元に英語で書かれた記事なのですが Manuel Araoz さんという OpenZeppelin の CTO をしている方によって投稿されています。正直僕も普段から Ledger という会社で暗号通貨用のウォレット端末を作っているので、ビットコイン以来の大きな技術ということに若干懐疑的になりながら記事を読み始めたんですけど、最後まで動画を見ていただけるとその衝撃が皆さんにも伝わるかと思います。
+で、その記事というのはこの動画のタイトルにもある"OpenAI の GPT-3 は Bitcoin 以来の技術革新かもしれないという見出しを元に英語で書かれた記事なのですが Manuel Araoz さんという OpenZeppelin の CTO をしている方によって投稿されています。正直僕も普段から Ledger という会社で暗号通貨用のウォレット端末を作っているので、ビットコイン以来の大きな技術ということに若干懐疑的になりながら記事を読み始めたんですけど、最後まで動画を見ていただけるとその衝撃が皆さんにも伝わるかと思います。
+
+[OpenAI's GPT-3 may be the biggest thing since bitcoin](https://maraoz.com/2020/07/18/openai-gpt3/)
 
 まずはところどころはしょりながら日本語で翻訳していきますね。
 
 > Peter Thiel, Elon Musk 等から投資を受けている人工知能のリサーチを行う NPO 団体の OpenAI が３世代目となる言語予測モデル(GPT-3)をオープンソースの世界にリリースしました。言語予測モデルは予め与えられた文章を元に、それと同様の長さ、文法を持つ文章をコンピューターに自動で生成させることができます。
+
+By Dan Taylor / Heisenberg Media - https://www.flickr.com/photos/heisenbergmedia/14070972702, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=66987439
+
+By Duncan.Hull - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=76353307
 
 うーん、なるほど。結構偉大な名前が投資家としてあがってますね。
 
@@ -99,6 +116,8 @@ https://twitter.com/maraoz/status/1284627854488150024
 > このシステムは初期のプロトタイプであり、その動作は実際の訓練された AI の動作に匹敵しません。 OpenAI GPT-3 は返信を予測できるように見えますが、それ自体の投稿への返信を常に予測しているわけではなく、予測された返信が関連性が高く、文法的に正しい傾向もありません。 ほとんどの場合に説得力のある応答を予測したプロトタイプは、ここで説明する GPT-3 よりもはるかに印象的ですが、おそらく何年ものトレーニングとモデルの改善を何度も繰り返す必要があります。 OpenAI の GPT-3 のようなシステムが、有能な人間のオペレーターの手で何が実現できるか想像しているだけです。 --> -->
 
 とても興味深い記事ですよね。でもこれらの文章の裏にはさらに興味深い事実が存在しています。実はこの記事には後書きが存在していて、そこでなんとこの文章を書いたのは **Manuel さん自身ではなく GPT-3 だった**という衝撃の告白が書いてあります。ん、?!!... :mindblown: なんすかこのどんでん返し、映画で言ったらファイトクラブとかシックスセンス並の結末ですよねｗ しかもこれ今実際に存在する技術ですよ。半端なくないですか?! この動画見てる方で最初から見破ってた人いますかね？僕の英語力では最初記事を読んだ時、完全に騙されました。原文へのリンクは概要欄に貼っておくので興味のある方はチェックしてみてください。
+
+By Scott Ellis from Dallas, US - Fight Club Soap, CC BY-SA 2.0, https://commons.wikimedia.org/w/index.php?curid=40062131
 
 Manuel さんが実際に行った方法としては、まず彼自身のホームページにある文章をコピペして GPT-3 にプロンプトとして投げたみたいです。こちらが実際にインプットした文章なんですけど、かなりシンプルなのがわかりますかね？。自己紹介として彼の経歴や興味関心、あとブログ記事用に、タイトルとかんたんな概要、タグ、日付などが記されています。ということは文章の殆どは GPT-3 の勝手な妄想なんですよね。すごいのは編集したところといえば、結果としてアウトプットされた文章にスペースを追加したり、フォーマットを修正した程度で言葉自体は何も変えていないそうです。あとは書き出された文章が自分のスタイルにマッチしていると感じるまで数回ジェネレートしてみたそうです。それでもジェネレートした総数は 10 回もいっていないというから衝撃ですよね。ちなみに実際はビットコイントークへの投稿はしてないみたいで、個人のブログの方で書いていたみたいです。
 
