@@ -3,7 +3,14 @@ title: [衝撃の結末] OpenAIのGPT-3はビットコイン以来の技術革�
 description: >
 
   ------------- 📌 Chapters -------------
-  0:00
+  0:00 イントロ
+  0:45 今回紹介する記事概要
+    - OpenAIについて
+    - ビットコインフォーラムを使った実験
+  2:37 実験の概要
+  3:40 GTP-3のすごさ
+  6:38 GPT-3の脅威について
+  8:50 まとめ
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
