@@ -51,6 +51,7 @@ tags:
   - GPT-3
   - AI
   - 人工知能
+  - 言語予測モデル
 link: https://youtu.be/MDQL2NfOYdU
 publishedAt: 2020-07-24 05:00:00
 playlists:
@@ -59,8 +60,9 @@ endScreen:
   elements:
     - "Video: Best for viewer"
     - "Subscribe: Junichi"
+    - "Video: Most recent upload"
 sns:
-  post: 今週は"ビットコイン以来の衝撃"とも言われる、話題の言語予測モデル「GPT-3」の紹介動画です！AIの進化にまじでビビってます。今度どこかで"GPT-3にYouTubeの原稿書かせてみた"っていうのも出そうかな🤖笑 面白かったらチャンネル登録お願いします！🙏🙏🙏#テックニュース #人工知能
+  post: 今週は"ビットコイン以来の衝撃"とも言われる、話題の言語予測モデル「GPT-3」の紹介動画です！AIの進化にまじでビビってます。今度どこかで"GPT-3にYouTubeの原稿書かせてみた"っていうのも出そうかな🤖笑 #テックニュース #人工知能 https://youtu.be/MDQL2NfOYdU
   twitter:
 ---
 
