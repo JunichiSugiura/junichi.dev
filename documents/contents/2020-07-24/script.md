@@ -50,7 +50,9 @@ description: >
   gregstee. Mind blown / Mind explosion. YouTube. October 10, 2011, https://youtu.be/9CS7j5I6aOc
   Wikipedia contributors. "OpenAI." Wikipedia, The Free Encyclopedia. Wikipedia, The Free Encyclopedia, 23 Jul. 2020. Web. 23 Jul. 2020. https://en.wikipedia.org/wiki/OpenAI
 thumbnailKeywords:
-  -
+  - ビットコイン以来の衝撃
+  - OpenAI
+  - GPT-3
 tags:
   # - プログラミング
   # - エンジニア
@@ -76,7 +78,7 @@ endScreen:
     - "Video: Most recent upload"
 sns:
   post: 今週は"ビットコイン以来の衝撃"とも言われる、話題の言語予測モデル「GPT-3」の紹介動画です！AIの進化にまじでビビってます。今度どこかで"GPT-3にYouTubeの原稿書かせてみた"っていうのも出そうかな🤖笑 #テックニュース #人工知能 https://youtu.be/MDQL2NfOYdU
-  twitter:
+  twitter: https://twitter.com/JunichiSugiura/status/1286528907731181569?s=20
 ---
 
 ## Outline
