@@ -24,7 +24,7 @@ https://twitter.com/Una/status/1271180494944829441
 
 翌日 12 日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For what it’s worth, I’m *super* happy to rename the default branch structure of “master” to “main” and I hope we can all do this together as a community with <a href="https://twitter.com/github?ref_src=twsrc%5Etfw">@github</a> leading the charge by implementing in their product moving forward 🙂</p>&mdash; Una Kravets 👩🏻‍💻 (@Una) <a href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">June 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+https://twitter.com/natfriedman/status/1271253144442253312
 
 そこで候補として"main"というワードが上がりました。
 
@@ -63,12 +63,10 @@ git push origin main
 
 Pull Request がすでにある場合は、それに飛んでマージされるはずのブランチを main に変更しておきましょう。
 
-![このような画面になります。](./picture1.png)
-
 ### GitHub の設定から default branch を main に変更
 
-今後もmainをデフォルトのブランチとして使用していくために、githubのサイトの設定から該当のリポジトリのデフォルトブランチを変更していきます。
-
+今後も main をデフォルトのブランチとして使用していくために、github のサイトの設定から該当のリポジトリのデフォルトブランチを変更していきます。
+![変更画面](./picture2.png)
 
 ### remote から"master" branch を削除
 
@@ -80,4 +78,3 @@ git push -d origin master
 ```
 
 ## そもそもなぜデフォルトのブランチ名に"master"が使われるのか
-
