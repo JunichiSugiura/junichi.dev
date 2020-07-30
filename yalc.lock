@@ -1,8 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "next-mdx-remote": {
-      "signature": "d674c4ca37610a02b0dc6c0c7b085c9c"
-    }
-  }
-}
