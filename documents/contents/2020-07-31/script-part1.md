@@ -1,17 +1,19 @@
 ---
 title: Next.jsで作る技術ブログ [Part1 - セットアップ]
 description: >
-  以前出したNext.jsで作る技術ブログのセットアップ編です。
-  Next JSの導入やTypeScriptファイルへの変更から、ESLintとPrettierの設定、そしてHeadの設定までを今回は扱います。💻
+  今回のチュートリアルは"Next.jsで作る技術ブログ"のセットアップ編です。以前の動画で今回使っていくツールの概要を説明しているので気になる方はチェックしてみてください。 https://youtu.be/8MTOTYwpogk
+  Next.jsの初期設定からTypeScriptの導入、linterの設定、簡単なホームの作成、そしてタイトルや絵文字を使ったファビコンの設定方法までを紹介しています 💻
+
+  質問等ございましたら、コメント欄にてご連絡ください 😉
 
   ------------- 📌 Chapters -------------
-  0:00 イントロ
-  0:33 Next.jsのセットアップ
-  1:25 TypeScriptのインテグレーション
-  3:45 ESLintのの設定
-  9:17 Prettierの設定
-  10:55 ホームページの作成
-  12:40 Headの設定
+  0:00 今回やること
+  0:33 create-next-app
+  1:25 TypeScript
+  3:45 ESLint
+  9:17 Prettier
+  10:55 簡単なホームの作成
+  12:40 headタグの設定
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
@@ -28,10 +30,10 @@ description: >
   # 現在はフランスのパリに住んでいます。
   # 普段は暗号通貨のハードウェアウォレットを作っています。
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
-
-  ---------- 🙏 ATTRIBUTION ----------
 thumbnailKeywords:
-  -
+  - Next.jsで作る技術ブログ
+  - Part 1
+  - Setup
 tags:
   # - プログラミング
   # - エンジニア
@@ -42,23 +44,24 @@ tags:
   # - 海外就職
   # - キャリア
   - ブログ
+  - 技術ブログ
+  - 初期設定
+  - チュートリアル
   - TypeScript
   - React
   - Nextjs
-  - MDX
   - ESLint
   - Prettier
-  - セットアップ
 link: https://youtu.be/5obR4PzQObI
 publishedAt: 2020-07-31 05:00:00
 playlists:
-  -
+  - Tutorials
 endScreen:
   elements:
     - "Video: Best for viewer"
     - "Subscribe: Junichi"
 sns:
-  post: 技術ブログチュートリアルPart1が始まりました！Next.jsのインストールからHeadの簡単なセットアップまでを紹介していきます。💻 #エンジニア #Nextjs #チュートリアル
+  post: "技術ブログチュートリアル"のPart1を公開しました！Next.jsの初期設定からTypeScript、linterの設定、そしてheadタグのセットアップまでを紹介していきます💻 参考になったという方は👍とチャンネル登録🔔お願いします🙏 #プログラミング #エンジニア https://youtu.be/5obR4PzQObI
   twitter:
 ---
 
