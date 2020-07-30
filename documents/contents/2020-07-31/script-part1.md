@@ -3,10 +3,18 @@ title: Next.jsで作る技術ブログ [Part1 - セットアップ]
 description: >
   今回のチュートリアルは"Next.jsで作る技術ブログ"のセットアップ編です。以前の動画で今回使っていくツールの概要を説明しているので気になる方はチェックしてみてください。 https://youtu.be/8MTOTYwpogk
   Next.jsの初期設定からTypeScriptの導入、linterの設定、簡単なホームの作成、そしてタイトルや絵文字を使ったファビコンの設定方法までを紹介しています 💻
+  
+  次回のPart2ではホームをSSG (Server Side Generation)を使ってレンダーしたり、ブログページのルーティング、MDXで書かれたブログ記事のparse等をしていくのでお楽しみに💪
 
   質問等ございましたら、コメント欄にてご連絡ください 😉
 
-  次回のPart2ではホームをSSG (Server Side Generation)を使ってレンダーしたり、ブログページのルーティング、MDXで書かれたブログ記事のparse等をしていくのでお楽しみに💪
+  ----- 📝 詰まったらこちらを参考にしてみてください -----
+  チュートリアルのソースコード: https://github.com/JunichiSugiura/tutorials/tree/main/nextjs-blog
+
+  ----- 🙇‍♂️ 修正点・お詫び -----
+  ESLintのルール設定の際に動画では"@typescript-eslint/ba-ts-comment"と書いていましたが正しくは"@typescript-eslint/ban-ts-comment"でした。
+  https://github.com/JunichiSugiura/tutorials/blob/main/nextjs-blog/.eslintrc.js#L24
+
 
   #毎週金曜14時投稿 #プログラミング #チュートリアル
 
@@ -62,8 +70,9 @@ playlists:
   - Tutorials
 endScreen:
   elements:
-    - "Video: Best for viewer"
+    - "Video: Best for viewer" # TODO swap with 2020-07-31-part2
     - "Subscribe: Junichi"
+    - "Video: 2020-07-17"
 sns:
   post: "技術ブログチュートリアル"のPart1を公開しました！Next.jsの初期設定からTypeScript、linterの設定、そしてheadタグのセットアップまでを紹介していきます💻 参考になったという方は👍とチャンネル登録🔔お願いします🙏 #プログラミング #エンジニア https://youtu.be/5obR4PzQObI
   twitter:
