@@ -16,7 +16,6 @@ export const theme = makeTheme({
     text: "#222",
     muted: "#73737D",
     boxShadow: "#000",
-    primary: "#03DAC6",
     youtubeRed: "#FF0000",
     twitterBlue: "#1DA1F2",
     modes: {

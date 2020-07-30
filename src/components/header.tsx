@@ -7,21 +7,23 @@ import {
   IoLogoInstagram,
 } from "react-icons/io";
 import { accounts } from "src/logic/sns";
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 import { useCallback } from "react";
-import {useTheme, ExactTheme} from "src/logic/styles"
+import { useTheme, ExactTheme } from "src/logic/styles";
 
 export function Header() {
-  const {theme, setColorMode}= useTheme()
+  const { theme, setColorMode } = useTheme();
 
   const toggleColorMode = useCallback(() => {
-    setColorMode(mode => mode === 'default' ? 'dark' : 'default')
-  }, [])
+    setColorMode((mode) => (mode === "default" ? "dark" : "default"));
+  }, []);
 
   return (
     <Container>
       <Link href="/">
-        <Logo>Jun<Accent>i</Accent>chi</Logo>
+        <Logo>
+          Jun<Accent>i</Accent>chi
+        </Logo>
       </Link>
 
       <Right>
@@ -31,19 +33,19 @@ export function Header() {
           </IconContainer>
         </a>
 
-        <a href={accounts.twitter.link} target="_blank"  rel="noreferrer">
+        <a href={accounts.twitter.link} target="_blank" rel="noreferrer">
           <IconContainer>
             <IoLogoTwitter size={28} color={theme.colors.twitterBlue} />
           </IconContainer>
         </a>
 
-        <a href={accounts.github.link} target="_blank"  rel="noreferrer">
+        <a href={accounts.github.link} target="_blank" rel="noreferrer">
           <IconContainer>
             <IoLogoGithub size={28} color={theme.colors.muted} />
           </IconContainer>
         </a>
 
-        <a href={accounts.instagram.link} target="_blank"  rel="noreferrer">
+        <a href={accounts.instagram.link} target="_blank" rel="noreferrer">
           <IconContainer>
             <IoLogoInstagram size={28} color={theme.colors.muted} />
           </IconContainer>
