@@ -34,7 +34,7 @@ tags:
   # - 海外就職
   # - キャリア
   -
-link: https://youtu.be/<video-id>
+link: https://youtu.be/VIDEO_ID
 publishedAt: YYYY-MM-DD 05:00:00
 playlists:
   -
