@@ -1,11 +1,11 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostAll, getPost, PostData } from "src/logic/models";
-import { ExactTheme } from "src/logic/styles";
+import { elevation, ExactTheme } from "src/logic/styles";
 import styled from "@emotion/styled";
 import YouTube from "react-youtube";
-import { elevation } from "src/logic/styles";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
+import { Code } from "src/components";
 
 interface Props {
   source: string;
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function Post({ source, data }: Props) {
-  const content = hydrate(source);
+  const content = hydrate(source, { code: Code });
   return (
     <Container>
       <Title>{data.title}</Title>
@@ -77,7 +77,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   }
 
   const { content, data } = getPost(title);
-  const source = await renderToString(content, null, null, data);
+  const source = await renderToString(content, { code: Code });
   return {
     props: {
       source,
