@@ -8,26 +8,23 @@ import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 
 interface Props {
-  mdxSource: string;
-  frontMatter: PostData;
+  source: string;
+  data: PostData;
 }
 
-export default function Post({ mdxSource, frontMatter }: Props) {
-  const content = hydrate(mdxSource);
+export default function Post({ source, data }: Props) {
+  const content = hydrate(source);
   return (
     <Container>
-      <Title>{frontMatter.title}</Title>
+      <Title>{data.title}</Title>
       <YouTubeContainer>
         <YouTube
-          videoId={frontMatter.videoId}
+          videoId={data.videoId}
           containerClassName="youtube-container"
         />
       </YouTubeContainer>
 
-      <Content>
-        {/* TODO: code */}
-        {content}
-      </Content>
+      <Content>{content}</Content>
     </Container>
   );
 }
@@ -38,7 +35,7 @@ const Container = styled.div`
   align-items: stretch;
   overflow-wrap: break-word;
   padding: 1rem;
-`
+`;
 
 const Title = styled.h1<{ theme: ExactTheme }>`
   margin: 1rem 0;
@@ -80,11 +77,11 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   }
 
   const { content, data } = getPost(title);
-  const mdxSource = await renderToString(content, null, null, data);
+  const source = await renderToString(content, null, null, data);
   return {
     props: {
-      mdxSource,
-      frontMatter: data,
+      source,
+      data,
     },
   };
 };
