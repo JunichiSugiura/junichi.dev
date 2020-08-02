@@ -8,6 +8,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import { Pre } from "src/components";
 import Img from "react-optimized-image";
+import { getThumbnailLink } from "src/logic/sns";
 
 interface Props {
   source: string;
@@ -30,6 +31,7 @@ export default function Post({
         title={data.title}
         description={data.spoiler}
         path={`/blog/${data.title}`}
+        image={getThumbnailLink(data.videoId)}
       />
       <Title>{data.title}</Title>
       <YouTubeContainer>
