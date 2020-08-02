@@ -110,6 +110,7 @@ const Navigator = styled.div<{ theme: ExactTheme }>`
     ${({ theme }) => `
       text-decoration: underline;
       text-decoration-color: ${theme.colors.accent};
+      font-weight: bold;
     `}
   }
 `;
