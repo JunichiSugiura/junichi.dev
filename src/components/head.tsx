@@ -1,4 +1,5 @@
 import NextHead from "next/head";
+import { useRouter } from "next/router";
 
 interface Props {
   title?: string;
@@ -6,12 +7,17 @@ interface Props {
   image?: string;
 }
 
+const baseUrl = "https://junichi.dev";
+
 export function Head({
   title = "Junichi パリ在住エンジニア🇫🇷",
   description = "エンジニア・OSS コントリビュータ。フランス・パリにあるLedgerという会社で暗号資産用のハードウェアウォレットを作っています。みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。",
   // TODO: change image
-  image = "/favicon-150x150.png",
+  image = baseUrl + "/favicon-150x150.png",
 }: Props) {
+  const router = useRouter();
+  const url = baseUrl + router.asPath;
+
   return (
     <NextHead>
       <title>{title}</title>
@@ -19,11 +25,13 @@ export function Head({
       <meta property="og:image" content={image} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
+      <meta property="og:url" content={url}></meta>
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <meta name="twitter:card" content={image} />
       <meta name="twitter:creator" content="@JunichiSugiura" />
+      <meta name="twitter:url" content={url} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

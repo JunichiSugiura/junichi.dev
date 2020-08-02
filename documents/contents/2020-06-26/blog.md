@@ -63,7 +63,7 @@ git push origin main
 
 Pull Request がすでにある場合は、それに飛んでマージされるはずのブランチを main に変更しておきましょう。
 
-![このような画面になります。](./picture1.png)
+![このような画面になります。](./picture2.png)
 
 ### GitHub の設定から default branch を main に変更
 

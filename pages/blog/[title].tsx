@@ -7,6 +7,7 @@ import YouTube from "react-youtube";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import { Pre } from "src/components";
+import Img from "react-optimized-image";
 
 interface Props {
   source: string;
@@ -21,9 +22,8 @@ export default function Post({
   prevPostData,
   nextPostData,
 }: Props) {
-  const content = hydrate(source, {
-    pre: Pre,
-  });
+  const components = getComponents(data);
+  const content = hydrate(source, components);
   return (
     <Container>
       <Head title={data.title} description={data.spoiler} />
@@ -133,7 +133,8 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   }
 
   const { content, ...post } = getPost(title);
-  const source = await renderToString(content, { pre: Pre });
+  const components = getComponents(post.data);
+  const source = await renderToString(content, components);
   return {
     props: {
       source,
@@ -141,3 +142,33 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
     },
   };
 };
+
+// const components = {
+//   pre: Pre,
+//   img: ({ src, ...props }) => (
+//     <Img {...props} src={require(`documents/contents/2020-06-26/${src}`)} />
+//   ),
+// };
+
+function getComponents(data) {
+  return {
+    pre: Pre,
+    // eslint-disable-next-line react/display-name
+    img: ({ src, ...props }: { src: string }) => (
+      <Img
+        {...props}
+        src={require(`documents/contents/${data.date}/${src.replace(
+          "./",
+          ""
+        )}`)}
+        style={{
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "100%",
+        }}
+        sizes={[400, 800, 1940]}
+      />
+    ),
+  };
+}
