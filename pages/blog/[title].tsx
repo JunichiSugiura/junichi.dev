@@ -19,12 +19,12 @@ export default function Post({ source, data }: Props) {
   return (
     <Container>
       <Title>{data.title}</Title>
-      {/* <YouTubeContainer>
+      <YouTubeContainer>
         <YouTube
           videoId={data.videoId}
           containerClassName="youtube-container"
         />
-      </YouTubeContainer> */}
+      </YouTubeContainer>
 
       <Content>{content}</Content>
     </Container>
@@ -36,6 +36,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: stretch;
   overflow-wrap: break-word;
+  width: 100vw;
+  max-width: 50rem;
 `;
 
 const Title = styled.h1<{ theme: ExactTheme }>`
@@ -43,16 +45,32 @@ const Title = styled.h1<{ theme: ExactTheme }>`
   text-decoration: underline ${({ theme }) => theme.colors.accent};
 `;
 
+const tabletVideoWidth = "70vw";
+const desktopVideoWidth = "50vw";
+
 const YouTubeContainer = styled.div<{ theme: ExactTheme }>`
   .youtube-container {
     margin-top: 1rem;
     display: flex;
     justify-content: center;
 
-    /* TODO: stretch width and height while respecting the aspect ratio of FHD (1920 * 1080) */
     > iframe {
-      border-radius: ${({ theme }) => theme.borderRadius};
-      box-shadow: ${elevation[3]};
+      width: 100vw;
+      height: ${(100 / 1920) * 1080}vw;
+
+      ${({ theme }) => `
+        @media screen and (min-width: ${theme.breakpoints[0]})  {
+          width: ${tabletVideoWidth};
+          height: calc(${tabletVideoWidth} / 1920 * 1080);
+          border-radius: ${theme.borderRadius};
+          box-shadow: ${elevation[3]};
+        }
+
+        @media screen and (min-width: ${theme.breakpoints[1]})  {
+          width: ${desktopVideoWidth};
+          height: calc(${desktopVideoWidth} / 1920 * 1080);
+        }
+      `}
     }
   }
 `;
