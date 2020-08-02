@@ -20,12 +20,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
 const Container = styled.div<{ theme: ExactTheme }>`
   display: flex;
-  align-self: center;
   flex-direction: column;
-  align-items: stretch;
+  align-self: center;
+  align-items: center;
+  width: 100vw;
   font-family: ${({ theme }) => theme.fontFamily.sansSerif};
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     width: ${({ theme }) => theme.breakpoints[1]};
   }
 `;

@@ -3,7 +3,7 @@ import fs from "fs";
 import matter, { GrayMatterFile, Input } from "gray-matter";
 import moment from "moment";
 
-const contentsPath = path.join("documents", "contents")
+const contentsPath = path.join("documents", "contents");
 
 export function getPostAll(): Post[] {
   const posts = fs

@@ -26,10 +26,7 @@ export function Head({ title = "Junichi パリ在住エンジニア🇫🇷" }: 
         href="/favicon/favicon-16x16.png"
       />
       <link rel="manifest" href="/favicon/site.webmanifest" />
-      <meta
-        name="msapplication-config"
-        content="/favicon/browserconfig.xml"
-      />
+      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <link
