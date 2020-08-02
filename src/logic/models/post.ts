@@ -5,7 +5,11 @@ import moment from "moment";
 
 const contentsPath = path.join("documents", "contents");
 
-export function getPostAll(): Post[] {
+interface GetOptions {
+  limit?: number;
+}
+
+export function getPostAll(options: GetOptions = {}): Post[] {
   const posts = fs
     .readdirSync(contentsPath)
     .map((dirName) => {
@@ -21,6 +25,7 @@ export function getPostAll(): Post[] {
       return fs.readFileSync(filePath);
     })
     .filter((f) => !!f)
+    .slice(0, options.limit)
     .map((f) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { orig, ...post } = matter(f);
@@ -31,8 +36,8 @@ export function getPostAll(): Post[] {
   return posts as Post[];
 }
 
-export function getPostDataAll(): PostData[] {
-  return getPostAll().map((m) => m.data);
+export function getPostDataAll(options?: GetOptions): PostData[] {
+  return getPostAll(options).map((m) => m.data);
 }
 
 export function getPost(title: string): Post {
