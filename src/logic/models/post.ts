@@ -40,9 +40,9 @@ export function getPostDataAll(options?: GetOptions): PostData[] {
   return getPostAll(options).map((m) => m.data);
 }
 
-export function getPost(title: string): Post {
+export function getPost(slug: string): Post {
   const posts = getPostAll();
-  const i = posts.findIndex((m) => m.data.title === title);
+  const i = posts.findIndex((m) => m.data.slug === slug);
   const post = posts[i];
   const prevPostData = posts[i - 1]?.data ?? null;
   const nextPostData = posts[i + 1]?.data ?? null;
@@ -58,6 +58,7 @@ export interface Post extends GrayMatterFile<Input> {
 
 export interface PostData {
   title: string;
+  slug: string;
   videoId: string;
   date: string;
   spoiler: string;

@@ -1,5 +1,6 @@
 ---
 title: GitHub デフォルトbranchをmasterからmainに変更する方法と"理由"
+slug: how-to-change-default-branch-to-main-and-why
 videoId: GRL-kF088Y0
 date: "2020-06-26"
 spoiler: Githubのチュートリアル

@@ -10,7 +10,7 @@ export function Posts({ posts }: { posts: PostData[] }) {
     <Container>
       <Header>新着記事</Header>
       {posts.map((p) => (
-        <Link key={p.title} href={`/blog/${p.title}`}>
+        <Link key={p.title} href={`/blog/${p.slug}`}>
           <Article>
             <Image src={getThumbnailLink(p.videoId)} />
             <Data>

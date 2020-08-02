@@ -30,7 +30,7 @@ export default function Post({
       <Head
         title={data.title}
         description={data.spoiler}
-        path={`/blog/${data.title}`}
+        path={`/blog/${data.slug}`}
         image={getThumbnailLink(data.videoId)}
       />
       <Title>{data.title}</Title>
@@ -45,13 +45,13 @@ export default function Post({
 
       <Navigator>
         {prevPostData && (
-          <Link href={prevPostData.title}>
-            <a>{`← ${prevPostData.title}`}</a>
+          <Link href={prevPostData.slug}>
+            <a>{`← ${prevPostData.slug}`}</a>
           </Link>
         )}
         {nextPostData && (
-          <Link href={nextPostData.title}>
-            <a>{`${nextPostData.title} →`}</a>
+          <Link href={nextPostData.slug}>
+            <a>{`${nextPostData.slug} →`}</a>
           </Link>
         )}
       </Navigator>
@@ -130,19 +130,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getPostAll().map((p) => ({
       params: {
-        title: p.data.title,
+        slug: p.data.slug,
       },
     })),
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
-  if (typeof title !== "string") {
+export const getStaticProps: GetStaticProps = async ({ params: { slug } }) => {
+  if (typeof slug !== "string") {
     throw new Error("Duplicated title");
   }
 
-  const { content, ...post } = getPost(title);
+  const { content, ...post } = getPost(slug);
   const components = getComponents(post.data);
   const source = await renderToString(content, components);
   return {
