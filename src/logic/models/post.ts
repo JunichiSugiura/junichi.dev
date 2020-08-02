@@ -36,12 +36,19 @@ export function getPostDataAll(): PostData[] {
 }
 
 export function getPost(title: string): Post {
-  return getPostAll().find((m) => m.data.title === title);
+  const posts = getPostAll();
+  const i = posts.findIndex((m) => m.data.title === title);
+  const post = posts[i];
+  const prevPostData = posts[i - 1]?.data ?? null;
+  const nextPostData = posts[i + 1]?.data ?? null;
+  return { ...post, prevPostData, nextPostData };
 }
 
 export interface Post extends GrayMatterFile<Input> {
   data: PostData;
   orig: undefined;
+  prevPostData: PostData | null;
+  nextPostData: PostData | null;
 }
 
 export interface PostData {

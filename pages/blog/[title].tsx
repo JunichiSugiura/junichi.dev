@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
+import { Link } from "src/components";
 import { getPostAll, getPost, PostData } from "src/logic/models";
 import { elevation, ExactTheme } from "src/logic/styles";
 import styled from "@emotion/styled";
@@ -10,9 +11,16 @@ import { Pre } from "src/components";
 interface Props {
   source: string;
   data: PostData;
+  prevPostData: PostData | null;
+  nextPostData: PostData | null;
 }
 
-export default function Post({ source, data }: Props) {
+export default function Post({
+  source,
+  data,
+  prevPostData,
+  nextPostData,
+}: Props) {
   const content = hydrate(source, {
     pre: Pre,
   });
@@ -27,6 +35,15 @@ export default function Post({ source, data }: Props) {
       </YouTubeContainer>
 
       <Content>{content}</Content>
+
+      <Navigator>
+        {prevPostData && (
+          <Link href={prevPostData.title}>{`← ${prevPostData.title}`}</Link>
+        )}
+        {nextPostData && (
+          <Link href={nextPostData.title}>{`${nextPostData.title} →`}</Link>
+        )}
+      </Navigator>
     </Container>
   );
 }
@@ -84,6 +101,19 @@ const Content = styled.div<{ theme: ExactTheme }>`
   }
 `;
 
+const Navigator = styled.div<{ theme: ExactTheme }>`
+  display: flex;
+  flex-direction: row;
+  padding 1rem;
+
+  a {
+    ${({ theme }) => `
+      text-decoration: underline;
+      text-decoration-color: ${theme.colors.accent};
+    `}
+  }
+`;
+
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: getPostAll().map((p) => ({
@@ -100,12 +130,12 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
     throw new Error("Duplicated title");
   }
 
-  const { content, data } = getPost(title);
+  const { content, ...post } = getPost(title);
   const source = await renderToString(content, { pre: Pre });
   return {
     props: {
       source,
-      data,
+      ...post,
     },
   };
 };
