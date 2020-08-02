@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Link } from "src/components";
+import { Link, Head } from "src/components";
 import { getPostAll, getPost, PostData } from "src/logic/models";
 import { elevation, ExactTheme } from "src/logic/styles";
 import styled from "@emotion/styled";
@@ -7,6 +7,7 @@ import YouTube from "react-youtube";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
 import { Pre } from "src/components";
+import Img from "react-optimized-image";
 
 interface Props {
   source: string;
@@ -21,11 +22,15 @@ export default function Post({
   prevPostData,
   nextPostData,
 }: Props) {
-  const content = hydrate(source, {
-    pre: Pre,
-  });
+  const components = getComponents(data);
+  const content = hydrate(source, components);
   return (
     <Container>
+      <Head
+        title={data.title}
+        description={data.spoiler}
+        path={`/blog/${data.title}`}
+      />
       <Title>{data.title}</Title>
       <YouTubeContainer>
         <YouTube
@@ -38,10 +43,14 @@ export default function Post({
 
       <Navigator>
         {prevPostData && (
-          <Link href={prevPostData.title}>{`← ${prevPostData.title}`}</Link>
+          <Link href={prevPostData.title}>
+            <a>{`← ${prevPostData.title}`}</a>
+          </Link>
         )}
         {nextPostData && (
-          <Link href={nextPostData.title}>{`${nextPostData.title} →`}</Link>
+          <Link href={nextPostData.title}>
+            <a>{`${nextPostData.title} →`}</a>
+          </Link>
         )}
       </Navigator>
     </Container>
@@ -132,7 +141,8 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   }
 
   const { content, ...post } = getPost(title);
-  const source = await renderToString(content, { pre: Pre });
+  const components = getComponents(post.data);
+  const source = await renderToString(content, components);
   return {
     props: {
       source,
@@ -140,3 +150,26 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
     },
   };
 };
+
+function getComponents(data: PostData) {
+  return {
+    pre: Pre,
+    // eslint-disable-next-line react/display-name
+    img: ({ src, ...props }: { src: string }) => (
+      <Img
+        {...props}
+        src={require(`documents/contents/${data.date}/${src.replace(
+          "./",
+          ""
+        )}`)}
+        style={{
+          display: "block",
+          marginLeft: "auto",
+          marginRight: "auto",
+          width: "100%",
+        }}
+        sizes={[1920]}
+      />
+    ),
+  };
+}

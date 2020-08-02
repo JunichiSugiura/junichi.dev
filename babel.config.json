@@ -1,4 +1,4 @@
 {
   "presets": ["next/babel"],
-  "plugins": ["emotion"]
+  "plugins": ["emotion", "react-optimized-image/plugin"]
 }

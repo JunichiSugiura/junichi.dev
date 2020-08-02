@@ -65,5 +65,6 @@ const HighlightedLineIndicator = styled.span<{ isHighlighted: boolean }>`
 `;
 
 const LineContent = styled.span`
+  font-size: 1rem;
   display: table-cell;
 `;
