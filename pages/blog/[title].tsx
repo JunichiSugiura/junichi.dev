@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Link } from "src/components";
+import { Link, Head } from "src/components";
 import { getPostAll, getPost, PostData } from "src/logic/models";
 import { elevation, ExactTheme } from "src/logic/styles";
 import styled from "@emotion/styled";
@@ -26,6 +26,7 @@ export default function Post({
   });
   return (
     <Container>
+      <Head title={data.title} description={data.spoiler} />
       <Title>{data.title}</Title>
       <YouTubeContainer>
         <YouTube
