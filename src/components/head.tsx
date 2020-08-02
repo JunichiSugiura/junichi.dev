@@ -13,7 +13,7 @@ export function Head({
   title = "Junichi パリ在住エンジニア🇫🇷",
   description = "エンジニア・OSS コントリビュータ。フランス・パリにあるLedgerという会社で暗号資産用のハードウェアウォレットを作っています。みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。",
   // TODO: change image
-  image = baseUrl + "/favicon-150x150.png",
+  image = baseUrl + "/profile.jpg",
 }: Props) {
   const router = useRouter();
   const url = baseUrl + router.asPath;
@@ -25,7 +25,7 @@ export function Head({
       <meta property="og:image" content={image} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      <meta property="og:url" content={url}></meta>
+      <meta property="og:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
