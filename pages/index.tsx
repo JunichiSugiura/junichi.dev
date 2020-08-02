@@ -1,17 +1,22 @@
 import { GetStaticProps } from "next";
 import { getPostDataAll, PostData } from "src/logic/models";
-import { Posts } from "src/components";
+import { Profile, Posts } from "src/components";
 
 interface Props {
   posts: PostData[];
 }
 
 export default function Home({ posts }: Props) {
-  return <Posts posts={posts} />;
+  return (
+    <>
+      <Profile />
+      <Posts posts={posts} />
+    </>
+  );
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   return {
-    props: { posts: getPostDataAll() },
+    props: { posts: getPostDataAll({ limit: 3 }) },
   };
 };
