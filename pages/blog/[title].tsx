@@ -39,10 +39,14 @@ export default function Post({
 
       <Navigator>
         {prevPostData && (
-          <Link href={prevPostData.title}>{`← ${prevPostData.title}`}</Link>
+          <Link href={prevPostData.title}>
+            <a>{`← ${prevPostData.title}`}</a>
+          </Link>
         )}
         {nextPostData && (
-          <Link href={nextPostData.title}>{`${nextPostData.title} →`}</Link>
+          <Link href={nextPostData.title}>
+            <a>{`${nextPostData.title} →`}</a>
+          </Link>
         )}
       </Navigator>
     </Container>
@@ -160,7 +164,7 @@ function getComponents(data: PostData) {
           marginRight: "auto",
           width: "100%",
         }}
-        sizes={[400, 800, 1920]}
+        sizes={[1920]}
       />
     ),
   };
