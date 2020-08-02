@@ -143,14 +143,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   };
 };
 
-// const components = {
-//   pre: Pre,
-//   img: ({ src, ...props }) => (
-//     <Img {...props} src={require(`documents/contents/2020-06-26/${src}`)} />
-//   ),
-// };
-
-function getComponents(data) {
+function getComponents(data: PostData) {
   return {
     pre: Pre,
     // eslint-disable-next-line react/display-name
@@ -167,7 +160,7 @@ function getComponents(data) {
           marginRight: "auto",
           width: "100%",
         }}
-        sizes={[400, 800, 1940]}
+        sizes={[400, 800, 1920]}
       />
     ),
   };
