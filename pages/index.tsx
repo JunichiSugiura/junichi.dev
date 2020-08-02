@@ -7,9 +7,7 @@ interface Props {
 }
 
 export default function Home({ posts }: Props) {
-  return (
-    <Posts posts={posts} />
-  );
+  return <Posts posts={posts} />;
 }
 
 export const getStaticProps: GetStaticProps = async () => {

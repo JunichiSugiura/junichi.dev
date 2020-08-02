@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import YouTube from "react-youtube";
 import renderToString from "next-mdx-remote/render-to-string";
 import hydrate from "next-mdx-remote/hydrate";
-import { Code } from "src/components";
+import { Pre } from "src/components";
 
 interface Props {
   source: string;
@@ -13,16 +13,18 @@ interface Props {
 }
 
 export default function Post({ source, data }: Props) {
-  const content = hydrate(source, { code: Code });
+  const content = hydrate(source, {
+    pre: Pre,
+  });
   return (
     <Container>
       <Title>{data.title}</Title>
-      <YouTubeContainer>
+      {/* <YouTubeContainer>
         <YouTube
           videoId={data.videoId}
           containerClassName="youtube-container"
         />
-      </YouTubeContainer>
+      </YouTubeContainer> */}
 
       <Content>{content}</Content>
     </Container>
@@ -34,11 +36,10 @@ const Container = styled.div`
   flex-direction: column;
   align-items: stretch;
   overflow-wrap: break-word;
-  padding: 1rem;
 `;
 
 const Title = styled.h1<{ theme: ExactTheme }>`
-  margin: 1rem 0;
+  margin: 1rem;
   text-decoration: underline ${({ theme }) => theme.colors.accent};
 `;
 
@@ -58,6 +59,11 @@ const YouTubeContainer = styled.div<{ theme: ExactTheme }>`
 
 const Content = styled.div<{ theme: ExactTheme }>`
   margin-top: 1rem;
+
+  > :not(pre) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 `;
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -77,7 +83,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   }
 
   const { content, data } = getPost(title);
-  const source = await renderToString(content, { code: Code });
+  const source = await renderToString(content, { pre: Pre });
   return {
     props: {
       source,

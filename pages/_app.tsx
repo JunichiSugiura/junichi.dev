@@ -25,7 +25,7 @@ const Container = styled.div<{ theme: ExactTheme }>`
   align-items: stretch;
   font-family: ${({ theme }) => theme.fontFamily.sansSerif};
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     width: ${({ theme }) => theme.breakpoints[1]};
   }
 `;
