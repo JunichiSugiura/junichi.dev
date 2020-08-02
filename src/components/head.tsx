@@ -1,5 +1,6 @@
 import NextHead from "next/head";
 import { useRouter } from "next/router";
+import profileImg from "public/profile.jpg";
 
 interface Props {
   title?: string;
@@ -13,7 +14,7 @@ export function Head({
   title = "Junichi パリ在住エンジニア🇫🇷",
   description = "エンジニア・OSS コントリビュータ。フランス・パリにあるLedgerという会社で暗号資産用のハードウェアウォレットを作っています。みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。",
   // TODO: change image
-  image = baseUrl + "/profile.jpg",
+  image = baseUrl + profileImg,
 }: Props) {
   const router = useRouter();
   const url = baseUrl + router.asPath;
