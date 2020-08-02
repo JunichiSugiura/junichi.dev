@@ -1,11 +1,11 @@
 import NextHead from "next/head";
-import { useRouter } from "next/router";
 import profileImg from "public/profile.jpg";
 
 interface Props {
   title?: string;
   description?: string;
   image?: string;
+  path?: string;
 }
 
 const baseUrl = "https://junichi.dev";
@@ -13,11 +13,10 @@ const baseUrl = "https://junichi.dev";
 export function Head({
   title = "Junichi パリ在住エンジニア🇫🇷",
   description = "エンジニア・OSS コントリビュータ。フランス・パリにあるLedgerという会社で暗号資産用のハードウェアウォレットを作っています。みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。",
-  // TODO: change image
   image = baseUrl + profileImg,
+  path = "/",
 }: Props) {
-  const router = useRouter();
-  const url = baseUrl + router.asPath;
+  const url = baseUrl + path.replace(/ /g, "%20");
 
   return (
     <NextHead>

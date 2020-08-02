@@ -26,7 +26,11 @@ export default function Post({
   const content = hydrate(source, components);
   return (
     <Container>
-      <Head title={data.title} description={data.spoiler} />
+      <Head
+        title={data.title}
+        description={data.spoiler}
+        path={`/blog/${data.title}`}
+      />
       <Title>{data.title}</Title>
       <YouTubeContainer>
         <YouTube
