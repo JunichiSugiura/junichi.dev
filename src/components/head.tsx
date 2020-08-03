@@ -6,11 +6,7 @@ export function Head() {
       <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=UA-174232195-1"
-      ></script>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=UA-174232195-1"
-      ></script>
+      />
       <script
         dangerouslySetInnerHTML={{
           __html: `(function() {
