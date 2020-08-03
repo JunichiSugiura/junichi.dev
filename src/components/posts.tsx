@@ -8,7 +8,6 @@ import { getThumbnailLink } from "src/logic/sns";
 export function Posts({ posts }: { posts: PostData[] }) {
   return (
     <Container>
-      <Header>新着記事</Header>
       {posts.map((p) => (
         <Link key={p.title} href={`/blog/${p.slug}`}>
           <Article>
@@ -29,13 +28,6 @@ const pageVerticalPadding = "2rem";
 
 const Container = styled.div`
   padding: 0 ${pageVerticalPadding};
-`;
-
-const Header = styled.h2`
-  font-size: 0.875rem;
-  margin: 0 1rem;
-  display: flex;
-  justify-content: center;
 `;
 
 const Article = styled.article<{ theme: ExactTheme }>`
