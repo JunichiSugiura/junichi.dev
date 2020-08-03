@@ -1,37 +1,8 @@
 import NextHead from "next/head";
-import profileImg from "public/profile.jpg";
 
-interface Props {
-  title?: string;
-  description?: string;
-  image?: string;
-  path?: string;
-}
-
-const baseUrl = "https://junichi.dev";
-
-export function Head({
-  title = "Junichi パリ在住エンジニア🇫🇷",
-  description = "エンジニア・OSS コントリビュータ。フランス・パリにあるLedgerという会社で暗号資産用のハードウェアウォレットを作っています。みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。",
-  image = baseUrl + profileImg,
-  path = "/",
-}: Props) {
-  const url = baseUrl + path.replace(/ /g, "%20");
-
+export function Head() {
   return (
     <NextHead>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:description" content={description} />
-      <meta property="og:title" content={title} />
-      <meta property="og:url" content={url} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:creator" content="@JunichiSugiura" />
-      <meta name="twitter:url" content={url} />
       <link
         rel="apple-touch-icon"
         sizes="180x180"

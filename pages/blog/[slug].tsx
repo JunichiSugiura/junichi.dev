@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { Link, Head } from "src/components";
+import { Link } from "src/components";
 import { getPostAll, getPost, PostData } from "src/logic/models";
 import { elevation, ExactTheme } from "src/logic/styles";
 import styled from "@emotion/styled";
@@ -9,6 +9,8 @@ import hydrate from "next-mdx-remote/hydrate";
 import { Pre } from "src/components";
 import Img from "react-optimized-image";
 import { getThumbnailLink } from "src/logic/sns";
+import { canonical } from "src/logic/seo";
+import { NextSeo } from "next-seo";
 
 interface Props {
   source: string;
@@ -27,11 +29,15 @@ export default function Post({
   const content = hydrate(source, components);
   return (
     <Container>
-      <Head
+      <NextSeo
         title={data.title}
         description={data.spoiler}
-        path={`/blog/${data.slug}`}
-        image={getThumbnailLink(data.videoId)}
+        openGraph={{
+          url: `${canonical}/blog/${data.slug}`,
+          images: [
+            { url: getThumbnailLink(data.videoId), alt: "Article picture" },
+          ],
+        }}
       />
       <Title>{data.title}</Title>
       <YouTubeContainer>
@@ -46,12 +52,12 @@ export default function Post({
       <Navigator>
         {prevPostData && (
           <Link href={prevPostData.slug}>
-            <a>{`← ${prevPostData.slug}`}</a>
+            <a>{`← ${prevPostData.title}`}</a>
           </Link>
         )}
         {nextPostData && (
           <Link href={nextPostData.slug}>
-            <a>{`${nextPostData.slug} →`}</a>
+            <a>{`${nextPostData.title} →`}</a>
           </Link>
         )}
       </Navigator>
