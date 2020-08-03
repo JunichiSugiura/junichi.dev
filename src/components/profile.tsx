@@ -5,7 +5,7 @@ export function Profile() {
   return (
     <Container>
       <h2>Junichi Sugiura</h2>
-      <p>エンジニア・OSS コントリビュータ</p>
+      <p>エンジニア・OSS コントリビュータ💻</p>
       <p>
         フランス・パリにある
         <a href="https://ledger.com" target="_blank" rel="noreferrer">

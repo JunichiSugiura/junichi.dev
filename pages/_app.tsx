@@ -3,11 +3,14 @@ import styled from "@emotion/styled";
 import { Header, Head, Footer } from "src/components";
 import { theme, ExactTheme } from "src/logic/styles";
 import { ThemeProvider } from "theme-ui";
+import { DefaultSeo } from "next-seo";
+import { seo } from "src/logic/seo";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head />
+      <DefaultSeo {...seo} />
       <Container>
         <Header />
         <main>
