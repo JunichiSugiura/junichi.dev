@@ -15,7 +15,6 @@ description: >
   ESLintのルール設定の際に動画では"@typescript-eslint/ba-ts-comment"と書いていましたが正しくは"@typescript-eslint/ban-ts-comment"でした。
   https://github.com/JunichiSugiura/tutorials/blob/main/nextjs-blog/.eslintrc.js#L24
 
-
   #毎週金曜14時投稿 #プログラミング #チュートリアル
 
   ------------- 📌 Chapters -------------
@@ -42,10 +41,6 @@ description: >
   # 現在はフランスのパリに住んでいます。
   # 普段は暗号通貨のハードウェアウォレットを作っています。
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
-thumbnailKeywords:
-  - Next.jsで作る技術ブログ
-  - Part 1
-  - Setup
 tags:
   # - プログラミング
   # - エンジニア
@@ -67,12 +62,12 @@ tags:
 link: https://youtu.be/5obR4PzQObI
 publishedAt: 2020-07-31 05:00:00
 playlists:
-  - Tutorials
+    -　Next.jsで作る技術ブログ [チュートリアル]
 endScreen:
   elements:
-    - "Video: Best for viewer" # TODO swap with 2020-07-31-part2
+    - "Video: 2020-07-31-part2"
     - "Subscribe: Junichi"
-    - "Video: 2020-07-17"
+    - "Video: Best for viewer"
 sns:
   post: "技術ブログチュートリアル"のPart1を公開しました！Next.jsの初期設定からTypeScript、linterの設定、そしてheadタグのセットアップまでを紹介していきます💻 参考になったという方は👍とチャンネル登録🔔お願いします🙏 #プログラミング #エンジニア https://youtu.be/5obR4PzQObI
   twitter:
