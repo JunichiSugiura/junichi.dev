@@ -3,7 +3,14 @@ title:
 description: >
 
   ------------- 📌 Chapters -------------
-  0:00
+  0:00 今回やること
+  0:50 index.tsxの編集
+  1:25 index.md テンプレートについて
+  4:27 next-mdx-remote と grey-matterのインストール
+  6:15 title.tsx の設定
+  9:17 front-matterの設定
+  18:55 jxsの設定(レイアウトの設定)
+  
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
