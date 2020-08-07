@@ -14,7 +14,7 @@ export function Head() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'UA-174232195-1');
-      })`,
+      })()`,
         }}
       />
       <link
