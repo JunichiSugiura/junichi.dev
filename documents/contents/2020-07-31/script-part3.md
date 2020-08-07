@@ -51,9 +51,14 @@ sns:
 
 ## Intro
 
+今回は主に Theme UI と emotion を使って簡単なページのスタイリングと最終的に Dark Mode を一緒に実装していきたいと思います！
+世の中の消費電力を減らして地球環境とエンジニアの目を救いましょうｗ
+
 ## Main
 
 ### Layout with Custom App component
+
+まずは App component を使ってページ全体のレイアウトをしていこうと思います。Next.js には`pages/_app.tsx`という特別なファイルがあって、このコンポーネントは各ページのルートコンポーネントとして使われるので、全ページのレイアウトを書くことができます。まずはこのファイルを作って行きましょうか。
 
 ```sh
 touch ./pages/_app.tsx
@@ -62,40 +67,40 @@ touch ./pages/_app.tsx
 ```tsx
 // pages/_app.tsx
 
+// "next/app"というサブモジュールから AppProps の型も import することができます。
 import { AppProps } from "next/app";
-import { Head } from "src/components";
 
+// そしてこの中で App コンポーネントを作成して default export しておきます。
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head />
-      <div>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </div>
+      <main>
+        {/* 各ページからdefault exportしているコンポーネントはこんな感じでレンダーします */}
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }
 ```
 
-```tsx
-// pages/index.tsx
-
-export default function Home() {
-  return <div>Welcome</div>;
-}
-```
-
 ### Setup Theme UI
+
+次に Theme UI をインストールしましょうか。
 
 ```sh
 yarn add theme-ui
 yarn add -D @types/theme-ui
+```
 
-mkdir ./src/logic
+そして新たに s`src`dir を作ってその下に logic モジュールを作って `styles.ts` ファイルを作成したいと思います
+そして styles 用のロジックを書いておくモジュールを作りたいと思います
+
+```sh
+mkdir -p ./src/logic
 touch ./src/logic/styles.ts
 ```
+
+それではこの中に theme 関連のコードを書いていきましょう。
 
 ```ts
 // src/components/logic/styles.ts
@@ -103,21 +108,21 @@ touch ./src/logic/styles.ts
 // @ts-ignore
 import { Theme, useThemeUI, ContextValue } from "theme-ui";
 
+// themeオブジェクトのpropertyは公式のdocsを参考にしましょう
+// https://theme-ui.com/theme-spec
+// ThemeUIからexportされているコンポーネントを使用する場合は個々で設定した内容がcontextを通して自動で反映されます。
+// またuseThemeカスタムフックやemotionのstyledファンクションを通して使用することもできます。
 export const theme = makeTheme({
+  // デフォルトのテーマを指定しておきます
   initialColorModeName: "light",
-  borderRadius: "0.25rem",
-  colors: {
-    accent: "#03DAC6",
-    background: "#fff",
-    text: "#222",
-    muted: "#73737D",
-    boxShadow: "#000",
-    youtubeRed: "#FF0000",
-    twitterBlue: "#1DA1F2",
-  },
+  // ここでbaseテーマのカラーを上書きしていきます。
+  // 今回はbaseのままでいいのでからのオブジェクトを一旦書いておきます。
+  colors: {},
 });
 
+// 次のバージョンからTSが正式にサポートされるみたいなのですが、今のところまだ方が安定してないので回りくどい書き方をします。
 // ref: https://theme-ui.com/guides/typescript
+// https://github.com/system-ui/theme-ui/issues/668
 function makeTheme<T extends Theme>(t: T) {
   return t;
 }
@@ -131,18 +136,18 @@ interface ExactContextValue extends Omit<ContextValue, "theme"> {
 export const useTheme = (useThemeUI as unknown) as () => ExactContextValue;
 ```
 
+そして `pages/_app.tsx` に戻って ThemeProvider を通して今作った theme をプロバイドしましょう。
+
 ```tsx
 // pages/_app.tsx
 
 import { AppProps } from "next/app";
-import { Head } from "src/components";
 import { ThemeProvider } from "theme-ui"; // <-
 import { theme } from "src/logic/styles"; // <-
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}> {/* <- */}
-      <Head />
       <div>
         <main>
           <Component {...pageProps} />
@@ -155,10 +160,16 @@ export default function App({ Component, pageProps }: AppProps) {
 
 ### Style with Emotion
 
+で、ThemeUI をインストールすると自動で emotion も入ってくるんですが、これだと CSS を JS のオブジェクトとして作成して prop として渡していく方法でスタイリングしていくことになります。個人的には styled を使って CSS を書いていく API の方が好きなのでそちらに必要なモジュールをインストールしたいと思います。ThemeUI のコンポーネントは styled-system と似たような API なので慣れてる人には便利なんですが、初めて目にする人には覚えることも多いので、個人的には pure な CSS を書いていく方が好みです。
+
 ```sh
 yarn add @emotion/styled
 yarn add -D babel-plugin-emotion
+```
 
+そして今取ってきた babel プラグインを設定するために`babel.config.json`ファイルを作成します。
+
+```sh
 touch babel.config.json
 ```
 
@@ -171,11 +182,16 @@ touch babel.config.json
 }
 ```
 
+以上で emotion の設定は完了です。
+
+### emotion を使って App をスタイル
+
+では次に実際に styled function を使って App の簡単なスタイリングをしていきましょう。
+
 ```tsx
 // pages/_app.tsx
 
 import { AppProps } from "next/app";
-import { Head } from "src/components";
 import { ThemeProvider } from "theme-ui";
 import { theme } from "src/logic/styles";
 import styled from "@emotion/styled"; // <-
@@ -183,7 +199,6 @@ import styled from "@emotion/styled"; // <-
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <Head />
       <Container>
         <main>
           <Component {...pageProps} />
@@ -196,19 +211,24 @@ export default function App({ Component, pageProps }: AppProps) {
 // here
 const Container = styled.div`
   display: flex;
+  // 前の会社で一緒だった人が何でも"flex使う人はチャラい"っていうめっちゃ偏見tweetしてたんですけど、
+  // 僕ってチャラいんですかねw 堅実な変人でありたいと思いますw
   align-self: center;
   flex-direction: column;
   align-items: stretch;
 `;
 ```
 
+ブラウザーの方で動いてるかチェックしましょうか。
+
 ### Add dark mode
 
-```tsx
+そしたら次にダークモード用の theme も書いていこうと思います。Theume UI では colors 以下に modes というプロパティーが提供されていて、これを通して default テーマに上書きしていくことができます。
+
+````tsx
 // src/logic/styles.tsx
 
-...
-
+// ...
 export const theme = makeTheme({
   initialColorModeName: "light",
   useColorSchemeMediaQuery: true, // <-
@@ -218,9 +238,6 @@ export const theme = makeTheme({
     background: "#fff",
     text: "#222",
     muted: "#73737D",
-    boxShadow: "#000",
-    youtubeRed: "#FF0000",
-    twitterBlue: "#1DA1F2",
     // ↓↓↓
     modes: {
       dark: {
@@ -232,29 +249,33 @@ export const theme = makeTheme({
     },
   },
 });
-
-...
-
 ```
 
 ### Custom Document component
 
+そして次にこれも`pages/_app.tsx`と同様に Next.js の特別なコンポーネントになる document コンポーネントを作りたいと思います。
+これは App コンポーネントよりも 1 階層上で、head や body など HTML タグを指定することができます。App コンポーネントは各ページ毎にレンダーされるのですが、Document はアプリケーションを通して最初に一度だけレンダーされます。
+
 ```sh
 touch ./pages/_document.tsx
-```
+````
 
 ```tsx
 // pages/_documents.tsx
 
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Main, NextScript } from "next/document";
 import { InitializeColorMode } from "theme-ui";
 
+// Next.jsがexportしているDocumentコンポーネントをここでextendします
 export default class extends Document {
   render() {
     return (
       <Html>
-        <Head />
         <body>
+          {/*
+            カラーモードを設定するために必要なコンポーネントになります。
+            カラーをCSS propertiesとしてheadに登録してくれるのでテーマを動的に切り替えた時の一時的なフラッシュをなくすことができます。
+          */}
           <InitializeColorMode />
           <Main />
           <NextScript />
@@ -266,6 +287,8 @@ export default class extends Document {
 ```
 
 ### Create Header
+
+次に theme を動的に切り替えるためのボタンをレンダーするために Header コンポーネントを作っていきます。
 
 ```sh
 touch ./src/components/header.tsx
@@ -317,6 +340,7 @@ const Right = styled.div`
   align-items: center;
 `;
 
+// 本当はThemeUIとemotionのコンテキストが自動で型を認識してくれればいいのですが、現状うまく実装されていないのでworkaroundとしてExactTheme型を書いておきます。
 const IconContainer = styled.div<{ theme: ExactTheme }>`
   height: 2.25rem;
   width: 2.25rem;
@@ -324,20 +348,26 @@ const IconContainer = styled.div<{ theme: ExactTheme }>`
   align-items: center;
   justify-content: center;
   margin: 0 0.25rem;
+  // こんな感じでTheme UIのthemeにemotionからアクセスすることができます。
+  color: ${({ theme }) => theme.colors.muted};
 `;
 ```
+
+そして component モジュールとして再度 export しておきましょう
 
 ```tsx
 // ./src/components/index.tsx
 
-...
+// ...
 export * from "./header";
 ```
+
+そして今作った Header を App コンポーネントの方で使っていきます。
 
 ```tsx
 // ./pages/_app.tsx
 import { AppProps } from "next/app";
-import { Head, Header } from "src/components"; // <-
+import { Header } from "src/components"; // <-
 import { ThemeProvider } from "theme-ui";
 import { theme } from "src/logic/styles";
 import styled from "@emotion/styled";
@@ -345,7 +375,6 @@ import styled from "@emotion/styled";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <Head />
       <Container>
         <Header /> {/* <- */}
         <main>
@@ -365,6 +394,8 @@ const Container = styled.div`
 ```
 
 ### Add global style with Theme UI
+
+最後に body 全体のスタイルを ThemeUI の root プロパティーを通して設定しておきたいと思います。
 
 ```ts
 export const theme = makeTheme({
@@ -392,5 +423,9 @@ export const theme = makeTheme({
 ```
 
 ## Ending
+
+以上でスタイリングの設定は全部になります。いかがだったでしょうか？他にもいろいろな方法で jsx のスタイリングをする方法があるんですが、CSS Properties の設定を Theme UI に任せて emotion の styled function を通してピュアな CSS を書いていくのが今の所僕の中では一番いいと思う組み合わせです。何か意見がありましたらコメント欄にて是非教えてください。
+
+次回は PrismJS を使って markdown の code セクションをスタイリングしていこうと思うのでまだの方はぜひチャンネル登録の方お願いします。じゃあまたね〜👋
 
 ### Announcement
