@@ -74,6 +74,15 @@ import { AppProps } from "next/app";
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      {/* Homeに書いてあったHeadをもってきます */}
+      <Head>
+        <title>NextJS Blog</title>
+        <link
+          rel="icon"
+          href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/unicorn-face_1f984.png"
+        />
+      </Head>
+
       <main>
         {/* 各ページからdefault exportしているコンポーネントはこんな感じでレンダーします */}
         <Component {...pageProps} />
@@ -83,16 +92,31 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 ```
 
+そしたらホームの方でmainで囲う必要がなくなったので修正しておきます。
+
+```tsx
+// pages/index.tsx
+// ...
+export default function Home() {
+  return (
+    <div>
+      {/* ついでに分かりやすいようにHomeに変えておきますか */}
+      <h2>Home</h2>
+    </div>
+  );
+}
+```
+
 ### Setup Theme UI
 
 次に Theme UI をインストールしましょうか。
 
 ```sh
-yarn add theme-ui
+yarn add theme-ui @theme-ui/presets
 yarn add -D @types/theme-ui
 ```
 
-そして新たに s`src`dir を作ってその下に logic モジュールを作って `styles.ts` ファイルを作成したいと思います
+そして新たに `src`dir を作ってその下に logic モジュールを作って `styles.ts` ファイルを作成したいと思います
 そして styles 用のロジックを書いておくモジュールを作りたいと思います
 
 ```sh
@@ -104,43 +128,21 @@ touch ./src/logic/styles.ts
 
 ```ts
 // src/components/logic/styles.ts
+import { base } from "@theme-ui/presets";
 
-// @ts-ignore
-import { Theme, useThemeUI, ContextValue } from "theme-ui";
+export const theme = {
+  ...base,
+  styles: {
+    ...base.styles,
+  },
+};
 
-// themeオブジェクトのpropertyは公式のdocsを参考にしましょう
-// https://theme-ui.com/theme-spec
-// ThemeUIからexportされているコンポーネントを使用する場合は個々で設定した内容がcontextを通して自動で反映されます。
-// またuseThemeカスタムフックやemotionのstyledファンクションを通して使用することもできます。
-export const theme = makeTheme({
-  // デフォルトのテーマを指定しておきます
-  initialColorModeName: "light",
-  // ここでbaseテーマのカラーを上書きしていきます。
-  // 今回はbaseのままでいいのでからのオブジェクトを一旦書いておきます。
-  colors: {},
-});
-
-// 次のバージョンからTSが正式にサポートされるみたいなのですが、今のところまだ方が安定してないので回りくどい書き方をします。
-// ref: https://theme-ui.com/guides/typescript
-// https://github.com/system-ui/theme-ui/issues/668
-function makeTheme<T extends Theme>(t: T) {
-  return t;
-}
-
-export type ExactTheme = typeof theme;
-
-interface ExactContextValue extends Omit<ContextValue, "theme"> {
-  theme: typeof theme;
-}
-
-export const useTheme = (useThemeUI as unknown) as () => ExactContextValue;
 ```
 
 そして `pages/_app.tsx` に戻って ThemeProvider を通して今作った theme をプロバイドしましょう。
 
 ```tsx
 // pages/_app.tsx
-
 import { AppProps } from "next/app";
 import { ThemeProvider } from "theme-ui"; // <-
 import { theme } from "src/logic/styles"; // <-
@@ -175,7 +177,6 @@ touch babel.config.json
 
 ```json
 // babel.config.json
-
 {
   "presets": ["next/babel"],
   "plugins": ["emotion"]
@@ -190,7 +191,6 @@ touch babel.config.json
 
 ```tsx
 // pages/_app.tsx
-
 import { AppProps } from "next/app";
 import { ThemeProvider } from "theme-ui";
 import { theme } from "src/logic/styles";
@@ -211,12 +211,43 @@ export default function App({ Component, pageProps }: AppProps) {
 // here
 const Container = styled.div`
   display: flex;
-  // 前の会社で一緒だった人が何でも"flex使う人はチャラい"っていうめっちゃ偏見tweetしてたんですけど、
-  // 僕ってチャラいんですかねw 堅実な変人でありたいと思いますw
-  align-self: center;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 `;
+```
+
+```tsx
+// pages/index.tsx
+// ...
+import { Theme } from "theme-ui";
+import styled from "@emotion/styled";
+
+export default function Home() {
+  return (
+    <Container>
+      <Head>
+        <title>NextJS Blog</title>
+        <link
+          rel="icon"
+          href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/237/unicorn-face_1f984.png"
+        />
+      </Head>
+      <Title>Home</Title>
+    </Container>
+  );
+}
+
+const Container = styled.div`
+  width: 100vw;
+  max-width: 60rem;
+  align-items: center;
+`;
+
+const Title = styled.h2<{ theme: Theme }>`
+  text-align: center;
+  text-decoration: underline ${({ theme }) => theme.colors.primary};
+`;
+// ...
 ```
 
 ブラウザーの方で動いてるかチェックしましょうか。
@@ -227,34 +258,26 @@ const Container = styled.div`
 
 ````tsx
 // src/logic/styles.tsx
+import { base, dark } from "@theme-ui/presets";
+import { merge, useColorMode } from "theme-ui";
 
-// ...
-export const theme = makeTheme({
-  initialColorModeName: "light",
-  useColorSchemeMediaQuery: true, // <-
-  borderRadius: "0.25rem",
+export const theme = merge(base, {
   colors: {
-    accent: "#03DAC6",
-    background: "#fff",
-    text: "#222",
-    muted: "#73737D",
-    // ↓↓↓
+    ...base.colors,
     modes: {
       dark: {
-        background: "#111216",
-        text: "rgba(255, 255, 255, 0.88)",
-        muted: "#73737D",
-        boxShadow: "#000",
+        ...dark.colors,
       },
     },
   },
 });
+
 ```
 
 ### Custom Document component
 
 そして次にこれも`pages/_app.tsx`と同様に Next.js の特別なコンポーネントになる document コンポーネントを作りたいと思います。
-これは App コンポーネントよりも 1 階層上で、head や body など HTML タグを指定することができます。App コンポーネントは各ページ毎にレンダーされるのですが、Document はアプリケーションを通して最初に一度だけレンダーされます。
+これは App コンポーネントよりも 1 階層上で、html や bodyタグなどを指定することができます。Appと違い、サーバーサイドでしかレンダーされないので、onClickみたいなハンドラーは使えません。
 
 ```sh
 touch ./pages/_document.tsx
@@ -263,7 +286,8 @@ touch ./pages/_document.tsx
 ```tsx
 // pages/_documents.tsx
 
-import Document, { Html, Main, NextScript } from "next/document";
+// Next.jsを正しく使うにはこれらすべてのコンポーネントをレンダーする必要があります
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { InitializeColorMode } from "theme-ui";
 
 // Next.jsがexportしているDocumentコンポーネントをここでextendします
@@ -271,6 +295,7 @@ export default class extends Document {
   render() {
     return (
       <Html>
+        <Head />
         <body>
           {/*
             カラーモードを設定するために必要なコンポーネントになります。
@@ -291,36 +316,28 @@ export default class extends Document {
 次に theme を動的に切り替えるためのボタンをレンダーするために Header コンポーネントを作っていきます。
 
 ```sh
+touch ./src/components/index.ts
 touch ./src/components/header.tsx
 yarn add react-icons
 ```
 
 ```tsx
 // ./src/comopnents/header.tsx
-
-import { useCallback } from "react";
-import styled from "@emotion/styled";
+import { IconButton } from "theme-ui";
 import { IoMdSunny } from "react-icons/io";
-import { useTheme, ExactTheme } from "src/logic/styles";
+import { useToggleColorMode } from "src/logic/styles";
+import styled from "@emotion/styled";
 
 export function Header() {
-  const { theme, setColorMode } = useTheme();
-
-  const toggleColorMode = useCallback(() => {
-    setColorMode((mode) => (mode === "default" ? "dark" : "default"));
-  }, []);
+  const toggleColorMode = useToggleColorMode();
 
   return (
     <Container>
-      <Logo>NextJS Blog</Logo>
+      <h1>NextJS Blog</h1>
 
-      <Right>
-        <button onClick={toggleColorMode}>
-          <IconContainer>
-            <IoMdSunny size={28} color={theme.colors.muted} />
-          </IconContainer>
-        </button>
-      </Right>
+      <IconButton aria-label="Toggle dark mode" onClick={toggleColorMode}>
+        <IoMdSunny size={28} />
+      </IconButton>
     </Container>
   );
 }
@@ -328,37 +345,38 @@ export function Header() {
 const Container = styled.header`
   display: flex;
   flex: 1;
+  align-items: center;
   justify-content: space-between;
+  padding: 0 1rem;
 `;
 
-const Logo = styled.div`
-  font-size: 1.125rem;
-`;
+```
 
-const Right = styled.div`
-  display: flex;
-  align-items: center;
-`;
+```tsx
+// src/logic/styles.ts
+import { useCallback } from "react";
+import { base, dark } from "@theme-ui/presets";
+import { merge, useColorMode } from "theme-ui";
+// ...
+enum ColorMode {
+  Default = "default",
+  Dark = "dark",
+}
 
-// 本当はThemeUIとemotionのコンテキストが自動で型を認識してくれればいいのですが、現状うまく実装されていないのでworkaroundとしてExactTheme型を書いておきます。
-const IconContainer = styled.div<{ theme: ExactTheme }>`
-  height: 2.25rem;
-  width: 2.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0.25rem;
-  // こんな感じでTheme UIのthemeにemotionからアクセスすることができます。
-  color: ${({ theme }) => theme.colors.muted};
-`;
+export function useToggleColorMode() {
+  const [mode, setColorMode] = useColorMode();
+
+  return useCallback(() => {
+    const m = mode === ColorMode.Default ? ColorMode.Dark : ColorMode.Default;
+    setColorMode(m);
+  }, [mode]);
+}
 ```
 
 そして component モジュールとして再度 export しておきましょう
 
 ```tsx
 // ./src/components/index.tsx
-
-// ...
 export * from "./header";
 ```
 
@@ -398,15 +416,11 @@ const Container = styled.div`
 最後に body 全体のスタイルを ThemeUI の root プロパティーを通して設定しておきたいと思います。
 
 ```ts
-export const theme = makeTheme({
-  ...
+// src/logic/styles.ts
+// ...
+export const theme = merge(base, {
   styles: {
     root: {
-      transition: "background 0.25s",
-      a: {
-        color: "inherit",
-        textDecoratiog: "inherit",
-      },
       button: {
         background: "none",
         color: "inherit",
@@ -416,9 +430,16 @@ export const theme = makeTheme({
         cursor: "pointer",
         outline: "inherit",
       },
-    }
-  }
-  ...
+    },
+  },
+  colors: {
+    ...base.colors,
+    modes: {
+      dark: {
+        ...dark.colors,
+      },
+    },
+  },
 });
 ```
 
@@ -426,6 +447,6 @@ export const theme = makeTheme({
 
 以上でスタイリングの設定は全部になります。いかがだったでしょうか？他にもいろいろな方法で jsx のスタイリングをする方法があるんですが、CSS Properties の設定を Theme UI に任せて emotion の styled function を通してピュアな CSS を書いていくのが今の所僕の中では一番いいと思う組み合わせです。何か意見がありましたらコメント欄にて是非教えてください。
 
-次回は PrismJS を使って markdown の code セクションをスタイリングしていこうと思うのでまだの方はぜひチャンネル登録の方お願いします。じゃあまたね〜👋
+次回はブログの一覧ページを作ったり、記事ページへのリンクの仕方などを紹介していくのでまだの方はぜひチャンネル登録の方お願いします。じゃあまたね〜👋
 
 ### Announcement

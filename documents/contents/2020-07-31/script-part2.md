@@ -84,13 +84,13 @@ sns:
 
 ブラウザーの方で前回作ったホームを見ると右下の方に雷マークが見えるかと思います。これは Server Side Rendering を通して作られたページだよという意味です。
 
-今回は Server Side Generation を使ってページを生成したいので、そのために index.tsx を変更していきたいと思います。
+今回は Static Site Generation を使ってページを生成したいので、そのために index.tsx を変更していきたいと思います。
 
 NextJS では各ページから`getStaticProps`という function を export しておくことだけで、build 時にページを生成してくれます。
 
 なのでまずはそちらを書いていきたいと思います。
 
-### Server side generation
+### Static Site Generation
 
 ```tsx
 // pages/index.tsx
