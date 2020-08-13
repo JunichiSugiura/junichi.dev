@@ -1,7 +1,7 @@
 ---
 title: Next.jsで作る技術ブログ [Part2 - SSG + ルーティング]
 description: >
-  今回はサーバーサイドレンダリングに代わってSSG(サーバーサイドジェネレーション)を使ってホームとブログページを作っていきます。MDXで書かれたブログ記事の配置方法からルーティング、フロントマッターのパース、Markdownをhtmlに変換する方法までを一緒に開発していきます。💻
+  今回はサーバーサイドレンダリングに代わってSSG(スタティックサイトジェネレーション)を使ってホームとブログページを作っていきます。MDXで書かれたブログ記事の配置方法からルーティング、フロントマッターのパース、Markdownをhtmlに変換する方法までを一緒に開発していきます。💻
 
   次回はTheme UIとemotionを使ったページのスタイリングとDark Themeの設定をしていこうと思っているのでお楽しみに💪
 
@@ -65,12 +65,12 @@ playlists:
   - Next.jsで作る技術ブログ [チュートリアル]
 endScreen:
   elements:
-    - "Video: Best for viewer" #TODO: "Video: 2020-07-31-part3"
+    - "Video: 2020-07-31-part3"
     - "Subscribe: Junichi"
     - "Video: Recently uploaded"
 sns:
   post: 今週は"技術ブログチュートリアル"のPart2としてSSGを使ったページの生成方法から記事ページのルーティング、MarkdownやFront Matterのパース方法などを説明していきます💻 チャンネル登録まだの方はぜひお願いします🔔🤟#プログラミング #エンジニア https://youtu.be/MzQZo6p4Qno
-  twitter:
+  twitter: https://twitter.com/JunichiSugiura/status/1291599958945042434?s=20
 ---
 
 ## Outline

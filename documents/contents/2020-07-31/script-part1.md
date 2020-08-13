@@ -70,7 +70,7 @@ endScreen:
     - "Video: Best for viewer"
 sns:
   post: "技術ブログチュートリアル"のPart1を公開しました！Next.jsの初期設定からTypeScript、linterの設定、そしてheadタグのセットアップまでを紹介していきます💻 参考になったという方は👍とチャンネル登録🔔お願いします🙏 #プログラミング #エンジニア https://youtu.be/5obR4PzQObI
-  twitter:
+  twitter: https://twitter.com/JunichiSugiura/status/1289063241264570368?s=20
 ---
 
 ## Outline
