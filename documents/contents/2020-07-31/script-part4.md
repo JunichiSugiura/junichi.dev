@@ -1,6 +1,32 @@
 ---
 title: Next.jsで作る技術ブログ [Part4 - ダークモード]
 description: >
+  前回に引き続きTheme UIとEmotionを通してページのスタイリングをしていき、ダークモードのセットアップとIconButtonコンポーネントとreact-iconsを使ってToggleボタンの実装までを行います。
+  次回はブログの一覧ページを作ったり、記事ページへのリンクの仕方などを紹介していくのでお楽しみに👋
+
+  質問等ございましたら、コメント欄にてご連絡ください 😉
+
+  ----- 📝 詰まったらこちらを参考にしてみてください -----
+  チュートリアルのソースコード: https://github.com/JunichiSugiura/tutorials/tree/main/nextjs-blog
+  Emotion Styled Components: https://emotion.sh/docs/styled
+  Theme UI: https://theme-ui.com/home
+  React Icons: https://react-icons.github.io/react-icons/
+
+  #毎週金曜14時投稿 #プログラミング #チュートリアル
+
+  ------------- 📌 Chapters -------------
+  0:00 Theme UIのカラーモード
+  0:00 dark プリセット
+  0:00 themeの組み合わせ方
+  0:00 Documentsコンポーネント作成
+  0:00 InitializeColorModeコンポーネント
+  0:00 Headerコンポーネント作成
+  0:00 IconButtonコンポーネント
+  0:00 React Icons
+  0:00 カラーモードをtoggleするカスタムhooks
+  0:00 グローバルスタイル
+  0:00 Headerのスタイル
+  0:00 まとめ
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
@@ -37,6 +63,7 @@ tags:
   - CSS
   - スタイリング
   - ダークモード
+  - ReactIcons
 link: https://youtu.be/VIDEO_ID
 publishedAt: 2020-08-15 05:00:00
 playlists:
@@ -47,8 +74,8 @@ endScreen:
     - "Subscribe: Junichi"
     - "Video: Recently uploaded"
 sns:
-  post:
-  twitter:
+  post: 昨日の"技術ブログチュートリアル"のPart3に引き続きPart4をUpしました🎥切り替え時にちらつかないダークモードを実装していきます💁‍♂️ #プログラミング #エンジニア #ユーチューブ #動画
+  twitter: https://twitter.com/JunichiSugiura/status/1294136670766342145?s=20
 ---
 
 ### Add dark mode
