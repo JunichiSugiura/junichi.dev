@@ -70,7 +70,7 @@ playlists:
   - Next.jsで作る技術ブログ [チュートリアル]
 endScreen:
   elements:
-    - "Video: Best for viewer" #TODO "Video: 2020-07-31-part4"
+    - "Video: 2020-07-31-part4"
     - "Subscribe: Junichi"
     - "Video: Recently uploaded"
 sns:

@@ -16,17 +16,17 @@ description: >
 
   ------------- 📌 Chapters -------------
   0:00 Theme UIのカラーモード
-  0:00 dark プリセット
-  0:00 themeの組み合わせ方
-  0:00 Documentsコンポーネント作成
-  0:00 InitializeColorModeコンポーネント
-  0:00 Headerコンポーネント作成
-  0:00 IconButtonコンポーネント
-  0:00 React Icons
-  0:00 カラーモードをtoggleするカスタムhooks
-  0:00 グローバルスタイル
-  0:00 Headerのスタイル
-  0:00 まとめ
+  0:23 dark プリセット
+  0:30 themeの組み合わせ方
+  1:28 Documentsコンポーネント作成
+  3:14 InitializeColorModeコンポーネント
+  3:52 Headerコンポーネント作成
+  4:37 IconButtonコンポーネント
+  5:00 React Icons
+  6:14 カラーモードをtoggleするカスタムhooks
+  9:29 グローバルスタイル
+  10:21 Headerのスタイル
+  12:24 まとめ
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
@@ -64,8 +64,8 @@ tags:
   - スタイリング
   - ダークモード
   - ReactIcons
-link: https://youtu.be/VIDEO_ID
-publishedAt: 2020-08-15 05:00:00
+link: https://youtu.be/gUAZzG_QRSk
+publishedAt: 2020-08-15 01:00:00
 playlists:
   - Next.jsで作る技術ブログ [チュートリアル]
 endScreen:
@@ -74,7 +74,7 @@ endScreen:
     - "Subscribe: Junichi"
     - "Video: Recently uploaded"
 sns:
-  post: 昨日の"技術ブログチュートリアル"のPart3に引き続きPart4をUpしました🎥切り替え時にちらつかないダークモードを実装していきます💁‍♂️ #プログラミング #エンジニア #ユーチューブ #動画
+  post: 昨日の"技術ブログチュートリアル"のPart3に引き続きPart4をUpしました🎥切り替え時にちらつかないダークモードを実装していきます💁‍♂️ #Nextjs #プログラミング #エンジニア #ユーチューブ #動画 https://youtu.be/gUAZzG_QRSk
   twitter: https://twitter.com/JunichiSugiura/status/1294136670766342145?s=20
 ---
 
