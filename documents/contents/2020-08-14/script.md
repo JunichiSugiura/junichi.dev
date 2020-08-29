@@ -1,11 +1,31 @@
 ---
-title:
-  - 成長しすぎたテック企業
-  - 5時間尋問されたテック企業のCEOたち
+title: 5時間半に及ぶ"GAFA"への尋問。今更本気出すアメリカ議会(反トラスト公聴会まとめ)
 description: >
+  7月29日に”GAFA”のCEO4人を集めて行われた反トラスト(日: 独占禁止法)にまつわる公聴会についてまとめてみました。(若干イジってます)
+  膨大な権力を使った競合他社への圧力、市場独占に関して議論されています。
+
+  彼らの運営するサービスは僕たちの日常生活において必要不可欠なインフラとなっています。
+  もちろん資本主義の世界においてはうまくビジネスを回して会社として成長していくことは尊重されるべきことですが、ここまで大きくなってくると競合他社が参入する余地がなくなってオープンマーケットの仕組みが成り立たなくなってきています。
+  国家をも超えかねない4社の権力が１年間に渡る議会の調査で明るみになった今、皆さんはどう考えますか？
+
+  公聴会の元動画: https://youtu.be/WBFDQvIrWYM
 
   ------------- 📌 Chapters -------------
-  0:00
+  0:00 概要
+  1:46 下院司法委員会
+  2:20 参加者
+  2:37 見どころ
+  4:11 議会の焦点
+  6:43 尋問内容
+  6:51 Amazon
+  9:30 Apple
+  11:02 Facebook
+  14:05 Google
+  17:03 面白かった場面
+  17:11 共和党議員のドラマ
+  18:17 Bezosがかわいい
+  19:43 今後の流れ
+  20:53 個人的な感想
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
@@ -24,8 +44,25 @@ description: >
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
 
   ---------- 🙏 ATTRIBUTION ----------
+  By Seattle City Council from Seattle - https://www.flickr.com/photos/seattlecitycouncil/39074799225/, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=68400532
+  By Austin Community College - https://www.flickr.com/photos/accdistrict/35992738453/, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=91537578
+  By Anthony Quintano from Westminster, United States - Mark Zuckerberg F8 2019 Keynote, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=90784061
+  By World Economic Forum - An Insight, An Idea with Sundar Pichai | DAVOS 2020, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=87519623
+  By Source, Fair use, https://en.wikipedia.org/w/index.php?curid=59548123
+  By Tpdwkouaa - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=48846417
+  By Christopher Michel from San Francisco, USA - Kevin Systrom, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=70110510
+  By Source (WP:NFCC#4), Fair use, https://en.wikipedia.org/w/index.php?curid=64267016
+  https://techcrunch.com/2014/08/25/amazon-will-officially-acquire-twitch/
+  https://www.theverge.com/2020/8/13/21367963/epic-fortnite-legal-complaint-apple-ios-app-store-removal-injunctive-relief
+  https://twitter.com/reillystyley/status/1288539851877318657
+  https://www.bloomberg.com/billionaires/
+  https://www.theverge.com/2020/8/11/21363692/google-genius-lyrics-lawsuit-scraping-copyright-yelp-antitrust-competition
+  https://techcrunch.com/2014/08/25/amazon-will-officially-acquire-twitch/
+  https://twitter.com/RampCapitalLLC/status/1288618874645221380
+  https://www.reddit.com/r/zuckmemes/comments/768hur/zuck_wants_data/?utm_source=share&utm_medium=web2x&context=3
 thumbnailKeywords:
-  -
+  - GAFA
+  - 強すぎ?
 tags:
   # - プログラミング
   # - エンジニア
@@ -35,19 +72,59 @@ tags:
   # - テック
   # - 海外就職
   # - キャリア
-  -
-link: https://youtu.be/VIDEO_ID
+  - 反トラスト
+  - 独占禁止法
+  - 独禁法
+  - 競合
+  - GAFA
+  - テック企業
+  - Amazon
+  - Apple
+  - Google
+  - Facebook
+  - Jeff Bezos
+  - Tim Cook
+  - Mark Zuckerberg
+  - Sunder Pichai
+  - Instagram
+  - Pinterest
+  - Snapchat
+  - Yelp
+  - Genius
+  - App Store
+  - 権力
+  - パワー
+  - データ
+  - 買収
+  - 価格破壊
+  - プラットフォーム
+  - プラットフォーマー
+  - 共和党
+  - トランプ
+  - トランプ大統領
+  - アメリカ議会
+  - 下院司法委員会
+  - 反トラスト小委員会
+  - テックニュース
+  - ニュース
+link: https://youtu.be/e2CE77-zQAQ
 publishedAt: YYYY-MM-DD 05:00:00
 playlists:
   -
 endScreen:
   elements:
-  　- "Video: https://youtu.be/WBFDQvIrWYM"
-    - "Video: Best for viewer"
     - "Subscribe: Junichi"
+    - "Video: Best for viewer"
 sns:
   post:
-  twitter:
+  twitter: >
+  先月アメリカで行われた反トラストにまつわる公聴会、皆さんご覧になりましたか？🇺🇸 
+
+  "GAFA"のCEO4人がアメリカ議会から市場独占に関して５時間半尋問されるというかなりボリュームのある内容だったので、所々掻い摘んで動画にまとめてみました
+
+  イジり甲斐があって楽しいw
+
+  https://youtu.be/e2CE77-zQAQ
 ---
 
 ### Intro
