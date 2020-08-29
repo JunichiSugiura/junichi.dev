@@ -108,7 +108,7 @@ tags:
   - テックニュース
   - ニュース
 link: https://youtu.be/e2CE77-zQAQ
-publishedAt: YYYY-MM-DD 05:00:00
+publishedAt: 2020-08-28 05:00:00
 playlists:
   -
 endScreen:
