@@ -67,11 +67,12 @@ tags:
 link: https://youtu.be/\<video-id\>
 publishedAt: YYYY-MM-DD 05:00:00
 playlists:
-  - Tutorials
+  - Next.jsで作る技術ブログ [チュートリアル]
 endScreen:
   elements:
-    - "Video: Best for viewer"
+    - "Video: 2020-07-31-part1"
     - "Subscribe: Junichi"
+    - "Video: Best for viewer"
 sns:
   post: >
     今週の動画は新しくYouTubeと共に運営していくことに決めた技術ブログについてです。技術ブログを作っていくにあたって考慮した点や、実際に使うことに決めたツールについて紹介します。💻 #エンジニア #Nextjs

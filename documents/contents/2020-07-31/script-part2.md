@@ -1,16 +1,27 @@
 ---
-title:
+title: Next.jsで作る技術ブログ [Part2 - SSG + ルーティング]
 description: >
+  今回はサーバーサイドレンダリングに代わってSSG(スタティックサイトジェネレーション)を使ってホームとブログページを作っていきます。MDXで書かれたブログ記事の配置方法からルーティング、フロントマッターのパース、Markdownをhtmlに変換する方法までを一緒に開発していきます。💻
+
+  次回はTheme UIとemotionを使ったページのスタイリングとDark Themeの設定をしていこうと思っているのでお楽しみに💪
+
+  質問等ございましたら、コメント欄にてご連絡ください 😉
+
+  ----- 📝 詰まったらこちらを参考にしてみてください -----
+  チュートリアルのソースコード: https://github.com/JunichiSugiura/tutorials/tree/main/nextjs-blog
+
+  #毎週金曜14時投稿 #プログラミング #チュートリアル
 
   ------------- 📌 Chapters -------------
   0:00 今回やること
-  0:50 index.tsxの編集
-  1:25 index.md テンプレートについて
-  4:27 next-mdx-remote と grey-matterのインストール
-  6:15 title.tsx の設定
-  9:17 front-matterの設定
-  18:55 jxsの設定(レイアウトの設定)
-  
+  0:13 SSG (Server Side Generation)
+  0:36 getStaticProps
+  2:00 ブログ記事(.md)の準備
+  4:13 next-mdx-remoteとgray-matterのインストール
+  5:57 ルーティング
+  10:27 dir名からpathを生成
+  14:32 Front Matterをパース
+  18:48 マークダウンをhtmlに変換
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
@@ -29,8 +40,6 @@ description: >
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
 
   ---------- 🙏 ATTRIBUTION ----------
-thumbnailKeywords:
-  -
 tags:
   # - プログラミング
   # - エンジニア
@@ -40,18 +49,28 @@ tags:
   # - テック
   # - 海外就職
   # - キャリア
-  -
-link: https://youtu.be/VIDEO_ID
-publishedAt: 2020-07-31 05:00:00
+  - ブログ
+  - 技術ブログ
+  - 初期設定
+  - チュートリアル
+  - TypeScript
+  - React
+  - Nextjs
+  - next-mdx-remote
+  - gray-matter
+  - mdx
+link: https://youtu.be/MzQZo6p4Qno
+publishedAt: 2020-08-07 05:00:00
 playlists:
-  -
+  - Next.jsで作る技術ブログ [チュートリアル]
 endScreen:
   elements:
-    - "Video: Best for viewer"
+    - "Video: 2020-07-31-part3"
     - "Subscribe: Junichi"
+    - "Video: Recently uploaded"
 sns:
-  post:
-  twitter:
+  post: 今週は"技術ブログチュートリアル"のPart2としてSSGを使ったページの生成方法から記事ページのルーティング、MarkdownやFront Matterのパース方法などを説明していきます💻 チャンネル登録まだの方はぜひお願いします🔔🤟#プログラミング #エンジニア https://youtu.be/MzQZo6p4Qno
+  twitter: https://twitter.com/JunichiSugiura/status/1291599958945042434?s=20
 ---
 
 ## Outline
@@ -63,15 +82,15 @@ sns:
 
 ## Main
 
-ブラウザーの方で前回作ったホームを見ると右下の方に雷マークが見えるかと思います。これはServer Side Renderingを通して作られたページだよという意味です。
+ブラウザーの方で前回作ったホームを見ると右下の方に雷マークが見えるかと思います。これは Server Side Rendering を通して作られたページだよという意味です。
 
-今回はServer Side Generationを使ってページを生成したいので、そのためにindex.tsxを変更していきたいと思います。
+今回は Static Site Generation を使ってページを生成したいので、そのために index.tsx を変更していきたいと思います。
 
-NextJSでは各ページから`getStaticProps`というfunctionをexportしておくことだけで、build時にページを生成してくれます。
+NextJS では各ページから`getStaticProps`という function を export しておくことだけで、build 時にページを生成してくれます。
 
 なのでまずはそちらを書いていきたいと思います。
 
-### Server side generation
+### Static Site Generation
 
 ```tsx
 // pages/index.tsx
@@ -84,18 +103,19 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 ```
-いくつかポイントととしては、`props`を返すことによってdefaultとしてexportしているコンポーネントに必要なpropsを渡すことができます。
-あと`getStaticProps`はasync functionになっているので外部からAPI requestなどを通して必要な情報をfetchしてくる場合にも便利になってます。
+
+いくつかポイントととしては、`props`を返すことによって default として export しているコンポーネントに必要な props を渡すことができます。
+あと`getStaticProps`は async function になっているので外部から API request などを通して必要な情報を fetch してくる場合にも便利になってます。
 
 ### Create Blog pages
 
-今度はブログページの方を作っていきますか。参考にできる文章があるといいので、reduxのクリエイターとして有名なDan Abramovさんのブログから記事を借りてきたいと思います。彼のブログはGatsbyJSによって作られているんですが、記事自体はmdファイルとしてGitHubの方に上がっているので、そこからコピーしてきたいと思います。
+今度はブログページの方を作っていきますか。参考にできる文章があるといいので、redux のクリエイターとして有名な Dan Abramov さんのブログから記事を借りてきたいと思います。彼のブログは GatsbyJS によって作られているんですが、記事自体は md ファイルとして GitHub の方に上がっているので、そこからコピーしてきたいと思います。
 
 [overreacted.io/pages](https://github.com/gaearon/overreacted.io/tree/master/src/pages)
 
-彼の場合はpages以下に記事毎にディレクトリを作っていて、その中で英語記事や翻訳記事、あとは記事の中で使われている画像ファイルなどが入っています。
+彼の場合は pages 以下に記事毎にディレクトリを作っていて、その中で英語記事や翻訳記事、あとは記事の中で使われている画像ファイルなどが入っています。
 
-今回はこの一番上の記事をお借りしましょうか。エディターに戻って`blog/`ディレクトリ以下に同じ用に記事ごとのディレクトリを作ります。そして日本語記事をrawページからコピーしてきます。
+今回はこの一番上の記事をお借りしましょうか。エディターに戻って`blog/`ディレクトリ以下に同じ用に記事ごとのディレクトリを作ります。そして日本語記事を raw ページからコピーしてきます。
 
 ```sh
 mkdir -r ./pages/blog/a-complete-guide-to-useeffect
@@ -111,11 +131,11 @@ This article was originally posted [here](https://raw.githubusercontent.com/gaea
 Thanks, Dan for open sourcing the article.
 ```
 
-次にブログのページを作っていきたいんですけど、mdファイルをmdxとしてReact側に読み込むために２つライブラリーをインストールしたいと思います。
+次にブログのページを作っていきたいんですけど、md ファイルを mdx として React 側に読み込むために２つライブラリーをインストールしたいと思います。
 
-1つ目は[gray-matter](https://github.com/jonschlinkert/gray-matter)というやつで、これはfrontmatter（mdファイルの一番上に書いてあるmeta情報ですね）、これをparseするために使います。Gatsbyでもこのライブラリーが使われているみたいです。
+1 つ目は[gray-matter](https://github.com/jonschlinkert/gray-matter)というやつで、これは frontmatter（md ファイルの一番上に書いてある meta 情報ですね）、これを parse するために使います。Gatsby でもこのライブラリーが使われているみたいです。
 
-そして記事自体をparseしてjsxに変換するするためにNextJSの方から公式で[@next/mdx](https://github.com/vercel/next.js/tree/canary/packages/next-mdx)っていうwebpackのプラグインがあるんですけど、記事が多くなってきた時に全記事データをcacheするためにメモリーをすごい消費したりとか、拡張性がなくて、mdファイルを好きなように配置したりとか、外部のサーバーに置いたりみたいなことが難しいので、今回は[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)っていうTerraformで有名なHashiCorpが作っているプラグインを使っていきたいと思います。ちなみに今個人的にこのライブラリーのTypeScript化に向けてPRを出したので、次のバージョンくらいからは型情報も入ってもっと使いやすくなると思います。
+そして記事自体を parse して jsx に変換するするために NextJS の方から公式で[@next/mdx](https://github.com/vercel/next.js/tree/canary/packages/next-mdx)っていう webpack のプラグインがあるんですけど、記事が多くなってきた時に全記事データを cache するためにメモリーをすごい消費したりとか、拡張性がなくて、md ファイルを好きなように配置したりとか、外部のサーバーに置いたりみたいなことが難しいので、今回は[next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)っていう Terraform で有名な HashiCorp が作っているプラグインを使っていきたいと思います。ちなみに今個人的にこのライブラリーの TypeScript 化に向けて PR を出したので、次のバージョンくらいからは型情報も入ってもっと使いやすくなると思います。
 
 じゃあまずはこの２つをインストールしましょうか。
 
@@ -125,7 +145,7 @@ yarn add next-mdx-remote gray-matter
 
 で、次にやらないといけないことなんですけど、
 
-まずビルド時にNextJSの方に各記事へのルーティングに必要なpathsが何があるのかということを伝えるために、カギ括弧で`[title].tsx`っていうファイルを作って、その中から`getStaticPaths`というfunctionをexportしていきます。俗に言うダイナミックルーティングっていうやつです。
+まずビルド時に NextJS の方に各記事へのルーティングに必要な paths が何があるのかということを伝えるために、カギ括弧で`[title].tsx`っていうファイルを作って、その中から`getStaticPaths`という function を export していきます。俗に言うダイナミックルーティングっていうやつです。
 
 まずは`[title].tsx`を作って、
 
@@ -133,7 +153,7 @@ yarn add next-mdx-remote gray-matter
 touch ./pages/blog/\[title\].tsx
 ```
 
-この中に一旦ざっくりしたfunctionを書いちゃいますね。あとでまとめて説明します。
+この中に一旦ざっくりした function を書いちゃいますね。あとでまとめて説明します。
 
 ```tsx
 // pages/blog/[title].tsx
@@ -149,18 +169,18 @@ export default function Post({ title }: { title: string }) {
 const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
-    fallback: false
-  }
-}
+    fallback: false,
+  };
+};
 
-export const getStaticProps: GetStaticProps = async ({ params: { title }　}) => {
+export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
   return {
     props: params,
   };
 };
 ```
 
-はい、ということでコードがかけたので、説明していくと、まず、pathsの中には`title`propertyが入ったparamsオブジェクトを入れていきます。それがファイル名のtitleに渡って、blog/のあとに続くpathを生成してくれます。
+はい、ということでコードがかけたので、説明していくと、まず、paths の中には`title`property が入った params オブジェクトを入れていきます。それがファイル名の title に渡って、blog/のあとに続く path を生成してくれます。
 
 例えばここに、
 
@@ -172,64 +192,66 @@ const getStaticPaths: GetStaticPaths = async () => {
     paths: [
       {
         params: {
-          title: "投稿1"
-        }
+          title: "投稿1",
+        },
       },
       {
         params: {
-          title: "投稿2"
-        }
+          title: "投稿2",
+        },
       },
       {
         params: {
-          title: "投稿3"
-        }
-      }
+          title: "投稿3",
+        },
+      },
     ],
-    fallback: false
-  }
-}
+    fallback: false,
+  };
+};
 ```
 
 と書いた場合、ブラウザーの方で`/blog/投稿1`にアクセスすると、ちゃんとページが生成されているのが、確認できるかと思います。
 
-そして、ちゃんとページ内のタイトルもかわってますよね。これはgetStaticPropsの方で、引数の中から渡ってきたparamsからtitleをdestructuringして、propsとしてリターンすることで一番上のPostコンポーネントに渡してあげてるからです。
+そして、ちゃんとページ内のタイトルもかわってますよね。これは getStaticProps の方で、引数の中から渡ってきた params から title を destructuring して、props としてリターンすることで一番上の Post コンポーネントに渡してあげてるからです。
 
-なので次は、getStaticPaths内で、returnの前にローカルのmdファイルを全て読みにいって、pathsにarrayとしてつめてリターンするようなコードを書いていきたいと思います。
+なので次は、getStaticPaths 内で、return の前にローカルの md ファイルを全て読みにいって、paths に array としてつめてリターンするようなコードを書いていきたいと思います。
 
-### Create params based on local *.md files
+### Create params based on local \*.md files
 
 ```tsx
 // pages/blog/[title].tsx
 
 // まずは
-const blogDirPath = path.join("pages", "blog")
+const blogDirPath = path.join("pages", "blog");
 
 function getPostAll() {
-  return fs
-     // `blog/` 以下のdirectory entryをとってくる
-     // { withFileTypes: true } によってdirectory名に加えてファイルの情報も入ったオブジェクトが返ってくる
-    .readdirSync(blogDirPath, { withFileTypes: true })
-    // subdirectoryのみをfilter
-    .filter((dir) => dir.isDirectory())
-    // 全てのファイルを読み込んで一つのarrayに並べる
-    .flatMap((dirEnt) => {
-      const dirPath = path.join(blogDirPath, dirEnt.name);
-      return fs
-        .readdirSync(dirPath)
-        .map((fileName) => fs.readFileSync(path.join(dirPath, fileName)));
-    })
-    // gray-matterを使ってfrontmatter(mdファイルの最初の部分)をparseする
-    // origは扱いづらいし使わないので外す
-    .map((f) => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { orig, ...post } = matter(f);
-      return post;
-    });
+  return (
+    fs
+      // `blog/` 以下のdirectory entryをとってくる
+      // { withFileTypes: true } によってdirectory名に加えてファイルの情報も入ったオブジェクトが返ってくる
+      .readdirSync(blogDirPath, { withFileTypes: true })
+      // subdirectoryのみをfilter
+      .filter((dir) => dir.isDirectory())
+      // 全てのファイルを読み込んで一つのarrayに並べる
+      .flatMap((dirEnt) => {
+        const dirPath = path.join(blogDirPath, dirEnt.name);
+        return fs
+          .readdirSync(dirPath)
+          .map((fileName) => fs.readFileSync(path.join(dirPath, fileName)));
+      })
+      // gray-matterを使ってfrontmatter(mdファイルの最初の部分)をparseする
+      // origは扱いづらいし使わないので外す
+      .map((f) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { orig, ...post } = matter(f);
+        return post;
+      })
+  );
 }
 ```
 
-これを使ってgetStaticPathsを書き換えましょう
+これを使って getStaticPaths を書き換えましょう
 
 ```tsx
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -244,7 +266,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 ```
 
-そしてgetStaticPropsの方では一旦そのままpost contentとdataを渡したいと思います。
+そして getStaticProps の方では一旦そのまま post content と data を渡したいと思います。
 
 ```tsx
 export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
@@ -258,7 +280,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
 };
 ```
 
-そしてPostコンポーネントの方でrenderしてみましょっか
+そして Post コンポーネントの方で render してみましょっか
 
 ```tsx
 interface Props {
@@ -283,22 +305,20 @@ export default function Post({ content, data }: Props) {
 ```
 
 ブラウザーで見てみると、
-こんな感じでちゃんとfrontmatterとcontentが表示されてますね。
-ただcontentはただのstringを貼ってるだけで、これだとstyling難しいので、しっかりとjsxにformatしてrenderしたいと思います。next-mdx-remoteの出番ですよね。
+こんな感じでちゃんと frontmatter と content が表示されてますね。
+ただ content はただの string を貼ってるだけで、これだと styling 難しいので、しっかりと jsx に format して render したいと思います。next-mdx-remote の出番ですよね。
 
 ```tsx
 // ...
-import renderToString from "next-mdx-remote/render-to-string"
+import renderToString from "next-mdx-remote/render-to-string";
 
 // ...
 
 export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
-  const { content, data } = getPostAll().find(
-    (m) => m.data.title === title
-  );
+  const { content, data } = getPostAll().find((m) => m.data.title === title);
 
   // mdxで書かれたstring contentをjsx stringに変換します。
-  const source = await renderToString(content)
+  const source = await renderToString(content);
 
   return {
     props: { source, data },
@@ -308,7 +328,7 @@ export const getStaticProps: GetStaticProps = async ({ params: { title } }) => {
 
 ```tsx
 // ...
-import hydrate from "next-mdx-remote/hydrate"
+import hydrate from "next-mdx-remote/hydrate";
 
 interface Props {
   source: Parameters<hydrate>[0];
