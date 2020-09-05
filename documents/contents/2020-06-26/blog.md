@@ -25,7 +25,7 @@ cta:
 
 翌日12日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
 
-https://twitter.com/natfriedman/status/1271253144442253312
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s a great idea and we are already working on this! cc <a href="https://twitter.com/billygriffin22?ref_src=twsrc%5Etfw">@billygriffin22</a></p>&mdash; Nat Friedman (@natfriedman) <a href="https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw">June 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 そこで候補として上がったワードが"main"です。そこで実際にgithubのデフォルトブランチをmainに移して見たいと思います！
 
@@ -35,7 +35,7 @@ https://twitter.com/natfriedman/status/1271253144442253312
 
 - ローカルで main branch を作成して checkout
 - ローカルの main branch を remote に push
-- 既存の Pull Request 全ての base branch を main に変更
+- 既存の Pull Requestがある場合は全ての base branch を main に変更
 - GitHub の設定から default branch を main に変更
 - remote から"master" branch を削除
 
@@ -58,8 +58,6 @@ git branch
 git push origin main
 ```
 
-### 既存の Pull Request 全ての base branch を main に変更
-
 Pull Request がすでにある場合は、それに飛んでマージされるはずのブランチを main に変更しておきましょう。
 
 
@@ -76,13 +74,12 @@ Pull Request がすでにある場合は、それに飛んでマージされる�
 git branch -d master
 git push -d origin master
 ```
+これでデフォルトのブランチ名をmainにする作業は終わりです。
 
 ## そもそもなぜデフォルトのブランチ名に"master"が使われるのか
 tech業界では歴史的に"master/slave"という概念を使うことが多くあります。こちらの[Wikipedia](https://en.wikipedia.org/wiki/Master/slave_(technology))を参照してください。
 
 これはtech業界に限った話ではなく音楽業界や映像業界でもこれらの言葉が一般的に使われてきました。
-
-例えば僕もYouTubeの動画編集をしている時に最終的にプラットフォームにアップロードするファイルを書き出すことを"マスタリング"と言ったりします。
 
 ### 業界用語への疑問視
 
