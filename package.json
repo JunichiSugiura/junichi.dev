@@ -6,11 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-<<<<<<< HEAD
     "lint": "eslint . --ext .ts,.tsx",
-=======
     "lint": "eslint . --ext .js,.ts,.tsx",
->>>>>>> c636b94c2f70adacaff7080f23a661cb98f882fa
     "new:script": "./scripts/new-script"
   },
   "dependencies": {
