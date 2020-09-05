@@ -1,5 +1,6 @@
 ---
 title: Markdownテスト
+slug: markdown-test
 videoId: GRL-kF088Y0
 date: "2020-07-12"
 spoiler: >

@@ -1,18 +1,22 @@
 import { AppProps } from "next/app";
 import styled from "@emotion/styled";
-import { Header, Head } from "src/components";
+import { Header, Head, Footer } from "src/components";
 import { theme, ExactTheme } from "src/logic/styles";
 import { ThemeProvider } from "theme-ui";
+import { DefaultSeo } from "next-seo";
+import { seo } from "src/logic/seo";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head />
+      <DefaultSeo {...seo} />
       <Container>
         <Header />
         <main>
           <Component {...pageProps} />
         </main>
+        <Footer />
       </Container>
     </ThemeProvider>
   );
@@ -20,12 +24,13 @@ export default function App({ Component, pageProps }: AppProps) {
 
 const Container = styled.div<{ theme: ExactTheme }>`
   display: flex;
-  align-self: center;
   flex-direction: column;
-  align-items: stretch;
+  align-self: center;
+  align-items: center;
+  width: 100vw;
   font-family: ${({ theme }) => theme.fontFamily.sansSerif};
 
-  @media screen and (min-width: ${({theme}) => theme.breakpoints[1]}) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     width: ${({ theme }) => theme.breakpoints[1]};
   }
 `;

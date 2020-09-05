@@ -1,5 +1,6 @@
 ---
 title: GitHub デフォルトbranchをmasterからmainに変更する方法と"理由"
+slug: how-to-change-default-branch-to-main-and-why
 videoId: GRL-kF088Y0
 date: "2020-06-26"
 spoiler: Githubのチュートリアル
@@ -62,6 +63,7 @@ git push origin main
 ### 既存の Pull Request 全ての base branch を main に変更
 
 Pull Request がすでにある場合は、それに飛んでマージされるはずのブランチを main に変更しておきましょう。
+
 
 ### GitHub の設定から default branch を main に変更
 

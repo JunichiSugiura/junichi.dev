@@ -20,8 +20,10 @@ description: >
   # 現在はフランスのパリに住んでいます。
   # 普段は暗号通貨のハードウェアウォレットを作っています。
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
+
+  ---------- 🙏 ATTRIBUTION ----------
 thumbnailKeywords:
-  - 
+  -
 tags:
   # - プログラミング
   # - エンジニア
@@ -31,11 +33,11 @@ tags:
   # - テック
   # - 海外就職
   # - キャリア
-  - 
-link: https://youtu.be/<video-id>
+  -
+link: https://youtu.be/VIDEO_ID
 publishedAt: YYYY-MM-DD 05:00:00
 playlists:
-  - 
+  -
 endScreen:
   elements:
     - "Video: Best for viewer"

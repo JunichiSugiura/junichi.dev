@@ -9,7 +9,7 @@ export function Posts({ posts }: { posts: PostData[] }) {
   return (
     <Container>
       {posts.map((p) => (
-        <Link key={p.title} href={`/blog/${p.title}`}>
+        <Link key={p.title} href={`/blog/${p.slug}`}>
           <Article>
             <Image src={getThumbnailLink(p.videoId)} />
             <Data>
@@ -28,7 +28,7 @@ const pageVerticalPadding = "2rem";
 
 const Container = styled.div`
   padding: 0 ${pageVerticalPadding};
-`
+`;
 
 const Article = styled.article<{ theme: ExactTheme }>`
   margin: 2rem 0;
@@ -48,7 +48,7 @@ const Article = styled.article<{ theme: ExactTheme }>`
   }
 `;
 
-const Data = styled.div<{theme: ExactTheme}>`
+const Data = styled.div<{ theme: ExactTheme }>`
   display: flex;
   flex-direction: column;
 
@@ -57,7 +57,7 @@ const Data = styled.div<{theme: ExactTheme}>`
   }
 `;
 
-const Title = styled.h2<{ theme: ExactTheme }>`
+const Title = styled.h3<{ theme: ExactTheme }>`
   text-decoration: underline ${({ theme }) => theme.colors.accent};
   font-family: ${({ theme }) => theme.fontFamily.sansSerif};
   font-size: 1.75rem;
@@ -75,9 +75,9 @@ const Spoiler = styled.p`
   margin 1rem 0;
 `;
 
-const imageMarginRight = "1rem"
+const imageMarginRight = "1rem";
 
-const videoAspectRatio = 9 / 16
+const videoAspectRatio = 9 / 16;
 
 const Image = styled.div<{ src: string; theme: ExactTheme }>`
   align-self: center;
@@ -94,25 +94,19 @@ const Image = styled.div<{ src: string; theme: ExactTheme }>`
     margin-right: ${imageMarginRight};
     flex: 1;
     height: calc(
-      (
-        (
-          100vw
-            - ${pageVerticalPadding} * 2
-            - ${imageMarginRight}
-        ) / 3
-      ) * ${videoAspectRatio}
+      ((100vw - ${pageVerticalPadding} * 2 - ${imageMarginRight}) / 3) *
+        ${videoAspectRatio}
     );
   }
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints[1]}) {
     height: calc(
       (
-        (
-          ${({ theme }) => theme.breakpoints[1]}
-            - ${pageVerticalPadding} * 2
-            - ${imageMarginRight}
-        ) / 3
-      ) * ${videoAspectRatio}
+          (
+              ${({ theme }) => theme.breakpoints[1]} - ${pageVerticalPadding} *
+                2 - ${imageMarginRight}
+            ) / 3
+        ) * ${videoAspectRatio}
     );
   }
 `;
