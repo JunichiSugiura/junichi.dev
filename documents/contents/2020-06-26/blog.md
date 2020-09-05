@@ -11,9 +11,9 @@ cta:
 
 ## この発表至るまでの経緯
 
-今月 11 日に Google Chrome の developer である Una Kravet さんが@github をメンションに含んで従来のデフォルトのブランチ名を"master"から"main"に変えてもいいよとの趣旨のツイートを投稿しました。
+今月 11 日に Google Chrome の developer である Una Kravet さんが@github をタグに含んで従来のデフォルトのブランチ名を"master"から"main"に変えてもいいよとの趣旨のツイートを投稿しました。
 
-https://twitter.com/Una/status/1271180494944829441
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For what it’s worth, I’m *super* happy to rename the default branch structure of “master” to “main” and I hope we can all do this together as a community with <a href="https://twitter.com/github?ref_src=twsrc%5Etfw">@github</a> leading the charge by implementing in their product moving forward 🙂</p>&mdash; Una Kravets 👩🏻‍💻 (@Una) <a href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">June 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 理由としては、
 
@@ -23,17 +23,15 @@ https://twitter.com/Una/status/1271180494944829441
 
 といったことが挙げられています。
 
-翌日 12 日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
+翌日12日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
 
 https://twitter.com/natfriedman/status/1271253144442253312
 
-そこで候補として上がったワードが"main"です。
+そこで候補として上がったワードが"main"です。そこで実際にgithubのデフォルトブランチをmainに移して見たいと思います！
 
 ## 実際に変更してみた
 
-そんなにブランチ名を変更すること自体に難しいステップではありませんが、サクッとデフォルトブランチの変更方法をお伝えしていきたいと思います。
-
-それでは一緒に変更していきましょう。順序はこのようになります。
+まず、順序はこのようになります。
 
 - ローカルで main branch を作成して checkout
 - ローカルの main branch を remote に push
