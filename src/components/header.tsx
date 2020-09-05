@@ -63,6 +63,7 @@ export function Header() {
 
 const Container = styled.header`
   display: flex;
+  align-self: stretch;
   align-items: center;
   justify-content: space-between;
   padding: 2rem 1rem;

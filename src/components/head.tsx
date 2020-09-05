@@ -1,13 +1,22 @@
 import NextHead from "next/head";
 
-interface Props {
-  title?: string;
-}
-
-export function Head({ title = "Junichi パリ在住エンジニア🇫🇷" }: Props) {
+export function Head() {
   return (
     <NextHead>
-      <title>{title}</title>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-174232195-1"
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'UA-174232195-1');
+      })()`,
+        }}
+      />
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -26,12 +35,8 @@ export function Head({ title = "Junichi パリ在住エンジニア🇫🇷" }: 
         href="/favicon/favicon-16x16.png"
       />
       <link rel="manifest" href="/favicon/site.webmanifest" />
-      <meta
-        name="msapplication-config"
-        content="/favicon/browserconfig.xml"
-      />
+      <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="theme-color" content="#ffffff" />
       <link
         href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
         rel="stylesheet"
@@ -40,6 +45,7 @@ export function Head({ title = "Junichi パリ在住エンジニア🇫🇷" }: 
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
         rel="stylesheet"
       />
+      <meta name="theme-color" content="#ffffff" />
     </NextHead>
   );
 }
