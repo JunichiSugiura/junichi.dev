@@ -72,7 +72,7 @@ sns:
   post: 今回は自分の経験ををベースに、OSS活動を始めたきっかけからエンジニアとしての自分のキャリヤへの活用、始めるにあたって気をつけたほうが良いことなどをお話してみました！
 
   https://youtu.be/_KFSz3k10C4
-  twitter:
+  twitter: https://twitter.com/JunichiSugiura/status/1304283529358966785
 ---
 
 ### 自分のOSSとの関わり
