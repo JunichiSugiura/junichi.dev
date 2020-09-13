@@ -6,12 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx",
     "lint": "eslint . --ext .js,.ts,.tsx",
     "new:script": "./scripts/new-script"
   },
   "dependencies": {
     "@emotion/styled": "^10.0.27",
-    "@types/theme-ui": "^0.3.5",
+    "@types/theme-ui": "^0.3.6",
     "gray-matter": "^4.0.2",
     "moment": "^2.27.0",
     "next": "^9.4.4",

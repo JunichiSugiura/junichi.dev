@@ -22,8 +22,6 @@ description: >
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
 
   ---------- 🙏 ATTRIBUTION ----------
-thumbnailKeywords:
-  -
 tags:
   # - プログラミング
   # - エンジニア
