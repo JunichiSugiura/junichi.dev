@@ -1,18 +1,18 @@
 #!/bin/sh
 
-date="$1"
+title="$1"
 
 contents_path=./documents/contents
 
-if [[ "$date" =~ ^[0-9]{4}-(0[1-9]|1[0-2])-([0-2][0-9]|3[0-1])$ ]]; then
-    if [ -d "$contents_path"/"$date" ]; then
-        echo "The date already exists"
+if [ -n "$title" ]; then
+    if [ -d "$contents_path"/"$title" ]; then
+        echo "Title already exists"
         exit 1
     else
-        mkdir "$contents_path"/"$date"
-        cp ./documents/templates/script.md "$contents_path"/"$date"/
+        mkdir "$contents_path"/"$title"
+        cp ./documents/templates/script.md "$contents_path"/"$title"/
     fi
 else
-    echo "The date need to be dd-mm-yyyy format"
+    echo "Title cannot be empty"
     exit 1
 fi
