@@ -58,7 +58,11 @@ sns:
 - Tempelhof
 - どうやってであった？
 - Berlin vs Paris
+  - いいところ
+  - 良くないところ
+  - 日本と比べて
 - Student vs Employee
+- 一週間の流れ
 
 ## Intro
 
