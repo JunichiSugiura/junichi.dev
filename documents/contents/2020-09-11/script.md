@@ -1,9 +1,33 @@
 ---
-title: Epic Games(Fortnite) vs 30%の"Apple Tax"どうなる？
+title: "Apple Tax"をめぐる戦い[Epic Games(Fortnite) vs Apple]
 description: >
+  iOS/iPadOSアプリ内での支払いに"一律"30%の手数料を徴収する通称"Apple Tax"。アプリ開発者が買い切りモデルからサブスクリプションモデルに移行した今、はたしてこれはプラットフォーマーに支払われるべき妥当な対価なのでしょうか？今回はEpic Gamesの身を削った挑戦についてまとめてみました。
 
   ------------- 📌 Chapters -------------
-  0:00
+  0:00 イントロ
+  0:13 Epic Gamesの紹介
+  1:11 Appleの紹介
+  1:33 Apple Tax
+  1:57 これまでの出来事
+  2:05 バトルのはじまり (The Fortnite Mega Drop)
+  3:01 Appleの反撃
+  3:39 SDKのアクセス制限
+  3:52 Unreal Engine
+  4:43 起訴内容
+  5:30 #FREEFORTNITE
+  5:38 Nineteen Eighteen-Fortnite
+  6:22 Free Fortnite Cupと皮肉の効いた賞品
+  7:44 Microsoftの賛同
+  8:25 裁判と判決
+  9:08 #FREEFORTNITE Asset Pack
+  9:53 ゲーム業界でのApple Tax影響
+  11:22 App Storeの売上
+  11:51 サブスクリプションモデルとApple Tax
+  13:42 Apple Taxの例外
+  14:29 Google Play StoreとGoogleの独占
+  16:09 Facebookの試み
+  17:09 Epic Games CEOのツイート
+  17:54 今後の流れ
 
   # ----------- 🔔 チャンネル登録はこちらから -----------
   # https://www.youtube.com/channel/UC9IdI7wrSz9S3y5QxHvFseg?sub_confirmation=1
@@ -22,6 +46,8 @@ description: >
   # みなさんの暗号資産をできる限り安全に管理できるようにするのが仕事です。
 
   ---------- 🙏 ATTRIBUTION ----------
+  By Official GDC - _DSC5777, CC BY 2.0, https://commons.wikimedia.org/w/index.php?curid=77551318
+  By Source (WP:NFCC#4), Fair use, https://en.wikipedia.org/w/index.php?curid=53764597
 thumbnailKeywords:
   -
 tags:
@@ -33,9 +59,40 @@ tags:
   # - テック
   # - 海外就職
   # - キャリア
-  -
-link: https://youtu.be/VIDEO_ID
-publishedAt: YYYY-MM-DD 05:00:00
+  - Epic Games
+  - Fortnite
+  - Apple
+  - Apple Tax
+  - 30%
+  - iOS
+  - iPadOS
+  - App Store
+  - Google
+  - Google Play
+  - Microsoft
+  - Facebook
+  - The Fortnite Mega Drop
+  - Unreal Engine
+  - Nineteen Eighteen-Fortnite
+  - FREEFORTNITE
+  - gaming
+  - game
+  - Antitrust
+  - Amazon
+  - Prime Video
+  - アップル
+  - エピックゲームズ
+  - フォートナイト
+  - グーグル
+  - マイクロソフト
+  - フェイスブック
+  - 独占
+  - 市場独占
+  - ゲーム
+  - アマゾン
+  - プライムビデオ
+link: https://youtu.be/jsOvclqQkhw
+publishedAt: 2020-09-26 02:00:00
 playlists:
   -
 endScreen:
@@ -43,8 +100,14 @@ endScreen:
     - "Video: Best for viewer"
     - "Subscribe: Junichi"
 sns:
-  post:
-  twitter:
+  post: >
+    iOSアプリ内での支払いに"一律"30%の手数料を徴収する通称"Apple Tax"
+    
+    買い切りモデルからサブスクリプションモデルに移行した今、果たしてこれはプラットフォーマーへの妥当な対価なのでしょうか？
+
+    今回はEpic Gamesの身を削った挑戦についてまとめてみました
+    https://youtu.be/jsOvclqQkhw
+  twitter: https://twitter.com/JunichiSugiura/status/1309643850898485248
 ---
 
 ## Outline
