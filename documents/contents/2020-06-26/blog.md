@@ -13,8 +13,9 @@ cta:
 
 今月 11 日に Google Chrome の developer である Una Kravet さんが@github をタグに含んで従来のデフォルトのブランチ名を"master"から"main"に変えてもいいよとの趣旨のツイートを投稿しました。
 
-<a target="_blank" href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">![twitter1](./twitter1.png)</a>
+<!-- <a target="_blank" href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">![twitter1](./twitter1.png)</a> -->
 
+![twitter1](./twitter1.png)
 理由としては、
 
 - 文字数が少なくなる
@@ -25,7 +26,8 @@ cta:
 
 翌日12日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
 
-<a target="_blank" href="https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw">![twitter2](./twitter2.png)</a>
+<!-- <a target="_blank" href="https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw">![twitter2](./twitter2.png)</a> -->
+![twitter2](./twitter2.png)
 
 そこで候補として上がったワードが"main"です。そこで実際にgithubのデフォルトブランチをmainに移して見たいと思います！
 
