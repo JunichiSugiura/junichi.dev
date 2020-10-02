@@ -13,7 +13,7 @@ cta:
 
 今月 11 日に Google Chrome の developer である Una Kravet さんが@github をタグに含んで従来のデフォルトのブランチ名を"master"から"main"に変えてもいいよとの趣旨のツイートを投稿しました。
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For what it’s worth, I’m *super* happy to rename the default branch structure of “master” to “main” and I hope we can all do this together as a community with <a href="https://twitter.com/github?ref_src=twsrc%5Etfw">@github</a> leading the charge by implementing in their product moving forward 🙂</p>&mdash; Una Kravets 👩🏻‍💻 (@Una) <a href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">June 11, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a target="_blank" href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">![twitter1](./twitter1.png)</a>
 
 理由としては、
 
@@ -25,7 +25,7 @@ cta:
 
 翌日12日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">It&#39;s a great idea and we are already working on this! cc <a href="https://twitter.com/billygriffin22?ref_src=twsrc%5Etfw">@billygriffin22</a></p>&mdash; Nat Friedman (@natfriedman) <a href="https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw">June 12, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a target="_blank" href="https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw">![twitter2](./twitter2.png)</a>
 
 そこで候補として上がったワードが"main"です。そこで実際にgithubのデフォルトブランチをmainに移して見たいと思います！
 
@@ -87,7 +87,7 @@ tech業界では歴史的に"master/slave"という概念を使うことが多�
 
 例えばGoogle Chromeの元となるchromiumというプロジェクトの規約には男女差別や人種差別に関連するワードをソースコードやドキュメントから排除するように促す[ルール](https://chromium.googlesource.com/chromium/src/+/master/styleguide/inclusive_code.md#racially-neutral)が存在しています。
 
-例えば、英語では一般的に"his/her"等のgender表現を使うことがよくありますが、今の世の中ではそれらの言葉に当てはまらないケースも認知されてきてますよね。自分以外の人達を表現するワードとして、"everyone", "folks", "people"などの表現を使うよう定められています。
+例えば、英語では一般的に"his/her"等のgender表現を使うことがよくありますが、今の世の中ではそれらの言葉に当てはまらないケースも認知されてきてます。自分以外の人達を表現するワードとして、"everyone", "folks", "people"などの表現を使うよう定められています。
 
 また"blacklist", "whitelist"などもblackは悪者、whiteは正義と捉えられることから、"blocklist", "allowlist"と表現するよう決められています。
 
