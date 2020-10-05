@@ -16,6 +16,8 @@ cta:
 <!-- <a target="_blank" href="https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw">![twitter1](./twitter1.png)</a> -->
 
 ![twitter1](./twitter1.png)
+[Tweetのリンク](https://twitter.com/Una/status/1271180494944829441?ref_src=twsrc%5Etfw)
+
 理由としては、
 
 - 文字数が少なくなる
@@ -24,10 +26,11 @@ cta:
 
 といったことが挙げられています。
 
-翌日12日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しました。
+翌日12日に GitHub の CEO である Nat さんがこの tweet に賛同し、これから GitHub 全社を上げて”master”ブランチをよりニュートラルな表現に変更することを発表しています。
 
 <!-- <a target="_blank" href="https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw">![twitter2](./twitter2.png)</a> -->
 ![twitter2](./twitter2.png)
+[Tweetのリンク](https://twitter.com/natfriedman/status/1271253144442253312?ref_src=twsrc%5Etfw)
 
 そこで候補として上がったワードが"main"です。そこで実際にgithubのデフォルトブランチをmainに移して見たいと思います！
 
@@ -81,28 +84,20 @@ git push -d origin master
 ## そもそもなぜデフォルトのブランチ名に"master"が使われるのか
 tech業界では歴史的に"master/slave"という概念を使うことが多くあります。こちらの[Wikipedia](https://en.wikipedia.org/wiki/Master/slave_(technology))を参照してください。
 
-これはtech業界に限った話ではなく音楽業界や映像業界でもこれらの言葉が一般的に使われてきました。
+これはTech業界に限った話ではなく音楽業界や映像業界でもこれらの言葉が一般的に使われてきました。
 
 ### 業界用語への疑問視
 
 先日George Floyedさんという黒人男性が、白人警官に執拗に拘束されて、死亡するという事件が発生したことから"Black Lives Matter"や"Blackout Tuesday"などのムーブメントが加熱しています。そうした流れの中で、人種差別に関連する業界用語への疑問視をする声がたくさん上がってきました。
 
-例えばGoogle Chromeの元となるchromiumというプロジェクトの規約には男女差別や人種差別に関連するワードをソースコードやドキュメントから排除するように促す[ルール](https://chromium.googlesource.com/chromium/src/+/master/styleguide/inclusive_code.md#racially-neutral)が存在しています。
-
-例えば、英語では一般的に"his/her"等のgender表現を使うことがよくありますが、今の世の中ではそれらの言葉に当てはまらないケースも認知されてきてます。自分以外の人達を表現するワードとして、"everyone", "folks", "people"などの表現を使うよう定められています。
-
-また"blacklist", "whitelist"などもblackは悪者、whiteは正義と捉えられることから、"blocklist", "allowlist"と表現するよう決められています。
-
-実際にchromiumのソースコードで"blacklist"と[検索した結果](https://github.com/chromium/chromium/search?q=blacklist&type=Code)、778件ヒットしたため、どこまでこの規約が徹底されているのかは正直わかりませんが、コミュニティーとしての努力は見ることができます。
+例えばGoogle Chromeの元となるchromiumというプロジェクトの規約で"blacklist", "whitelist"などもblackは悪者、whiteは正義と捉えられることから、"blocklist", "allowlist"と表現するよう決められています。
 
 #### これらのムーブメントに対するTech業界での動き
 
-これらの動きを見て巨大テック企業も次々に動きを見せています。
+トランプ大統領が"Black Lives Matter"の参加者をTwitter上で"Thugs(極悪人)"と呼び、"略奪が始まったら発泡が始まる"という旨のtweetをしました。これに対するテック企業の対応は様々です。
 
 Twitter
-- Trumpが"Balck Lives Matter"等のdemo参加者をTwitter上で"THUGS"と呼ぶ
-- さらに、"略奪が始まったら発砲が始まる"というtweetを残す
-- これに対してTwitter側は"暴力を美化している"発言はプラットフォームの規約に反するとして、Trump氏に警告を発する
+- "暴力を美化している"発言はプラットフォームの規約に反するとして、Trump氏に警告を発する
 - これによってユーザーは意図的にこのツイートをクリックしないと文章が表示されない仕様に
 - またlikeやreplyもできない仕様に
 
@@ -111,8 +106,6 @@ Facebook
 - FacebookはTrump氏の同様の投稿に対して、アクションを取らない方針を発表
 - これに反発したReact Core Teamを始めとするFacebookの[従業員がオンライン上でストライキ](https://twitter.com/dan_abramov/status/1267544361929256966)を実行
 - Twitter上で転職を考えていることを示唆したり、実際にFacebookを退職した人も
-- その後Reactの公式サイトでも"Black Lives Matter"というメッセージとともにNPO団体への寄付を促すリンクがトップページに表示されるようになる
-  - https://reactjs.org/
 
 Reddit, Revolutを始めとするTech企業も自社アプリのロゴを白黒に変更にしています。
 
