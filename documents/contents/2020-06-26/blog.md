@@ -92,7 +92,7 @@ tech業界では歴史的に"master/slave"という概念を使うことが多�
 
 例えばGoogle Chromeの元となるchromiumというプロジェクトの規約で"blacklist", "whitelist"などもblackは悪者、whiteは正義と捉えられることから、"blocklist", "allowlist"と表現するよう決められています。
 
-#### これらのムーブメントに対するTech業界での動き
+### これらのムーブメントに対するTech業界での動き
 
 トランプ大統領が"Black Lives Matter"の参加者をTwitter上で"Thugs(極悪人)"と呼び、"略奪が始まったら発泡が始まる"という旨のtweetをしました。これに対するテック企業の対応は様々です。
 
