@@ -1,0 +1,170 @@
+### Ref
+https://www.keychron.com/products/keychron-k2-wireless-mechanical-keyboard
+http://keychronwireless.refr.cc/junsugiurajp
+
+## Research
+- Keychrone K2 (Version 2)
+- 箱
+  - おもちゃ買ってもらったみたい
+  - ボードゲームみたいな音する
+- Shipping
+  - 注文: 10/3
+  - 発送: 10/5
+  - 到着: 10/14 (11日間)
+- Version
+  - RGB Backlight Almunium Frame
+  - Brown Switch
+- Price
+  - $89 + $19.50 (Shipping)
+- Specs
+  - 84 keys
+  - Wireless & wired
+  - Up to 3 devices
+  - Mac/Windows layout
+  - 15+ Types of RGB light
+  - Varias Gateron switch options
+  - Type-C plug
+  - バッテリーはバックライトOFFの状態なら240時間
+- Version 2の違い
+  - Bluethooth 5.2
+  - Inclined bottom frame
+  - Dedicated caps lock backlight
+- Video Pattern
+  - Pattern 1
+    - [Review: Keychron K2 (version 2), 9to5Mac](https://youtu.be/o7AqU4tWQI0)
+    - Intro
+    - Unboxing
+    - What's new
+      - Inclined bottom frame
+      - Dual feet incline
+      - Dedicated Caps Lock backlight
+      - Improved tactile slider switches
+      - Bluetooth 5.1
+    - Aluminum case
+    - Mac-centric keys
+    - Removable keycaps
+    - Braided right-angle USB-C cable
+    - Pair with up to three Bluetooth hosts
+    - RGB demonstration
+    - How it sounds to type
+    - Gateron key switches
+    - Conclusion
+  - Pattern 2
+    - [The World's Thinnest Mechanical Keyboard](https://youtu.be/-tZaqcLasFs)
+    - Intro
+      - Suffering Keyboard quality and experience
+        - butterfly
+        - low-profile
+        - Magic keyboard
+        - Tactile < Thinness(good looks)
+        - Apple keyboard for iMac
+      - Thinness + mechanical switches
+        - Can they co-exist? or too much?
+      - Keytron -> Keychrone
+      - Kickstarter campain
+        - mac keyboard
+        - but windows is avairable
+        - Price
+        - RGB version
+    - Unbox
+      - 付属品
+        - Bluetooth and wired connection
+        - extra keycaps
+      - 見た目
+        - size (thin)
+        - color (black)
+        - material (metal)
+        - apple keyboard but elevated
+        - shows mechanical switch from the side(blue switch)
+      - Mac specific keys
+        - command
+        - multi functional keys
+      - Side switches and I/O
+        - OS switch
+        - Charger plug (USB-C)
+    - Turn on
+      - Bluetooth
+      - backlight demo
+      - typing demo
+        - not the most satisfying feeling but
+        - もちろんタイピング音のボリュームは大きい
+      - laptopとの薄さ比較
+      - laptopと繋いでdemo
+        - edgelord
+    - Conclusion
+
+
+### Outline
+- My keyboard history
+  - Appleの純正派
+    - macbook's butterfly keyboard
+      - gen1は問題あり
+        - よく使うキーが戻らなくなった
+        - キーがくっつく
+      - 修理してから問題は起こらなくなった
+      - Apple Magic keyboard
+  - 現状問題は特にない
+  - displayの配置的に内蔵のキーボードが都合いい
+  - vimを使ってるのでなるべく"F/J"から離れたくない
+    - 十字キーやテンキーが離れてるのは好きじゃない
+  - programmingしたりYouTubeの原稿を書いたりtypingすることが多い
+    - 作業効率向上
+    - モチベーションの向上
+    - 仕事・タイピングを楽しみたい
+- Keychrone (K2)の説明
+  - mac用のBluetooth mechanical keyboardの走り
+  - Kickstarterでのcloud fundingから生まれた
+  - minimulisticなdesign
+  - 今回はこれのV2
+- Price
+  - $89 + $19.50 (Shipping)
+- Shipping
+  - Shenzhen (深セン)から発送
+  - 注文: 10/3
+  - 発送: 10/5
+  - 到着: 10/14 (11日間)
+- 箱
+  - おもちゃ買ってもらったみたい
+  - ボードゲームみたいな音する
+- 開封
+  - 付属品
+    - Bluetooth and wired connection
+    - extra keycaps
+  - 見た目
+    - size
+    - material (アルミニウム)
+      - プラスチックバージョンもある
+  - Mac specific keys
+    - command
+    - multi functional keys
+  - Inclined bottom frame
+  - Dual feet incline
+  - Side switches and I/O
+    - OS switch
+    - Charger plug (USB-C)
+  - Bluetooth 5.1
+- Turn on
+  - バッテリーはバックライトなしで240時間(10日間)
+  - 2習慣に一回位の充電になる予感
+- Typing音 demo
+  - switch type(brown switch)
+  - Blue
+    - もっと感触がある
+    - うるさい
+  - Red
+    - 全く押した感覚がない
+    - 静か
+- RGB Right demo
+  - Dedicated Caps Lock backlight
+  - White backlightバージョンもある
+- 気になる点
+  - 手首疲れそう
+- [寿司打](http://typingx0.net/sushida/play.html)
+  - エンジニアとしてのタイピング能力
+  - 一回練習、2回目本番
+  - macbook keyboard, magic keyboard, K2
+- まとめ
+  - これから使ってく?
+  - K3のcloud fundingに参加(pledged)
+    - cloud funding自体はもう終了
+  - 来年初頭に発送されるので届いたらまたレビューします
