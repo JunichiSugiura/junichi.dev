@@ -12,17 +12,19 @@ interface GetOptions {
 export function getPostAll(options: GetOptions = {}): Post[] {
   const posts = fs
     .readdirSync(contentsPath)
-    .map((dirName) => {
-      const filePath = path.join(contentsPath, dirName, "blog.md");
-      if (!fs.existsSync(filePath)) {
-        return;
-      }
+    .flatMap((year) => {
+      const yearPath = path.join(contentsPath, year);
+      return fs.readdirSync(yearPath).map((dirName) => {
+        const filePath = path.join(yearPath, dirName, "blog.md");
+        if (
+          !fs.existsSync(filePath) ||
+          (process.env.NODE_ENV === "production" && dirName === "test")
+        ) {
+          return;
+        }
 
-      if (process.env.NODE_ENV === "production" && dirName === "test") {
-        return;
-      }
-
-      return fs.readFileSync(filePath);
+        return fs.readFileSync(filePath);
+      });
     })
     .filter((f) => !!f)
     .slice(0, options.limit)
